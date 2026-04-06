@@ -4,7 +4,7 @@ const FeaturedCard = ({ image, title, description }) => {
   return (
     <div className="w-full rounded overflow-hidden bg-white">
 
-      <div className="h-96 w-full overflow-hidden">
+      <div className="h-96  sm:h-72 md:h-96 w-full overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -12,11 +12,11 @@ const FeaturedCard = ({ image, title, description }) => {
         />
       </div>
 
-      <div className="px-6 py-4">
-        <h3 className="text-xl font-bold text-black mb-2">
+      <div className="px-4  sm:px-6 py-4">
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
           {title}
         </h3>
-        <p className="text-base text-gray-700">
+        <p className="text-sm sm:text-base text-gray-700">
           {description}
         </p>
       </div>

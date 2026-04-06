@@ -1,29 +1,51 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const { body } = require("express-validator")
-const userController = require('../controllers/user.controller');
-const authMiddleware = require('../middleware/authMiddleware');
 
+// import userController from '../controllers/user.controller.js';
+import { registerUser, loginUser } from '../controllers/user.controller.js';
+// import {usergetProfileLogoutController} from '../controllers/getProfileLogout.controller.js';
+import { logoutUser, getUserProfile } from '../controllers/getProfileLogout.controller.js';
+// Authentication middleware
+import { authUser } from '../middlewares/auth.middleware.js';
 
-router.post('/register', [
-  body('email').isEmail().withMessage('Invalid Email'),
-  body('fullname.firstname').isLength({ min: 3 }).withMessage('First name must be at least 3 characters long'),
-  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
-],
-  userController.registerUser
-)
+// Validation middleware
+import {
+  validateRequest,
+  registerValidationRules,
+  loginValidationRules,
+} from '../middlewares/validationMiddleware.js';
 
-router.post('/login', [
-  body('email').isEmail().withMessage('Invalid Email'),
-  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
-],
-  userController.loginUser
-)
+// console.log('Logout User Function:', logoutUser);
+// console.log('Get User Profile Function:', getUserProfile);
 
-router.get('/profile', authMiddleware.authUser, userController.getUserProfile)
+// Registering a new user
+router.post(
+  '/register',
+  registerValidationRules,
+  validateRequest,
+  registerUser
+);
 
-router.get('/logout', authMiddleware.authUser, userController.logoutUser)
+// Login a user
+router.post(
+  '/login',
+  loginValidationRules,
+  validateRequest,
+  loginUser
+);
 
+// Logout a user
+router.get(
+  '/logout',
+  authUser,
+  logoutUser
+);
 
+// Get user profile
+router.get(
+  '/profile',
+  authUser,
+  getUserProfile
+);
 
-module.exports = router;
+export default router;

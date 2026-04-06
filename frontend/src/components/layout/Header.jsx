@@ -1,18 +1,71 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Logo from "/images/Crop_Main_Logo.png";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../store/auth";
+
 
 const Header = () => {
-  // ... all your existing state, refs and effects unchanged ...
+  const { isLoggedIn, user } = useAuth();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false);
   const [pagesOpenMobile, setPagesOpenMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
   const menuButtonRef = useRef(null);
   const panelRef = useRef(null);
+
+  // 
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setIsDropdownOpen(false);
+    closeAll(); // optional: also close menu
+  };
+
+  useEffect(() => {
+    console.log("isLoggedIn:", isLoggedIn);
+    console.log("user:", user);
+  }, [isLoggedIn, user]);
+
+  // --- 1. SCROLL LOGIC ---
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // If any menu is OPEN, always show the navbar
+      if (mobileOpen || desktopMenuOpen) {
+        setVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Determine scroll direction
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        // Scrolling DOWN -> Hide
+        setVisible(false);
+      } else {
+        // Scrolling UP -> Show
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileOpen, desktopMenuOpen]);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -37,9 +90,7 @@ const Header = () => {
     };
     const onEsc = (e) => {
       if (e.key === "Escape") {
-        setDesktopMenuOpen(false);
-        setMobileOpen(false);
-        setPagesOpenMobile(false);
+        closeAll();
       }
     };
     document.addEventListener("mousedown", onDocClick);
@@ -53,25 +104,25 @@ const Header = () => {
   }, [desktopMenuOpen]);
 
   const mainFour = [
-    { id: "home", title: "Home", link: "/" },
-    { id: "studio", title: "Studio", link: "/studio" },
-    { id: "work", title: "Work", link: "/work" },
-    { id: "news", title: "News", link: "/news" },
+    { id: "home", title: "Home", url: "/", active: true },
+    { id: "studio", title: "Studio", url: "/studio", active: true },
+    { id: "work", title: "Work", url: "/work", active: true },
+    { id: "news", title: "News", url: "/news", active: true },
   ];
 
   const otherItems = [
-    { id: "portfolio", title: "Portfolio", link: "/portfolio" },
-    { id: "blogs", title: "Blogs", link: "/blogs" },
-    { id: "contact", title: "ContactUS", link: "/contact" },
+    { id: "portfolio", title: "Portfolio", url: "/portfolio", active: true },
+    { id: "blogs", title: "Blogs", url: "/blogs", active: true },
+    { id: "contact", title: "ContactUS", url: "/contact", active: true },
   ];
 
   const pages = [
-    { id: "about", title: "About us", link: "/about" },
-    { id: "our-services", title: "Our Services", link: "/services" },
-    { id: "service-details", title: "Service Details", link: "/service-details" },
-    { id: "team", title: "Our Team", link: "/team" },
-    { id: "pricing", title: "Pricing", link: "/pricing" },
-    { id: "faqs", title: "FAQs", link: "/faqs" },
+    { id: "about", title: "About us", url: "/aboutUs", active: true },
+    { id: "OurSAP", title: "Our Services & Pricing", url: "/services-pricing", active: true },
+    // { id: "service-details", title: "Service Details", url: "/service-details", active: true },
+    { id: "team", title: "Our Team", url: "/our-team", active: true },
+    // { id: "pricing", title: "Pricing", url: "/pricing", active: true },
+    { id: "faqs", title: "FAQs", url: "/faqs", active: true },
   ];
 
   const handleMenuToggle = () => {
@@ -94,9 +145,12 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full bg-[#1c1c1c] z-50">
+      <header
+        className={`fixed top-0 left-0 w-full bg-[#1c1c1c] z-50 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"
+          }`}
+      >
         <nav className="w-full">
-          <div className="container mx-auto px-4 py-4 flex items-center justify-between text-white">
+          <div className="container mx-auto px-4 pt-4 pb-2 flex items-center justify-between text-white">
             {/* LEFT: logo + main links */}
             <div className="flex items-center gap-8">
               <a href="/" aria-label="Homepage" className="flex items-center">
@@ -104,29 +158,79 @@ const Header = () => {
               </a>
 
               <ul className="hidden md:flex items-center gap-3 text-gray-200">
-                {mainFour.map((item) => (
-                  <li key={item.id}>
-                    <a
-                      href={item.link}
-                      onClick={closeAll}
-                      className={`inline-block py-1 px-3 font-semibold ${currentPath === item.link ? "text-yellow-400" : "hover:text-yellow-400 text-gray-200"
-                        }`}
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
+                {mainFour.map((item) =>
+                  item.active ? (
+                    <li key={item.id}>
+                      <button
+                        onClick={() => { navigate(item.url) }}
+                        className={`inline-block py-1 px-3 font-semibold ${currentPath === item.url
+                          ? "text-yellow-400"
+                          : "hover:text-yellow-400 text-gray-200"
+                          }`}
+                      >
+                        {item.title}
+                      </button>
+                    </li>
+                  ) : null
+                )
+                }
               </ul>
             </div>
 
             {/* RIGHT: start project + menu */}
             <div className="flex items-center gap-6">
-              <a
-                href="/start-project"
+
+              {/* User Authentication Menu */}
+              {isLoggedIn ? (
+                <div className="relative inline-block text-justify">
+                  <button
+                    onClick={toggleDropdown}
+                    className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
+                  >
+                    {user?.username || "Loading..."}
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                      <Link
+                        to="/logout"
+                        className="block px-3 py-1 text-gray-700 hover:bg-gray-100"
+                        onClick={handleLinkClick}
+                      >
+                        Logout
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    className="block py-2 px-4 hover:text-yellow-400"
+                    onClick={handleLinkClick}
+                  >
+                    Login
+                  </Link>
+
+                  <Link
+                    to="/signup"
+                    className="block py-2 px-4 hover:text-yellow-400"
+                    onClick={handleLinkClick}
+                  >
+                    Signup
+                  </Link>
+                </>
+              )}
+
+
+              <button
+                onClick={() => {
+                  navigate("/start-project");
+                }}
                 className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-gray-800"
               >
                 Start Project <ImArrowUpRight2 />
-              </a>
+              </button>
 
               <div className="relative">
                 <button
@@ -163,7 +267,7 @@ const Header = () => {
           />
         </nav>
 
-        {/* DESKTOP: fixed panel box (overlay) — appears outside navbar space, anchored top-right */}
+        {/* DESKTOP PANEL */}
         {isDesktop && desktopMenuOpen && (
           <div
             ref={panelRef}
@@ -171,20 +275,22 @@ const Header = () => {
             role="dialog"
             aria-modal="true"
           >
-            {/* Grid: pages | other items */}
+            {/* ... Menu Content ... */}
             <div className="grid grid-cols-2 gap-6 text-gray-200">
               <div>
                 <h3 className="text-sm font-semibold mb-3">Pages</h3>
                 <div className="grid gap-1">
                   {pages.map((p) => (
-                    <a
+                    <button
                       key={p.id}
-                      href={p.link}
-                      onClick={() => setDesktopMenuOpen(false)}
-                      className="block py-2 px-2 rounded hover:bg-gray-800 text-sm"
+                      onClick={() => {
+                        navigate(p.url);
+                        setDesktopMenuOpen(false);
+                      }}
+                      className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
                     >
                       {p.title}
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -193,29 +299,36 @@ const Header = () => {
                 <h3 className="text-sm font-semibold mb-3">More</h3>
                 <div className="grid gap-1">
                   {otherItems.map((it) => (
-                    <a
+
+                    <button
                       key={it.id}
-                      href={it.link}
-                      onClick={() => setDesktopMenuOpen(false)}
-                      className="block py-2 px-2 rounded hover:bg-gray-800 text-sm"
+                      onClick={() => {
+                        navigate(it.url);
+                        setDesktopMenuOpen(false);
+                      }}
+                      className="w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
                     >
                       {it.title}
-                    </a>
+                    </button>
+
                   ))}
-                  <a
-                    href="/start-project"
-                    onClick={() => setDesktopMenuOpen(false)}
+
+                  <button
+                    onClick={() => {
+                      navigate("/start-project");
+                      setDesktopMenuOpen(false);
+                    }}
                     className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded bg-[#111111] text-white font-semibold hover:bg-black"
                   >
                     Start Project <ImArrowUpRight2 />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         )}
 
-        {/* MOBILE full sheet (unchanged) */}
+        {/* MOBILE MENU */}
         {mobileOpen && (
           <div
             className="md:hidden bg-[#1c1c1c] shadow-md border-t border-gray-800 z-40"
@@ -224,18 +337,18 @@ const Header = () => {
             <ul className="flex flex-col px-4 py-4 gap-1 text-gray-200">
               {mainFour.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={item.link}
-                    onClick={closeAll}
-                    className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                  <button
+                    onClick={() => {
+                      navigate(item.url);
+                      closeAll();
+                    }}
+                    className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 font-medium"
                   >
                     {item.title}
-                  </a>
+                  </button>
                 </li>
               ))}
-
               <li className="mt-1 border-t border-gray-700" />
-
               <li>
                 <button
                   className="w-full flex items-center justify-between py-2 px-2 rounded hover:bg-gray-800 font-medium"
@@ -243,53 +356,65 @@ const Header = () => {
                   aria-expanded={pagesOpenMobile}
                 >
                   <span>Pages</span>
-                  <svg
-                    className={`w-5 h-5 transform transition-transform ${pagesOpenMobile ? "rotate-180" : "rotate-0"}`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <svg className={`w-5 h-5 transform transition-transform ${pagesOpenMobile ? "rotate-180" : "rotate-0"}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </button>
-
                 {pagesOpenMobile && (
                   <ul className="mt-1 pl-4 flex flex-col gap-1">
                     {pages.map((p) => (
                       <li key={p.id}>
-                        <a href={p.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">
+                        {/* <a href={p.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{p.title}</a> */}
+                        <button
+                          onClick={() => {
+                            navigate(p.url);
+                            closeAll();
+                          }}
+                          className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                        >
                           {p.title}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
                 )}
               </li>
-
               <li className="mt-1 border-t border-gray-700" />
-
               {otherItems.map((it) => (
-                <li key={it.id}>
-                  <a href={it.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">
-                    {it.title}
-                  </a>
-                </li>
-              ))}
 
+                <li key={it.id}>
+                  <button
+                    onClick={() => {
+                      navigate(it.url);
+                      closeAll();
+                    }}
+                    className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                  >
+                    {it.title}
+                  </button>
+                </li>
+
+
+              ))}
               <li className="mt-3 px-4">
-                <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">
+
+                <button
+                  onClick={() => {
+                    navigate("/start-project");
+                    closeAll();
+                  }}
+                  className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold"
+                >
                   Start Project <ImArrowUpRight2 className="inline-block ml-2" />
-                </a>
+                </button>
+
+                {/* <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">Start Project <ImArrowUpRight2 className="inline-block ml-2" />
+                </a> */}
               </li>
             </ul>
           </div>
         )}
       </header>
 
-      {/* ===== Spacer: prevents content from sitting under the fixed header =====
-          Adjust heights if you change header padding/logo size */}
-      <div aria-hidden className="h-16 md:h-20" />
+      {/* <div className="h-16 md:h-20" aria-hidden="true" /> */}
     </>
   );
 };

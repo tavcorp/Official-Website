@@ -13,6 +13,24 @@
   width: 100% !important;
 }
 
+.swiper-pagination {
+  position: relative;
+  margin-top: 16px;
+
+  background-color: #212325;
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
 /* inner wrapper provides padding but ensures full width */
 .slide-inner {
   width: 100%;

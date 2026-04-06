@@ -1,30 +1,16 @@
 import React from "react";
 
-const QuestionCard = ({ id, question, answer, open, toggle }) => {
+const QuestionCard = ({ id, question, answer, open, toggle, styles }) => {
   return (
-    <div className="
-    bg-[#2a2929] rounded-xl p-4 shadow-md
-      w-[90%] mx-auto         
-      sm:w-[90%]               
-      md:w-[90%]                
-      lg:w-full
-    ">
-
-      <div
-        onClick={() => toggle(id)}
-        className="flex justify-between items-start cursor-pointer text-xl"
-      >
+    <div className={`${styles.questionCard} ${open ? styles.activeCard : ""}`}>
+      <div className={styles.cardTop} onClick={() => toggle(id)}>
         <h1>{question}</h1>
-        <span className="text-2xl">{open ? "-" : "+"}</span>
+        <span className={styles.icon}>{open ? "−" : "+"}</span>
       </div>
 
-      <p
-        className={`text-lg opacity-75 transition-all duration-300 overflow-hidden 
-          ${open ? "max-h-[200px] mt-3" : "max-h-0"}
-        `}
-      >
-        {answer}
-      </p>
+      <div className={styles.answerP}>
+        <p>{answer}</p>
+      </div>
     </div>
   );
 };

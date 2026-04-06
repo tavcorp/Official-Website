@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Pacifico', 'cursive'],
-      }
+        caveat: ['"Caveat"', 'cursive'],
+      },
     },
   },
   plugins: [],

@@ -16,7 +16,8 @@
   /* The border around ALL dots */
   border-radius: 50px;
   /* Makes the ends round (Pill shape) */
-  padding: 6px 12px;
+  padding: 2px 6px;
+  /* gap: 4px; */
   /* Adds breathing room inside the border */
   background-color: white;
   /* (Optional) Background inside the pill */

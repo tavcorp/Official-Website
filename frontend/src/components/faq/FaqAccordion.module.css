@@ -1,0 +1,78 @@
+/* FaqAccordion.module.css */
+
+.faqsContainer {
+  /* min-height: 100vh; */
+  padding: 3rem 1rem;
+  background-color: #0a0a0a;
+  color: #f8fafc;
+  font-family: sans-serif;
+}
+
+.faqsWrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.faqHeaderText {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.faqHeaderText span {
+  color: #fbbf24;
+}
+
+.questionCard {
+  background-color: #2a2929;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.cardTop h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #fbbf24;
+}
+
+.answerP {
+  font-size: 1.8rem;
+  opacity: 0.75;
+  line-height: 1.5;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-height: 0;
+}
+
+/* Logic for the Open State */
+.activeCard .cardTop h1 {
+  color: #fbbf24;
+}
+
+.activeCard .answerP {
+  max-height: 500px; /* High enough to fit content */
+  margin-top: 1.5rem;
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .questionCard { width: 70%; }
+}

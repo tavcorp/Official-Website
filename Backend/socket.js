@@ -1,11 +1,11 @@
-const socketIo = require('socket.io');
-const userModel = require('./models/user');
-const employeeModel = require('./models/employee');
+import { Server } from 'socket.io';
+import userModel from './models/user.model.js';
+// import employeeModel from './models/employee.js';
 
 let io;
 
-function initializeSocket(server) {
-  io = socketIo(server, {
+export function initializeSocket(server) {
+  io = new Server(server, {
     cors: {
       origin: '*',
       methods: ['GET', 'POST']
@@ -15,15 +15,15 @@ function initializeSocket(server) {
   io.on('connection', (socket) => {
     console.log(`Client connected: ${socket.id}`);
 
-    // Register the socket ID of the user or employee when joining
     socket.on('join', async (data) => {
       const { userId, userType } = data;
 
       if (userType === 'user') {
         await userModel.findByIdAndUpdate(userId, { socketId: socket.id });
-      } else if (userType === 'employee') {
-        await employeeModel.findByIdAndUpdate(userId, { socketId: socket.id });
       }
+      // else if (userType === 'employee') {
+      //   await employeeModel.findByIdAndUpdate(userId, { socketId: socket.id });
+      // }
     });
 
     socket.on('disconnect', () => {
@@ -32,8 +32,8 @@ function initializeSocket(server) {
   });
 }
 
-// Send a real-time message to a specific socketId
-const sendMessageToSocketId = (socketId, messageObject) => {
+// named export
+export const sendMessageToSocketId = (socketId, messageObject) => {
   console.log(messageObject);
 
   if (io) {
@@ -42,5 +42,3 @@ const sendMessageToSocketId = (socketId, messageObject) => {
     console.log('Socket.io not initialized.');
   }
 };
-
-module.exports = { initializeSocket, sendMessageToSocketId };

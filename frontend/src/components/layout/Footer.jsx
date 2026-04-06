@@ -1,6 +1,8 @@
 // src/components/layout/Footer.jsx
 import React from "react";
 import Banner from "/images/Banner.jpeg";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -44,9 +46,15 @@ const Footer = () => {
 
             <p className="text-xs text-gray-500 mt-3 max-w-sm">
               By subscribing, you accept our{" "}
-              <a href="/privacy" className="underline text-gray-300">
+              <Link
+                to="/privacy"
+                className=" whitespace-nowrap underline text-gray-300"
+              >
                 Privacy Policy
-              </a>
+              </Link>
+              {/* <a href="/privacy" className="underline text-gray-300">
+                Privacy Policy
+              </a> */}
             </p>
           </div>
 
@@ -89,23 +97,38 @@ const Footer = () => {
                   <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-10 gap-y-5 sm:gap-x-6">
                     <ul className="text-sm text-gray-300">
                       <li>
-                        <a href="/terms" className="hover:underline whitespace-nowrap">
+                        <Link
+                          to="/terms"
+                          className="hover:underline whitespace-nowrap"
+                        >
                           Terms &amp; Conditions
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="/privacy" className="hover:underline whitespace-nowrap">
+                        <Link
+                          to="/privacy"
+                          className="hover:underline whitespace-nowrap"
+                        >
                           Privacy Policy
-                        </a>
+                        </Link>
                       </li>
                     </ul>
 
                     <ul className="text-sm text-gray-300">
                       <li>
-                        <a href="/news" className="hover:underline">News</a>
+                        <Link
+                           to="/news" 
+                           className="hover:underline"
+                        >
+                          News
+                        </Link>
                       </li>
                       <li>
-                        <a href="/pricing" className="hover:underline">Pricings</a>
+                        <Link 
+                          to="/pricing" 
+                          className="hover:underline">
+                            Pricings
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -131,10 +154,10 @@ const Footer = () => {
           <div className="w-full md:w-auto md:mr-12">
             <h6 className="text-sm font-semibold text-white mb-3 text-center md:text-right">Our Socials</h6>
             <div className="grid grid-cols-2 gap-2 text-sm text-gray-300 justify-center md:justify-end">
-              <a href="https://instagram.com" className="hover:underline text-center md:text-right">Instagram</a>
+              <a href="https://www.instagram.com/tavcorp/" className="hover:underline text-center md:text-right">Instagram</a>
               <a href="https://tiktok.com" className="hover:underline text-center md:text-right">Tiktok</a>
-              <a href="https://twitter.com" className="hover:underline text-center md:text-right">Twitter/X</a>
-              <a href="https://linkedin.com" className="hover:underline text-center md:text-right">LinkedIn</a>
+              <a href="https://x.com/tavcorp_" className="hover:underline text-center md:text-right">Twitter/X</a>
+              <a href="https://www.linkedin.com/company/tavcorp/" className="hover:underline text-center md:text-right">LinkedIn</a>
             </div>
           </div>
         </div>

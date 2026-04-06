@@ -1,8 +1,8 @@
-import React from "react";
-
 const PricingCard = ({ plan }) => {
   return (
-    <div className="bg-[#101010] border border-gray-800 rounded-2xl p-6 hover:border-yellow-400 transition">
+    <div className="bg-[#101010] border border-gray-800 rounded-2xl p-6 
+                    hover:border-yellow-400 transition
+                    flex flex-col h-full">
 
       {/* Plan Name */}
       <h2 className="text-2xl font-bold text-white mb-2">
@@ -34,14 +34,15 @@ const PricingCard = ({ plan }) => {
           ))}
       </ul>
 
-      {/* Button */}
-      <button className="w-full bg-yellow-400 text-black font-medium py-2 rounded-lg hover:bg-yellow-300 transition">
+      {/* Button pushed to bottom */}
+      <button className="mt-auto w-full bg-yellow-400 text-black font-medium py-2 
+                         rounded-lg hover:bg-yellow-300 transition">
         Pick this package &gt;
       </button>
-
-      
     </div>
   );
 };
+
+
 
 export default PricingCard;
