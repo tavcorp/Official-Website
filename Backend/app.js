@@ -9,8 +9,7 @@ import bodyParser from 'body-parser';
 import connectDB from './config/db.js';
 
 import authRoutes from './routes/auth.route.js';
-// import userRoutes from './routes/user.routes.js';
-// import contactRoute from './routes/contact.routes.js';
+
 
 const app = express();
 
