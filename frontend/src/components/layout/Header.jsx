@@ -3,8 +3,12 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Logo from "/images/Crop_Main_Logo.png";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../store/auth";
+
 
 const Header = () => {
+  const { isLoggedIn, user } = useAuth();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false);
@@ -16,6 +20,24 @@ const Header = () => {
 
   const menuButtonRef = useRef(null);
   const panelRef = useRef(null);
+
+  // 
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setIsDropdownOpen(false);
+    closeAll(); // optional: also close menu
+  };
+
+  useEffect(() => {
+    console.log("isLoggedIn:", isLoggedIn);
+    console.log("user:", user);
+  }, [isLoggedIn, user]);
 
   // --- 1. SCROLL LOGIC ---
   useEffect(() => {
@@ -157,6 +179,50 @@ const Header = () => {
 
             {/* RIGHT: start project + menu */}
             <div className="flex items-center gap-6">
+
+              {/* User Authentication Menu */}
+              {isLoggedIn ? (
+                <div className="relative inline-block text-justify">
+                  <button
+                    onClick={toggleDropdown}
+                    className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
+                  >
+                    {user?.username || "Loading..."}
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                      <Link
+                        to="/logout"
+                        className="block px-3 py-1 text-gray-700 hover:bg-gray-100"
+                        onClick={handleLinkClick}
+                      >
+                        Logout
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    className="block py-2 px-4 hover:text-yellow-400"
+                    onClick={handleLinkClick}
+                  >
+                    Login
+                  </Link>
+
+                  <Link
+                    to="/signup"
+                    className="block py-2 px-4 hover:text-yellow-400"
+                    onClick={handleLinkClick}
+                  >
+                    Signup
+                  </Link>
+                </>
+              )}
+
+
               <button
                 onClick={() => {
                   navigate("/start-project");
@@ -233,7 +299,7 @@ const Header = () => {
                 <h3 className="text-sm font-semibold mb-3">More</h3>
                 <div className="grid gap-1">
                   {otherItems.map((it) => (
-             
+
                     <button
                       key={it.id}
                       onClick={() => {
@@ -246,7 +312,7 @@ const Header = () => {
                     </button>
 
                   ))}
-                
+
                   <button
                     onClick={() => {
                       navigate("/start-project");
@@ -313,10 +379,6 @@ const Header = () => {
               </li>
               <li className="mt-1 border-t border-gray-700" />
               {otherItems.map((it) => (
-                // <li key={it.id}>
-                //   <a href={it.link} onClick={closeAll} className="block py-2 px-2 rounded hover:bg-gray-800 font-medium">{it.title}</a>
-                // </li>
-
 
                 <li key={it.id}>
                   <button
@@ -331,21 +393,19 @@ const Header = () => {
                 </li>
 
 
-
-
               ))}
               <li className="mt-3 px-4">
-                
+
                 <button
-                 onClick={() => {
-                  navigate("/start-project");
-                  closeAll();
-                 }}
+                  onClick={() => {
+                    navigate("/start-project");
+                    closeAll();
+                  }}
                   className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold"
-                  >
+                >
                   Start Project <ImArrowUpRight2 className="inline-block ml-2" />
-                 </button>
-               
+                </button>
+
                 {/* <a href="/start-project" onClick={closeAll} className="block w-full py-2 px-2 rounded bg-black text-white text-center font-semibold">Start Project <ImArrowUpRight2 className="inline-block ml-2" />
                 </a> */}
               </li>

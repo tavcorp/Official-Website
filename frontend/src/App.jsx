@@ -18,13 +18,18 @@ import Terms from "./pages/term";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import OurServicesPricing from "./pages/OurSAP";
 import NotFound from "./pages/NotFound";
-
+import Login from "./login";
+import Signup from "./signup";
+import { Logout } from "./logout";
+import { AuthProvider } from "./store/auth";
 
 
 const App = () => {
   return (
     <div className="overflow-x-hidden">
+      <AuthProvider>
       <Header />
+      </AuthProvider>
 
       <ScrollToTop />
       <Routes>
@@ -44,6 +49,10 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
 
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/logout" element={<Logout />} />
 
       </Routes>
 

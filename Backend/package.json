@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Backend for TavCorp offical website.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "node test.js",
     "start": "node server.js",
@@ -36,6 +37,7 @@
     "express": "^5.1.0",
     "express-validator": "^7.3.0",
     "jsonwebtoken": "^9.0.2",
+    "mailtrap": "^4.5.1",
     "mongoose": "^8.19.2",
     "socket.io": "^4.8.1"
   },
