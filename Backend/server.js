@@ -3,7 +3,6 @@ import "./config/env.js";  // ✅ MUST BE FIRST
 import cors from 'cors';
 import http from 'http';
 import app from './app.js';
-// import { initializeSocket } from './socket.js';
 
 const PORT = process.env.PORT || 4000;
 
