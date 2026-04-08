@@ -4,7 +4,7 @@
   height: auto;
   /* Changed to auto to accommodate content */
   min-height: 600px;
-  background: linear-gradient(192deg, #1B1B1B 37%, rgba(139, 100, 38, 0.8) 49%, #DF9931 73%);
+  background: linear-gradient(192deg, #1B1B1B 37%, rgba(211, 145, 47, 0.8) 49%, #D3912F 73%);
   color: #F1F1F1;
   padding-top: 150px;
   padding-right: 5%;
@@ -15,6 +15,13 @@
   display: flex;
   /* Helps center container if needed */
   flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .Hero1 {
+    padding-right: 16%;
+    padding-left: 16%;
+  }
 }
 
 /* The Main Container */
@@ -303,7 +310,7 @@
   }
 
   .left {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 600;
     line-height: 1.2;
   }
@@ -380,7 +387,7 @@
   }
 
   .left {
-    font-size: 2.3rem;
+    font-size: 2.8rem;
     font-weight: 600;
     line-height: 1.1;
   }
@@ -395,7 +402,7 @@
   }
 
   .right p {
-    font-size: 1.05rem;
+    font-size: 0.85rem;
     line-height: 1.5;
     color: #cccccc;
   }

@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -61,6 +63,14 @@ const App = () => {
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   //  Replace spinner with simple UI fallback
   if (isCheckingAuth) {

@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#1B1B1B] text-[#F1F1F1]">
-      <div className="w-[90%] lg:w-[80%] mx-auto py-10 sm:py-16">
+      <div className="w-[90%] lg:w-[68%] mx-auto py-10 sm:py-16" data-aos="fade-up">
         {/* Top area: newsletter left + columns right */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24" data-aos="fade-up">
           {/* Newsletter / left */}
           <div className="md:col-span-6 lg:col-span-5">
             <h4 className="text-[22px] sm:text-2xl lg:text-[28px] font-bold text-white mb-6 md:mb-10 leading-[1.3] tracking-tight">
@@ -124,7 +124,7 @@ const Footer = () => {
 
         {/* bottom copyright */}
         <div className="mt-12 sm:mt-16 pt-6 pb-4 sm:pb-2 text-center lg:pl-[2px]">
-          <p className="text-[14px] sm:text-[18px] md:text-[20px] font-bold text-white tracking-wide leading-snug">
+          <p className="text-[10px] sm:text-[16px] md:text-[18px] font-bold text-white tracking-wide leading-snug">
             2025 - 2026 Copyrights | All Rights Reserved @TavCorp Inc
           </p>
         </div>

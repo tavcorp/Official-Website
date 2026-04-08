@@ -1,9 +1,15 @@
 import React from 'react';
 import styles from './styleStack.module.css';
 import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 // Added props: style, onClick, className
 const stackCard = ({ highlights, desc, image, style, onClick, className }) => {
+  const navigate = useNavigate();
+
+  const handleMoreAboutUs = () => {
+    navigate('/studio');
+  };
   return (
     <div
       className={`${styles.cardContainer} ${className || ''}`}
@@ -29,7 +35,7 @@ const stackCard = ({ highlights, desc, image, style, onClick, className }) => {
         {/* DESCRIPTION */}
         <div className={styles.description}>
           <p className={styles.descriptionText}>{desc}</p>
-          <button className={styles.learnMoreButton}>
+          <button onClick={handleMoreAboutUs} className={styles.learnMoreButton}>
             More About Us <IoIosArrowForward />
           </button>
         </div>

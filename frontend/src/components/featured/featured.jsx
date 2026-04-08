@@ -15,17 +15,24 @@ const Featured = () => {
 
   return (
     <div className="h-full w-full bg-white-100 pb-0 pt-0">
-      <div className="w-[90%] lg:w-[80%] mx-auto">
+        <div className="w-[90%] lg:w-[68%] mx-auto" data-aos="fade-up">
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center py-4 mb-6 gap-4 sm:gap-6 md:gap-0">
 
           {/* Heading Text */}
           <div className="heading">
             <h1 className="flex items-center">
-              <span className="text-black font-[650] text-4xl sm:text-5xl md:text-[56px] leading-none tracking-tight">
+              <span className="text-black font-[650] text-2xl sm:text-5xl md:text-[56px] leading-none tracking-tight">
                 Featured
               </span>
-              <span className="font-caveat text-[#DF9931] ml-3 text-4xl sm:text-5xl md:text-[56px] font-[600] leading-none">
+              <span 
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontStyle: "italic",
+                  fontWeight: 600
+                }}
+                className="text-[#DF9931] ml-3 text-4xl sm:text-5xl md:text-[56px] leading-none"
+              >
                 Works
               </span>
             </h1>

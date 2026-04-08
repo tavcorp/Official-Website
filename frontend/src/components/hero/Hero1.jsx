@@ -3,6 +3,7 @@ import styles from './hero1.module.css';
 import { IoIosArrowForward } from "react-icons/io";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
 import { IoLogoInstagram } from "react-icons/io5";
+import Counter from '../ui/Counter';
 
 const Hero1 = () => {
   return (
@@ -10,14 +11,23 @@ const Hero1 = () => {
       <div className={styles.container}>
 
         {/* --- TOP SECTION (Headline + Description) --- */}
-        <div className={styles.topSection}>
-          <div className={styles.left}>
+        <div className={styles.topSection} data-aos="fade-up">
+          <div className={styles.left} data-aos="fade-right" data-aos-delay="100">
             <span>Crafting,</span>
             <span>Brands and</span>
-            <span className="font-caveat">Experiences</span>
+            <span 
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontStyle: "italic",
+                fontWeight: 600
+              }}
+              className="font-caveat"
+            >
+              Experiences
+            </span>
           </div>
 
-          <div className={styles.right}>
+          <div className={styles.right} data-aos="fade-left" data-aos-delay="200">
             <p>Based in Abuja, we're a digital products design & development studio that passoinate with the creation high applicability of digital experiences.</p>
             <button type="button">
               Learn more <IoIosArrowForward />
@@ -26,9 +36,9 @@ const Hero1 = () => {
         </div>
 
         {/* --- BOTTOM SECTION (Icons + Stats) --- */}
-        <div className={styles.bottomSection}>
+        <div className={styles.bottomSection} data-aos="fade-up" data-aos-delay="200">
 
-          <div className={styles.socials}>
+          <div className={styles.socials} data-aos="fade-left" data-aos-delay="300">
             <a
               // href="https://www.linkedin.com/company/tavcorp/about/"
               href="https://www.linkedin.com/company/tavcorp/"
@@ -64,14 +74,14 @@ const Hero1 = () => {
             </a>
           </div>
 
-        <div className={styles.stats}>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>98%</span>
+        <div className={styles.stats} data-aos="fade-up" data-aos-delay="400">
+          <div className={styles.statItem} data-aos="fade-up" data-aos-delay="400">
+            <span className={styles.statNumber}><Counter end={98} suffix="%" /></span>
             <p>CLIENTS SATISFIED AND REPEATING</p>
           </div>
 
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>106+</span>
+          <div className={styles.statItem} data-aos="fade-up" data-aos-delay="500">
+            <span className={styles.statNumber}><Counter end={106} suffix="+" /></span>
             <p>PROJECTS COMPLETED IN 11 COUNTRIES</p>
           </div>
         </div>
