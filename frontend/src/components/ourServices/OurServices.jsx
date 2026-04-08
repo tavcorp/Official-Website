@@ -35,26 +35,38 @@ const services = [
 
 const OurServices = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [mobileSelectedIndex, setMobileSelectedIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth < 768 : false
   );
 
   React.useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setMobileSelectedIndex(null); // Reset selection on resize
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isActive = (index) => isMobile || hoveredIndex === index;
+  const isActive = (index) => 
+    isMobile ? mobileSelectedIndex === index : hoveredIndex === index;
 
   return (
     <section className="py-16 bg-black text-white">
-      <div className="w-[90%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] lg:w-[68%] mx-auto" data-aos="fade-up">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 px-1 pb-10 gap-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold whitespace-nowrap">
-            Our<span className="font-caveat text-amber-400"> Services</span>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold whitespace-nowrap">
+            Our<span 
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontStyle: "italic",
+                fontWeight: 600
+              }}
+              className="text-amber-400 text-4xl sm:text-4xl md:text-5xl"
+            > Services</span>
           </h1>
 
           <a
@@ -76,7 +88,10 @@ const OurServices = () => {
                 <div
                   onMouseEnter={() => !isMobile && setHoveredIndex(index)}
                   onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+                  onClick={() => isMobile && setMobileSelectedIndex(mobileSelectedIndex === index ? null : index)}
                   className="flex flex-col md:flex-row md:items-end px-0 py-5 cursor-pointer transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   {/* Mobile layout: title + icon side by side, description below */}
                   <div className="flex items-center justify-between w-full md:contents">
@@ -90,7 +105,7 @@ const OurServices = () => {
                           lineHeight: 1,
                           overflow: isMobile || (active && !isMobile) ? "visible" : "hidden",
                           height: isMobile ? "auto" : active ? "auto" : "0.8em",
-                          color: active && !isMobile ? "#FBBF24" : "#ffffff",
+                          color: active ? "#FBBF24" : "#ffffff",
                           transition: "color 0.3s ease, height 0.3s ease",
                           whiteSpace: "nowrap",
                         }}
@@ -101,8 +116,8 @@ const OurServices = () => {
 
                     {/* Icon — mobile: always visible on right of title */}
                     <div
-                      style={{ color: "#e5e7eb" }}
-                      className="text-2xl md:hidden"
+                      style={{ color: active ? "#FBBF24" : "#e5e7eb" }}
+                      className="text-2xl md:hidden transition-colors duration-300"
                     >
                       {service.icon}
                     </div>

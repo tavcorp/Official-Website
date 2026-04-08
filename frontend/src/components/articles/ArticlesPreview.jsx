@@ -6,12 +6,19 @@ const ArticlesSection = () => {
   return (
     <article>
       <section id="articles" className="py-20 bg-[#262626] text-white">
-        <div className="w-[90%] lg:w-[80%] mx-auto">
+        <div className="w-[90%] lg:w-[68%] mx-auto" data-aos="fade-up">
           {/* Header Row */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 md:mb-12 gap-6">
             {/* Heading */}
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              Our <span className="text-[#DF9931] capitalize" style={{ fontFamily: "'Brush Script MT', 'Cedarville Cursive', cursive", fontWeight: 400 }}>Articles</span>
+            <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+              Our <span 
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontStyle: "italic",
+                  fontWeight: 600
+                }}
+                className="text-[#DF9931] capitalize text-4xl sm:text-5xl md:text-6xl"
+              >Articles</span>
             </h2>
 
             {/* Button */}
@@ -33,15 +40,16 @@ const ArticlesSection = () => {
           </div>
 
           {/* Cards Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articlesData.map((item) => (
-              <ArticleCard
-                key={item.id}
-                experience={item.experience}
-                date={item.date}
-                title={item.title}
-                image={item.image}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+            {articlesData.map((item, index) => (
+              <div key={item.id} data-aos="fade-up" data-aos-delay={index * 100}>
+                <ArticleCard
+                  experience={item.experience}
+                  date={item.date}
+                  title={item.title}
+                  image={item.image}
+                />
+              </div>
             ))}
           </div>
         </div>

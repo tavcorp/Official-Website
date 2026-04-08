@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         caveat: ['"Caveat"', 'cursive'],
+        playfair: ['"Playfair Display"', 'serif'],
       },
     },
   },

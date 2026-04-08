@@ -14,9 +14,9 @@ import "./Testimonials.css";
 const Testimonials = () => {
   return (
     <div className="bg-black text-white py-16 md:py-20 lg:py-24">
-      <div className="w-[95%] sm:w-[90%] lg:w-[80%] mx-auto bg-[#181818] py-12 px-3 sm:px-6 md:py-16 md:px-12 lg:px-16 rounded-2xl">
+      <div className="w-[95%] sm:w-[90%] lg:w-[68%] mx-auto bg-[#181818] py-12 px-3 sm:px-6 md:py-16 md:px-12 lg:px-16 rounded-2xl" data-aos="fade-up">
 
-        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-0">
+        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-0" data-aos="zoom-in" data-aos-delay="100">
 
           {/* Left Icon */}
           <MdMessage

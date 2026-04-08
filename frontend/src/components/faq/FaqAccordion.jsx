@@ -12,24 +12,33 @@ const FaqAccordion = () => {
 
   return (
     <div className={styles.faqsContainer}>
-      <div className={styles.faqsWrapper}>
-        <h1 className={styles.faqHeaderText}>
-          Ask us <span className="font-caveat text-[#DF9931]">
+      <div className={styles.faqsWrapper} data-aos="fade-up">
+        <h1 className={styles.faqHeaderText} data-aos="zoom-in">
+          <span>Ask us</span> <span 
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontStyle: "italic",
+              fontWeight: 600,
+              marginLeft: "0.5rem"
+            }}
+            className="text-[#DF9931]"
+          >
             Anything
           </span>
         </h1>
 
-        <div className={styles.faqList}>
-          {faqs.map((item) => (
-            <QuestionCard
-              key={item.id}
-              id={item.id}
-              question={item.question}
-              answer={item.answer}
-              open={showSelection === item.id}
-              toggle={toggleAnswer}
-              styles={styles} // Pass the styles object down
-            />
+        <div className={styles.faqList} data-aos="fade-up">
+          {faqs.map((item, index) => (
+            <div key={item.id} data-aos="fade-up" data-aos-delay={index * 50}>
+              <QuestionCard
+                id={item.id}
+                question={item.question}
+                answer={item.answer}
+                open={showSelection === item.id}
+                toggle={toggleAnswer}
+                styles={styles} // Pass the styles object down
+              />
+            </div>
           ))}
         </div>
       </div>
