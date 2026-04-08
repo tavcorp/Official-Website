@@ -12,7 +12,7 @@ const Hero1 = () => {
         {/* --- TOP SECTION (Headline + Description) --- */}
         <div className={styles.topSection}>
           <div className={styles.left}>
-            {/* <span>Crafting,</span> */}
+            <span>Crafting,</span>
             <span>Brands and</span>
             <span className="font-caveat">Experiences</span>
           </div>
