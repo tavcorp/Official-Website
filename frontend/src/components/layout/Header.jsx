@@ -137,7 +137,7 @@ const Header = () => {
         className="fixed top-0 left-0 w-full bg-black/20 backdrop-blur-md z-50"
       >
         <nav className="w-full">
-          <div className="w-[70%] mx-auto px-4 pt-4 pb-2 flex items-center justify-between text-white">
+          <div className="w-[100%] md:w-[70%] mx-auto px-4 pt-4 pb-2 flex items-center justify-between text-white">
             {/* LEFT: logo + main links */}
             <div className="flex items-center gap-8">
               <a href="/" aria-label="Homepage" className="flex items-center">
