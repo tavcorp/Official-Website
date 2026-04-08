@@ -4,11 +4,14 @@ import { ImArrowUpRight2 } from "react-icons/im";
 import Logo from "/images/Crop_Main_Logo.png";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../store/auth";
+// import { useAuth } from "../../store/auth";
+import { useAuthStore } from "../../store/authStore";
+import { mainFour, otherItems, pages } from "./HeaderData";
 
 
 const Header = () => {
-  const { isLoggedIn, user } = useAuth();
+  // const { isLoggedIn, user } = useAuth();
+  const { isAuthenticated, user, logout } = useAuthStore();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false);
@@ -34,10 +37,10 @@ const Header = () => {
     closeAll(); // optional: also close menu
   };
 
-  useEffect(() => {
-    console.log("isLoggedIn:", isLoggedIn);
-    console.log("user:", user);
-  }, [isLoggedIn, user]);
+  // useEffect(() => {
+  //   console.log("isLoggedIn:", isLoggedIn);
+  //   console.log("user:", user);
+  // }, [isLoggedIn, user]);
 
   // --- 1. SCROLL LOGIC ---
   useEffect(() => {
@@ -103,27 +106,7 @@ const Header = () => {
     };
   }, [desktopMenuOpen]);
 
-  const mainFour = [
-    { id: "home", title: "Home", url: "/", active: true },
-    { id: "studio", title: "Studio", url: "/studio", active: true },
-    { id: "work", title: "Work", url: "/work", active: true },
-    { id: "news", title: "News", url: "/news", active: true },
-  ];
 
-  const otherItems = [
-    { id: "portfolio", title: "Portfolio", url: "/portfolio", active: true },
-    { id: "blogs", title: "Blogs", url: "/blogs", active: true },
-    { id: "contact", title: "ContactUS", url: "/contact", active: true },
-  ];
-
-  const pages = [
-    { id: "about", title: "About us", url: "/aboutUs", active: true },
-    { id: "OurSAP", title: "Our Services & Pricing", url: "/services-pricing", active: true },
-    // { id: "service-details", title: "Service Details", url: "/service-details", active: true },
-    { id: "team", title: "Our Team", url: "/our-team", active: true },
-    // { id: "pricing", title: "Pricing", url: "/pricing", active: true },
-    { id: "faqs", title: "FAQs", url: "/faqs", active: true },
-  ];
 
   const handleMenuToggle = () => {
     if (isDesktop) {
@@ -181,48 +164,49 @@ const Header = () => {
             <div className="flex items-center gap-6">
 
               {/* User Authentication Menu */}
-              {isLoggedIn ? (
-                <div className="relative inline-block text-justify">
+            {isAuthenticated ? (
+              <div className="relative inline-block text-justify">
+               <button
+                onClick={toggleDropdown}
+                className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
+              >
+                 {user?.username || "Loading..."}
+               </button>
+
+            {isDropdownOpen && (
+               <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
                   <button
-                    onClick={toggleDropdown}
-                    className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
+                    onClick={() => {
+                      logout();
+                      navigate("/");
+                      handleLinkClick();
+                    }}
+                    className="block px-3 py-1 text-gray-700 hover:bg-gray-100 w-full text-left"
                   >
-                    {user?.username || "Loading..."}
+                    Logout
                   </button>
-
-                  {isDropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
-                      <Link
-                        to="/logout"
-                        className="block px-3 py-1 text-gray-700 hover:bg-gray-100"
-                        onClick={handleLinkClick}
-                      >
-                        Logout
-                      </Link>
-                    </div>
-                  )}
                 </div>
-              ) : (
-                <>
-                  <Link
-                    to="/login"
-                    className="block py-2 px-4 hover:text-yellow-400"
-                    onClick={handleLinkClick}
-                  >
-                    Login
-                  </Link>
+            )}
+        </div>
+          ) : (
+        <>
+        <Link
+          to="/LoginPage"
+          className="block py-2 px-4 hover:text-yellow-400"
+          onClick={handleLinkClick}
+        >
+          Login
+        </Link>
 
-                  <Link
-                    to="/signup"
-                    className="block py-2 px-4 hover:text-yellow-400"
-                    onClick={handleLinkClick}
-                  >
-                    Signup
-                  </Link>
-                </>
-              )}
-
-
+        <Link
+          to="/SignUpPage"
+          className="block py-2 px-4 hover:text-yellow-400"
+          onClick={handleLinkClick}
+        >
+          Signup
+        </Link>
+      </>
+    )}
               <button
                 onClick={() => {
                   navigate("/start-project");
