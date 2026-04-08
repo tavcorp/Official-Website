@@ -1,7 +1,7 @@
 const PricingCard = ({ plan }) => {
   return (
-    <div className="bg-[#101010] border border-gray-800 rounded-2xl p-6 
-                    hover:border-yellow-400 transition
+    <div className="bg-[#252525] border border-[#DF9931] rounded-2xl p-6 
+                    hover:border-[#E8A649] transition
                     flex flex-col h-full">
 
       {/* Plan Name */}
@@ -11,7 +11,7 @@ const PricingCard = ({ plan }) => {
 
       {/* Price */}
       <p className="text-gray-400 text-sm">{plan.priceStart}</p>
-      <p className="text-4xl font-bold text-yellow-400 mb-4">
+      <p className="text-4xl font-bold text-[#DF9931] mb-4">
         {plan.price}
       </p>
 
@@ -28,15 +28,15 @@ const PricingCard = ({ plan }) => {
           .filter((key) => key.includes("features") && plan[key])
           .map((featureKey, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-yellow-400 mr-2">✓</span>
+              <span className="text-[#DF9931] mr-2">✓</span>
               <span>{plan[featureKey]}</span>
             </li>
           ))}
       </ul>
 
       {/* Button pushed to bottom */}
-      <button className="mt-auto w-full bg-yellow-400 text-black font-medium py-2 
-                         rounded-lg hover:bg-yellow-300 transition">
+      <button className="mt-auto w-full bg-[#DF9931] text-[#1B1B1B] font-medium py-2 
+                         rounded-lg hover:bg-[#E8A649] transition">
         Pick this package &gt;
       </button>
     </div>

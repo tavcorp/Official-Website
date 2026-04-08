@@ -32,8 +32,8 @@
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: #d1d5db;
-  /* Gray */
+  background-color: #E0E0E0;
+  /* Light gray */
   opacity: 1;
   margin: 0 4px !important;
   /* Space between dots */
@@ -46,8 +46,8 @@
 
 /* 3. The Active Dot */
 .swiper-pagination-bullet-active {
-  background-color: #fbbf24;
-  /* Yellow */
+  background-color: #DF9931;
+  /* Primary orange */
   width: 12px;
   /* Optional: make active dot slightly bigger */
   height: 12px;

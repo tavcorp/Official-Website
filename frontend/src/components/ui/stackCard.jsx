@@ -18,7 +18,7 @@ const stackCard = ({ highlights, desc, image, style, onClick, className }) => {
         ))}
       </div>
 
-      <hr className='my-4 border-gray-300/30' /> {/* Made transparent */}
+      <hr className='my-4 border-gray-300/30 hidden md:block' /> {/* Made transparent */}
 
       <div className={styles.main}>
         {/* IMAGE */}

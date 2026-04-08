@@ -1,5 +1,6 @@
 import React from "react";
 import { MdMessage } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
 import { testimonialsData } from "../../data/testimonialsData";
 import TestimonialsCard from "../ui/TestimonialsCard";
 
@@ -12,31 +13,25 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   return (
-    <div className="bg-black text-white pt-20 pb-10 px-4">
-      <div className="max-w-5xl mx-auto bg-[#181818] py-16 px-6 rounded-xl">
+    <div className="bg-black text-white py-16 md:py-20 lg:py-24">
+      <div className="w-[95%] sm:w-[90%] lg:w-[80%] mx-auto bg-[#181818] py-12 px-3 sm:px-6 md:py-16 md:px-12 lg:px-16 rounded-2xl">
 
-        {/* <div className="flex flex-col md:flex-row items-center md:items-start"> */}
+        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-0">
 
-        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-0">
-
-
-          {/* Left Icon (will appear on top on small screens) */}
-          {/* <MdMessage className="text-yellow-400 text-6xl md:text-9xl flex-shrink-0 self-start mt-16 ml-8" /> */}
+          {/* Left Icon */}
           <MdMessage
             className="
-    text-yellow-400
-    text-5xl sm:text-6xl md:text-9xl
+    text-[#DF9931]
+    text-[90px] sm:text-[110px] md:text-[180px] lg:text-[240px]
     flex-shrink-0
-    self-center md:self-start
-    mt-6 sm:mt-8 md:mt-16
-    mx-auto md:mx-0
+    self-start
+    mt-0 sm:mt-2 md:mt-4
+    ml-2 sm:ml-4 md:ml-0
   "
           />
 
-
-          {/* Right Swiper - give it a fixed flex-basis so card has room */}
-          {/* <div className="flex-1 min-w-0 w-full"> */}
-          <div className="flex-1 min-w-0 w-full mt-6 md:mt-0">
+          {/* Right Swiper */}
+          <div className="flex-1 min-w-0 w-full mt-2 md:mt-0">
             <Swiper
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
@@ -47,7 +42,7 @@ const Testimonials = () => {
             >
               {testimonialsData.map((item) => (
                 <SwiperSlide key={item.id} className="slide-center">
-                  <div className="slide-inner px-4">
+                  <div className="slide-inner px-2 sm:px-4">
                     <TestimonialsCard
                       message={item.message}
                       name={item.name}
@@ -57,6 +52,45 @@ const Testimonials = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+        </div>
+
+        {/* Logos Section - wrapped to grid on mobile for a tighter fit */}
+        <div className="mt-16 md:mt-24 grid grid-cols-2 md:flex md:flex-wrap justify-items-center md:justify-between items-center gap-6 sm:gap-4 md:gap-0 px-2 lg:px-8">
+          {/* archin */}
+          <div className="flex items-center justify-center h-[60px] sm:h-[72px] w-[130px] sm:w-[140px] md:w-[130px] border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer">
+            <span className="font-bold text-xl sm:text-2xl tracking-tighter lowercase text-white">archin</span>
+          </div>
+
+          {/* Mathew coo. */}
+          <div className="flex flex-col items-center justify-center h-[60px] sm:h-[72px] w-[130px] sm:w-[140px] md:w-[130px] border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer">
+            <span className="text-[22px] sm:text-[26px] leading-tight text-white mb-[-2px]" style={{ fontFamily: "'Brush Script MT', 'Cedarville Cursive', cursive", fontWeight: 400 }}>Mathew</span>
+            <span className="text-[8px] sm:text-[9px] tracking-[0.2em] font-medium text-white/90">coo.</span>
+          </div>
+
+          {/* GitHub */}
+          <div className="flex items-center justify-center h-[60px] sm:h-[72px] w-[130px] sm:w-[140px] md:w-[100px] border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer">
+            <FaGithub className="text-3xl sm:text-4xl text-white" />
+          </div>
+
+          {/* ZUMAR CONS */}
+          <div className="flex items-center justify-center h-[60px] sm:h-[72px] w-[130px] sm:w-[150px] md:w-[140px] gap-2 border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer">
+            <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
+              <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <div className="flex flex-col text-[10px] sm:text-[11px] font-bold leading-[1.1] tracking-wider text-white">
+              <span>ZUMAR</span>
+              <span>CONS</span>
+            </div>
+          </div>
+
+          {/* Abstract Square Logo */}
+          <div className="flex items-center justify-center h-[60px] sm:h-[72px] w-[130px] sm:w-[140px] md:w-[110px] border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer col-span-2 md:col-span-1 mx-auto md:mx-0">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 border-[2px] sm:border-[2.5px] border-white flex flex-col justify-end items-end p-[1px] rounded-[3px]">
+               <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white rounded-sm"></div>
+            </div>
           </div>
         </div>
 

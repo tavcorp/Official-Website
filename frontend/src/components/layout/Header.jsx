@@ -44,6 +44,11 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Close mobile menu when scrolling
+      if (mobileOpen) {
+        setMobileOpen(false);
+      }
+
       // If any menu is OPEN, always show the navbar
       if (mobileOpen || desktopMenuOpen) {
         setVisible(true);
@@ -146,8 +151,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full bg-[#1c1c1c] z-50 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"
-          }`}
+        className="fixed top-0 left-0 w-full bg-black/20 backdrop-blur-md z-50"
       >
         <nav className="w-full">
           <div className="container mx-auto px-4 pt-4 pb-2 flex items-center justify-between text-white">
@@ -163,10 +167,7 @@ const Header = () => {
                     <li key={item.id}>
                       <button
                         onClick={() => { navigate(item.url) }}
-                        className={`inline-block py-1 px-3 font-semibold ${currentPath === item.url
-                          ? "text-yellow-400"
-                          : "hover:text-yellow-400 text-gray-200"
-                          }`}
+                        className="inline-block py-1 px-3 font-semibold text-white hover:text-[#DF9931] transition text-lg"
                       >
                         {item.title}
                       </button>
@@ -182,7 +183,7 @@ const Header = () => {
 
               {/* User Authentication Menu */}
               {isLoggedIn ? (
-                <div className="relative inline-block text-justify">
+                <div className="relative inline-block text-justify hidden md:inline-block">
                   <button
                     onClick={toggleDropdown}
                     className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
@@ -206,7 +207,7 @@ const Header = () => {
                 <>
                   <Link
                     to="/login"
-                    className="block py-2 px-4 hover:text-yellow-400"
+                    className="hidden md:block py-2 px-4 hover:text-[#DF9931] text-lg"
                     onClick={handleLinkClick}
                   >
                     Login
@@ -214,7 +215,7 @@ const Header = () => {
 
                   <Link
                     to="/signup"
-                    className="block py-2 px-4 hover:text-yellow-400"
+                    className="hidden md:block py-2 px-4 hover:text-[#DF9931] text-lg"
                     onClick={handleLinkClick}
                   >
                     Signup
@@ -227,7 +228,7 @@ const Header = () => {
                 onClick={() => {
                   navigate("/start-project");
                 }}
-                className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-gray-800"
+                className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-lg font-semibold hover:bg-gray-200 transition"
               >
                 Start Project <ImArrowUpRight2 />
               </button>
@@ -236,7 +237,7 @@ const Header = () => {
                 <button
                   ref={menuButtonRef}
                   onClick={handleMenuToggle}
-                  className="p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 z-50"
+                  className="p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DF9931] z-50"
                   aria-label="Open menu"
                   aria-expanded={isDesktop ? desktopMenuOpen : mobileOpen}
                 >
@@ -256,22 +257,13 @@ const Header = () => {
             </div>
           </div>
 
-          {/* left-bottom gradient accent */}
-          <div
-            aria-hidden
-            className="absolute left-0 bottom-0 h-3 w-56 pointer-events-none rounded-t-md"
-            style={{
-              background:
-                "linear-gradient(90deg, #24211d 0%, rgba(36,33,29,0.6) 40%, rgba(36,33,29,0.15) 70%, transparent 100%)",
-            }}
-          />
         </nav>
 
         {/* DESKTOP PANEL */}
         {isDesktop && desktopMenuOpen && (
           <div
             ref={panelRef}
-            className="fixed right-6 top-16 z-50 w-[760px] max-w-[90vw] rounded-lg bg-[#1c1c1c] border border-gray-700 shadow-2xl p-6"
+            className="fixed right-6 top-16 z-50 w-[760px] max-w-[90vw] rounded-lg bg-[#252525] border border-[#DF9931] shadow-2xl p-6"
             role="dialog"
             aria-modal="true"
           >
@@ -318,7 +310,7 @@ const Header = () => {
                       navigate("/start-project");
                       setDesktopMenuOpen(false);
                     }}
-                    className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded bg-[#111111] text-white font-semibold hover:bg-black"
+                    className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded bg-[#DF9931] text-[#1B1B1B] font-semibold hover:bg-[#E8A649]"
                   >
                     Start Project <ImArrowUpRight2 />
                   </button>
@@ -331,7 +323,7 @@ const Header = () => {
         {/* MOBILE MENU */}
         {mobileOpen && (
           <div
-            className="md:hidden bg-[#1c1c1c] shadow-md border-t border-gray-800 z-40"
+            className="md:hidden bg-[#1B1B1B] shadow-md border-t border-[#DF9931] z-40"
             style={{ maxHeight: "70vh", overflowY: "auto" }}
           >
             <ul className="flex flex-col px-4 py-4 gap-1 text-gray-200">
@@ -394,6 +386,29 @@ const Header = () => {
 
 
               ))}
+              {!isLoggedIn && (
+                <>
+                  <li className="mt-1 border-t border-gray-700" />
+                  <li>
+                    <Link
+                      to="/login"
+                      className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                      onClick={closeAll}
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/signup"
+                      className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
+                      onClick={closeAll}
+                    >
+                      Signup
+                    </Link>
+                  </li>
+                </>
+              )}
               <li className="mt-3 px-4">
 
                 <button

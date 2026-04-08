@@ -14,53 +14,53 @@ import "./featured.css";
 const Featured = () => {
 
   return (
-    <div className="h-full w-full bg-white-100 pb-20 pt-20">
-
-      {/* Heading */}
-      <div className="flex flex-row justify-between items-center px-4 sm:px-8 md:px-12 py-4 mb-4">
-
+    <div className="h-full w-full bg-white-100 pb-0 pt-0">
+      <div className="w-[90%] lg:w-[80%] mx-auto">
         {/* Heading */}
-        <div className="heading">
-          <h1 className="flex items-center">
-            <span className="text-black font-[650] text-3xl sm:text-4xl md:text-5xl">
-              Featured
-            </span>
-            <span className="font-caveat text-yellow-400 ml-2 text-3xl sm:text-4xl md:text-5xl font-[600]">
-              Works
-            </span>
-          </h1>
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center py-4 mb-6 gap-4 sm:gap-6 md:gap-0">
+
+          {/* Heading Text */}
+          <div className="heading">
+            <h1 className="flex items-center">
+              <span className="text-black font-[650] text-4xl sm:text-5xl md:text-[56px] leading-none tracking-tight">
+                Featured
+              </span>
+              <span className="font-caveat text-[#DF9931] ml-3 text-4xl sm:text-5xl md:text-[56px] font-[600] leading-none">
+                Works
+              </span>
+            </h1>
+          </div>
+
+          {/* Button */}
+          <div className="button">
+            <button
+              className="
+          inline-flex items-center justify-center
+          border border-black text-black
+          rounded-[2rem]
+          px-5 py-2.5 sm:px-6 sm:py-3
+          font-bold text-base sm:text-[17px]
+          hover:bg-black hover:text-white
+          transition duration-300 w-fit
+        "
+            >
+              <span className="inline">
+                See all projects
+              </span>
+
+              <MdKeyboardArrowRight size={24} className="sm:ml-1" />
+            </button>
+          </div>
+
         </div>
 
-        {/* Button */}
-        <div className="button">
-          <button
-            className="
-        flex items-center justify-center
-        border border-black
-        rounded-full
-        px-3 py-2 sm:px-4
-        hover:bg-black hover:text-white
-        transition duration-300
-      "
-          >
-            {/* Text → hidden on small screens */}
-            <span className="hidden sm:inline">
-              See all projects
-            </span>
 
-            <MdKeyboardArrowRight size={24} className="sm:ml-1" />
-          </button>
-        </div>
-
-      </div>
+        {/* main card section */}
 
 
-      {/* main card section */}
+        <div className="flex flex-col md:flex-row items-start py-4">
 
-
-      <div className="flex flex-col md:flex-row items-start gap-6 px-4 sm:px-8 md:px-12 py-4">
-
-          <div className="flex-1 min-w-0 w-full">
+            <div className="flex-1 min-w-0 w-full">
           <Swiper
             className="!pb-12"
             loop={true}
@@ -92,6 +92,7 @@ const Featured = () => {
             </Swiper>
           </div>
         </div>
+      </div>
     </div>
   );
 };

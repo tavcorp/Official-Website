@@ -25,10 +25,10 @@ const PricingSection = () => {
           onClick={() => {
             navigate("/contact");         
           }}
-          className="text-yellow-400 underline text-sm sm:text-base"
+          className="text-[#DF9931] underline text-sm sm:text-base"
         >Contact Us</button>
         {/* <a 
-          href="/contact" className="text-yellow-400 underline text-sm sm:text-base"
+          href="/contact" className="text-[#DF9931] underline text-sm sm:text-base"
         > */}
           {/* <Link to="/contact">Contact Us</Link> */}
         {/* </a> */}

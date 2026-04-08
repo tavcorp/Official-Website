@@ -4,8 +4,8 @@
   height: auto;
   /* Changed to auto to accommodate content */
   min-height: 600px;
-  background: linear-gradient(192deg, rgba(15, 15, 15, 1) 37%, rgba(44, 35, 21, 1) 49%, rgba(224, 157, 56, 1) 73%);
-  color: #ffffff;
+  background: linear-gradient(192deg, #1B1B1B 37%, rgba(139, 100, 38, 0.8) 49%, #DF9931 73%);
+  color: #F1F1F1;
   padding-top: 150px;
   padding-right: 5%;
   padding-bottom: 15px;
@@ -48,6 +48,7 @@
   font-size: 5.5rem;
   font-weight: 600;
   line-height: 1.1;
+  margin-top: 30px;
 }
 
 .left span {
@@ -65,7 +66,7 @@
 
 .right p {
   font-size: 1.1rem;
-  color: #cccccc;
+  color: #F1F1F1;
   line-height: 1.5;
 }
 
@@ -75,8 +76,8 @@
   gap: 10px;
   width: fit-content;
   background-color: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
   border-radius: 30px;
   padding: 10px 30px;
   font-size: 1rem;
@@ -85,8 +86,8 @@
 }
 
 .right button:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #FFFFFF;
+  color: #1B1B1B;
 }
 
 /* --- Bottom Section (The new part) --- */
@@ -102,7 +103,7 @@
   gap: 60px;
   /* Spacing between Icons, Data1, and Data2 */
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(241, 241, 241, 0.1);
   /* Optional: Adds a subtle divider line */
   /* padding-top: 10px; */
 }
@@ -120,10 +121,10 @@
   /* Set a fixed width */
   height: 40px;
   /* Set height equal to width */
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 50%;
   /* Makes it circular */
-  border: 1px solid #ffffff;
+  border: 1px solid #FFFFFF;
 
   /* Icon Color */
   font-size: 1.2rem;
@@ -151,10 +152,10 @@
   /* Set a fixed width */
   height: 40px;
   /* Set height equal to width */
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 50%;
   /* Makes it circular */
-  border: 1px solid #ffffff;
+  border: 1px solid #FFFFFF;
 
   /* Icon Color */
   font-size: 1.2rem;
@@ -181,10 +182,10 @@
   /* Set a fixed width */
   height: 40px;
   /* Set height equal to width */
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 50%;
   /* Makes it circular */
-  border: 1px solid #ffffff;
+  border: 1px solid #FFFFFF;
 
   /* Icon Color */
   font-size: 1.2rem;
@@ -239,18 +240,212 @@
 
 
 /* --- Mobile Responsiveness --- */
+
+/* Tablet Responsiveness (900px and below) */
 @media (max-width: 900px) {
+  .Hero1 {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    min-height: 500px;
+  }
+
   .topSection {
     flex-direction: column;
+    gap: 30px;
   }
 
   .left {
     font-size: 3rem;
   }
 
+  .right {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
   .bottomSection {
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+    padding-top: 30px;
+  }
+
+  .stats {
+    gap: 30px;
+    width: 100%;
+  }
+
+  .statNumber {
+    font-size: 3rem;
+  }
+
+  .socials {
+    align-self: flex-start;
+  }
+}
+
+/* Small Tablet / Large Phone (768px and below) */
+@media (max-width: 768px) {
+  .Hero1 {
+    padding-top: 80px;
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-bottom: 20px;
+    min-height: 450px;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  .topSection {
+    gap: 20px;
+  }
+
+  .left {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .right p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .right button {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    padding-top: 25px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .statItem {
+    width: 100%;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
+  }
+
+  .statItem p {
+    font-size: 0.7rem;
+  }
+
+  .socials {
+    align-self: flex-start;
+    gap: 15px;
+  }
+
+  .linkedin,
+  .Twitter,
+  .Instagram {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .Hero1 {
+    padding-top: 60px;
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-bottom: 15px;
+    min-height: auto;
+  }
+
+  .container {
+    gap: 15px;
+  }
+
+  .topSection {
+    gap: 15px;
+  }
+
+  .left {
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .left span {
+    display: block;
+  }
+
+  .right {
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+
+  .right p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #cccccc;
+  }
+
+  .right button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .statItem {
+    width: 100%;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .statItem p {
+    font-size: 0.65rem;
+    letter-spacing: 0.8px;
+    margin: 5px 0 0 0;
+    max-width: 100%;
+  }
+
+  .socials {
+    align-self: flex-start;
+    gap: 12px;
+  }
+
+  .linkedin,
+  .Twitter,
+  .Instagram {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
   }
 }
