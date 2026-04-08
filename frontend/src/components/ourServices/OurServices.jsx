@@ -1,152 +1,136 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMegaphoneOutline } from "react-icons/io5";
 import { FaPencilRuler } from "react-icons/fa";
 import { IoRocketSharp } from "react-icons/io5";
 import { RiCodeSSlashLine, RiRobot3Line } from "react-icons/ri";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-import { IoIosArrowForward } from "react-icons/io";
+const services = [
+  {
+    title: "Branding",
+    description: "Branding Identity, Strategy & Consult, Positioning, Rebrand",
+    icon: <IoMegaphoneOutline />,
+  },
+  {
+    title: "Design",
+    description: "Graphics, Illustration, Animation, Product, Architecture",
+    icon: <FaPencilRuler />,
+  },
+  {
+    title: "Code",
+    description: "Mobile App, Web Development, AI, Robotics",
+    icon: <RiCodeSSlashLine />,
+  },
+  {
+    title: "Growth",
+    description: "Analytics, Strategy, SMM, SEO",
+    icon: <IoRocketSharp />,
+  },
+  {
+    title: "Automate",
+    description: "AI Systems, Workflows, SaaS, Production, Tools",
+    icon: <RiRobot3Line />,
+  },
+];
 
 const OurServices = () => {
-  // Styles applied to every row wrapper
-  const rowBaseClass = "flex items-end px-0 mb-8";
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
 
-  // Styles for the H2 (Cut effect)
-  const headerClass = "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-none overflow-hidden h-[0.75em] md:h-[0.8em]";
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-
-  // Styles for the Right Column (Paragraph + Icon)
-  // const rightColClass = "w-1/2 flex items-center justify-between pl-10 pb-2";
-  const rightColClass =
-    "w-1/2 flex items-center justify-end md:justify-between pl-10 pb-2";
-
+  const isActive = (index) => isMobile || hoveredIndex === index;
 
   return (
-    <section className="w-full bg-black text-white py-16">
-      <div className="max-w-6xl mx-auto px-8">
+    <section className="py-16 bg-black text-white">
+      <div className="w-[90%] lg:w-[80%] mx-auto">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-12 px-1 pb-10">
-
-          {/* Heading */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 px-1 pb-10 gap-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold whitespace-nowrap">
-            Our<span className="font-caveat text-amber-400 "> Services
-            </span>
+            Our<span className="font-caveat text-amber-400"> Services</span>
           </h1>
 
-          {/* Button */}
           <a
             href="#"
-            className="
-      inline-flex items-center justify-center
-      border border-amber-400 text-amber-400
-      rounded-full
-      px-3 py-2 sm:px-4 sm:py-1.5
-      hover:bg-amber-400 hover:text-black
-      transition font-bold
-    "
+            className="inline-flex items-center justify-center border border-amber-400 text-amber-400 rounded-full px-3 py-2 sm:px-4 sm:py-1.5 hover:bg-amber-400 hover:text-black transition font-bold w-fit"
           >
-            {/* Text → hidden on small screens */}
-            <span className="hidden sm:inline text-lg">
-              See our Approach
-            </span>
-
-            {/* Icon → always visible */}
-            <MdKeyboardArrowRight size={24} className="sm:ml-2" />
+            <span className="text-lg">See our Approach</span>
+            <MdKeyboardArrowRight size={24} className="ml-2" />
           </a>
-
         </div>
-
 
         {/* SERVICE ROWS */}
-        <div className="space-y-8">
+        <div>
+          {services.map((service, index) => {
+            const active = isActive(index);
 
-          {/* Branding */}
-          <div className={rowBaseClass}>
-            {/* Left Side: Title (50%) */}
-            <div className="w-1/2">
-              <h2 className={headerClass}>Branding</h2>
-            </div>
+            return (
+              <div key={service.title}>
+                <div
+                  onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+                  onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+                  className="flex flex-col md:flex-row md:items-end px-0 py-5 cursor-pointer transition-all duration-300"
+                >
+                  {/* Mobile layout: title + icon side by side, description below */}
+                  <div className="flex items-center justify-between w-full md:contents">
 
-            {/* Right Side: Description + Icon (50%) */}
-            <div className={rightColClass}>
-              <p className="hidden md:block text-lg text-gray-300 text-left">
-                Branding Identity, Strategy & Consult, Positioning, Rebrand
-              </p>
-              {/* <div className="w-8 flex justify-center text-xl text-gray-200 ml-28 sm:ml-16"> */}
-              <div className="w-8 flex justify-center text-xl text-gray-200 ml-auto md:ml-0">
-                <IoMegaphoneOutline />
+                    {/* Title */}
+                    <div className="md:w-1/2">
+                      <h2
+                        style={{
+                          fontSize: "clamp(2.2rem, 8vw, 5rem)",
+                          fontWeight: 600,
+                          lineHeight: 1,
+                          overflow: isMobile || (active && !isMobile) ? "visible" : "hidden",
+                          height: isMobile ? "auto" : active ? "auto" : "0.8em",
+                          color: active && !isMobile ? "#FBBF24" : "#ffffff",
+                          transition: "color 0.3s ease, height 0.3s ease",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {service.title}
+                      </h2>
+                    </div>
+
+                    {/* Icon — mobile: always visible on right of title */}
+                    <div
+                      style={{ color: "#e5e7eb" }}
+                      className="text-2xl md:hidden"
+                    >
+                      {service.icon}
+                    </div>
+                  </div>
+
+                  {/* Description — mobile: always shown below title */}
+                  <div className="md:w-1/2 md:flex md:items-center md:justify-between md:pl-10 md:pb-1">
+                    <p className="text-base text-gray-300 mt-2 md:mt-0 md:text-lg md:text-left">
+                      {service.description}
+                    </p>
+
+                    {/* Icon — desktop only */}
+                    <div
+                      style={{ color: active ? "#FBBF24" : "#e5e7eb" }}
+                      className="hidden md:flex w-8 justify-center text-xl ml-auto md:ml-0 transition-colors duration-300"
+                    >
+                      {service.icon}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <hr className="border-gray-700" />
               </div>
-            </div>
-          </div>
-
-          {/* Design */}
-          <div className={rowBaseClass}>
-            <div className="w-1/2">
-              <h2 className={headerClass}>Design</h2>
-            </div>
-            <div className={rightColClass}>
-              <p className="hidden md:block text-lg text-gray-300 text-left">
-                Graphics, Illustration, Animation, Product, Architecture
-              </p>
-              {/* <div className="w-8 flex justify-center text-xl text-gray-200 ml-28 sm:ml-16"> */}
-              <div className="w-8 flex justify-center text-xl text-gray-200 ml-auto md:ml-0">
-                <FaPencilRuler />
-              </div>
-            </div>
-          </div>
-
-          {/* Code */}
-          <div className={rowBaseClass}>
-            <div className="w-1/2">
-              <h2 className={headerClass}>Code</h2>
-            </div>
-            <div className={rightColClass}>
-              <p className="hidden md:block text-lg text-gray-300 text-left">
-                Mobile App, Web Development, AI, Robotics
-              </p>
-              {/* <div className="w-8 flex justify-center text-xl text-gray-200 ml-28 sm:ml-16"> */}
-              <div className="w-8 flex justify-center text-xl text-gray-200 ml-auto md:ml-0">
-                <RiCodeSSlashLine />
-              </div>
-            </div>
-          </div>
-
-          {/* Growth — with border touching the text */}
-          <div className="flex items-end px-0 border-b border-gray-700 pb-0 mb-8">
-            <div className="w-1/2">
-              <h2 className={headerClass}>Growth</h2>
-            </div>
-            <div className={rightColClass}>
-              <p className="hidden md:block text-lg text-gray-300 text-left">
-                Analytics, Strategy, SMM, SEO
-              </p>
-              {/* <div className="w-8 flex justify-center text-xl text-gray-200 ml-28 sm:ml-16"> */}
-              <div className="w-8 flex justify-center text-xl text-gray-200 ml-auto md:ml-0">
-                <IoRocketSharp />
-              </div>
-            </div>
-          </div>
-
-          {/* Automate */}
-          <div className="flex items-end px-0 border-b border-gray-800 pb-12">
-            <div className="w-1/2">
-              <h2 className="text-[clamp(3rem,12vw,5rem)] font-semibold leading-none text-amber-400">
-                Automate
-              </h2>
-            </div>
-            <div className={rightColClass}>
-              <p className="hidden md:block text-lg text-gray-300 text-left">
-                AI Systems, Workflows, SaaS, Production, Tools
-              </p>
-              {/* <div className="w-8 flex justify-center text-xl text-gray-200 ml-28 sm:ml-16"> */}
-              <div className="w-8 flex justify-center text-xl text-gray-200 ml-auto md:ml-0">
-                <RiRobot3Line />
-              </div>
-            </div>
-          </div>
-
+            );
+          })}
         </div>
+
       </div>
     </section>
   );

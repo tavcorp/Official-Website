@@ -37,7 +37,7 @@ const Hero1 = () => {
               aria-label="LinkedIn"
             >
               <span className={styles.linkedin}>
-                <FiLinkedin color="rgb(222, 151, 38)" strokeWidth="3" />
+                <FiLinkedin color="#DF9931" strokeWidth="3" />
               </span>
             </a>
 
@@ -48,7 +48,7 @@ const Hero1 = () => {
               aria-label="Twitter / X"
             >
               <span className={styles.Twitter}>
-                <FiTwitter color="rgb(222, 151, 38)" strokeWidth="3" />
+                <FiTwitter color="#DF9931" strokeWidth="3" />
               </span>
             </a>
 
@@ -59,7 +59,7 @@ const Hero1 = () => {
               aria-label="Instagram"
             >
               <span className={styles.Instagram}>
-                <IoLogoInstagram color="rgb(222, 151, 38)" strokeWidth="5" />
+                <IoLogoInstagram color="#DF9931" strokeWidth="5" />
               </span>
             </a>
           </div>

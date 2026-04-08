@@ -3,8 +3,8 @@
 .faqsContainer {
   /* min-height: 100vh; */
   padding: 3rem 1rem;
-  background-color: #0a0a0a;
-  color: #f8fafc;
+  background-color: #1B1B1B;
+  color: #F1F1F1;
   font-family: sans-serif;
 }
 
@@ -21,11 +21,11 @@
 }
 
 .faqHeaderText span {
-  color: #fbbf24;
+  color: #DF9931;
 }
 
 .questionCard {
-  background-color: #2a2929;
+  background-color: #252525;
   border-radius: 12px;
   padding: 1.5rem 2rem;
   margin-bottom: 1rem;
@@ -33,29 +33,34 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 0.3s ease;
 }
 
 .cardTop {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
 }
 
 .cardTop h1 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
   margin: 0;
-  transition: color 0.3s ease;
 }
 
 .icon {
   font-size: 2rem;
-  color: #fbbf24;
+  font-weight: 300;
+  color: #ffffff;
 }
 
 .answerP {
-  font-size: 1.8rem;
-  opacity: 0.75;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0;
   line-height: 1.5;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -63,14 +68,14 @@
 }
 
 /* Logic for the Open State */
-.activeCard .cardTop h1 {
-  color: #fbbf24;
+.activeCard {
+  background-color: #DF9931;
 }
 
 .activeCard .answerP {
-  max-height: 500px; /* High enough to fit content */
-  margin-top: 1.5rem;
-  opacity: 1;
+  max-height: 500px;
+  margin-top: 1rem;
+  opacity: 0.95;
 }
 
 @media (min-width: 1024px) {

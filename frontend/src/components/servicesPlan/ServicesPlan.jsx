@@ -9,7 +9,7 @@ const Services = () => {
 
         {/* Heading */}
         <h1 className="text-2xl sm:text-3xl font-bold">
-          Services <span className="font-caveat text-yellow-400">
+          Services <span className="font-caveat text-[#DF9931]">
             Plans
           </span>
         </h1>
@@ -19,10 +19,10 @@ const Services = () => {
           href="#"
           className="
       flex items-center justify-center
-      text-yellow-400 border border-yellow-400
+      text-[#DF9931] border border-[#DF9931]
       px-2 py-1 sm:px-3 sm:py-1
       rounded-xl
-      hover:bg-yellow-400 hover:text-black
+      hover:bg-[#DF9931] hover:text-[#1B1B1B]
       transition
     "
         >

@@ -1,6 +1,6 @@
 .Hero {
-  background: #E09D38;
-  background: linear-gradient(190deg, rgba(224, 157, 56, 1) 40%, rgba(255, 255, 255, 1) 63%);
+  background: #DF9931;
+  background: linear-gradient(190deg, rgba(223, 153, 49, 1) 40%, #FFFFFF 63%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,11 +45,9 @@
 
 @media (max-width: 768px) {
   .stackWrapper {
-    /* More margin on mobile */
-    width: 88%;
+    width: 92%;
     height: auto;
-    /* Give enough height for the absolutely positioned cards to exist */
-    min-height: 580px;
+    min-height: 660px;
   }
 }
 

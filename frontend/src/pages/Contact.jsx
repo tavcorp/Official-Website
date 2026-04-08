@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-[#121212] flex items-center justify-center px-4 pt-24 pb-12">
-      <div className="w-full max-w-md bg-[#1c1c1c] rounded-xl shadow-lg p-6 text-gray-200 ">
+    <div className="min-h-screen bg-[#1B1B1B] flex items-center justify-center px-4 pt-24 pb-12">
+      <div className="w-full max-w-md bg-[#252525] rounded-xl shadow-lg p-6 text-[#F1F1F1] ">
 
         <h2 className="text-2xl font-bold mb-6 text-center text-white">
           Contact Us
@@ -15,7 +15,7 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full px-3 py-2 rounded bg-[#111] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-3 py-2 rounded bg-[#1B1B1B] border border-[#DF9931] focus:outline-none focus:ring-2 focus:ring-[#DF9931]"
             />
           </div>
 
@@ -26,7 +26,7 @@ const Contact = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full px-3 py-2 rounded bg-[#111] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-3 py-2 rounded bg-[#1B1B1B] border border-[#DF9931] focus:outline-none focus:ring-2 focus:ring-[#DF9931]"
             />
           </div>
 
@@ -37,13 +37,13 @@ const Contact = () => {
             <textarea
               rows="4"
               placeholder="Your Message"
-              className="w-full px-3 py-2 rounded bg-[#111] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"
+              className="w-full px-3 py-2 rounded bg-[#1B1B1B] border border-[#DF9931] focus:outline-none focus:ring-2 focus:ring-[#DF9931] resize-none"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-2 mt-2 rounded bg-yellow-400 text-black font-semibold hover:bg-yellow-500 transition"
+            className="w-full py-2 mt-2 rounded bg-[#DF9931] text-[#1B1B1B] font-semibold hover:bg-[#E8A649] transition"
           >
             Send Message
           </button>
