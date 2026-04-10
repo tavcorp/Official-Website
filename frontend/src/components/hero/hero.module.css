@@ -1,14 +1,14 @@
 .Hero {
   background: #DF9931;
   background: linear-gradient(190deg, rgba(223, 153, 49, 1) 40%, #FFFFFF 63%);
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
   /* Adds padding so the stack never touches the top/bottom of the screen */
   /* padding: 60px 0; */
-  padding: 40px 0;
+  padding: 20px 0;
   box-sizing: border-box;
   /* overflow-x: hidden; */
   /* Prevent horizontal scroll */
