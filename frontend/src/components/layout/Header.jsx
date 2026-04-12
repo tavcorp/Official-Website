@@ -134,14 +134,14 @@ const Header = () => {
   return (
     <>
       <header
-        className="fixed top-0 left-0 w-full bg-black/20 backdrop-blur-md z-50"
+        className="fixed top-0 left-0 w-full bg-black/20 backdrop-blur-md z-50 animate-slideDown"
       >
         <nav className="w-full">
-          <div className="container mx-auto px-4 pt-4 pb-2 flex items-center justify-between text-white">
+          <div className="w-[100%] md:w-[70%] mx-auto px-4 pt-6 pb-4 flex items-center justify-between text-white">
             {/* LEFT: logo + main links */}
             <div className="flex items-center gap-8">
               <a href="/" aria-label="Homepage" className="flex items-center">
-                <img src={Logo} alt="Logo" className="h-11 w-auto" />
+                <img src={Logo} alt="Logo" className="h-5 md:h-11 w-auto" />
               </a>
 
               <ul className="hidden md:flex items-center gap-3 text-gray-200">
@@ -193,7 +193,7 @@ const Header = () => {
         <>
         <Link
           to="/LoginPage"
-          className="block py-2 px-4 hover:text-yellow-400"
+          className="hidden md:block py-2 px-4 hover:text-yellow-400"
           onClick={handleLinkClick}
         >
           Login
@@ -201,7 +201,7 @@ const Header = () => {
 
         <Link
           to="/SignUpPage"
-          className="block py-2 px-4 hover:text-yellow-400"
+          className="hidden md:block py-2 px-4 hover:text-yellow-400"
           onClick={handleLinkClick}
         >
           Signup
@@ -370,7 +370,7 @@ const Header = () => {
 
 
               ))}
-              {!isLoggedIn && (
+              {!isAuthenticated && (
                 <>
                   <li className="mt-1 border-t border-gray-700" />
                   <li>

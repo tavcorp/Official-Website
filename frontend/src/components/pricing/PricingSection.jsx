@@ -7,17 +7,19 @@ const PricingSection = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="bg-black text-white py-12 sm:py-16 px-4 sm:px-6">
+    <div className="bg-black text-white py-12 sm:py-16 px-4 sm:px-6" data-aos="fade-up">
 
       {/* Pricing Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        {pricingPlans.map((plan) => (
-          <PricingCard key={plan.id} plan={plan} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" data-aos="fade-up">
+        {pricingPlans.map((plan, index) => (
+          <div key={plan.id} data-aos="fade-up" data-aos-delay={index * 100}>
+            <PricingCard plan={plan} />
+          </div>
         ))}
       </div>
       
       {/* Bottom CTA */}
-      <div className="mt-6 sm:mt-8 text-gray-400 flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 text-center">
+      <div className="mt-6 sm:mt-8 text-gray-400 flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 text-center" data-aos="fade-up" data-aos-delay="300">
         <p className="text-sm sm:text-base">
           Can't find your plan! Want to setup a tailor-plan for only you? 
         </p>

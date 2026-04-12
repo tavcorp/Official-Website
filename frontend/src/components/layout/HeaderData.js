@@ -6,8 +6,7 @@ export const mainFour = [
 ];
 
 export const otherItems = [
-  { id: "portfolio", title: "Portfolio", url: "/portfolio", active: true },
-  { id: "blogs", title: "Blogs", url: "/blogs", active: true },
+  { id: "faqs", title: "FAQs", url: "/faqs", active: true },
   { id: "contact", title: "ContactUS", url: "/contact", active: true },
 ];
 
@@ -17,5 +16,6 @@ export const pages = [
   // { id: "service-details", title: "Service Details", url: "/service-details", active: true },
   { id: "team", title: "Our Team", url: "/our-team", active: true },
   // { id: "pricing", title: "Pricing", url: "/pricing", active: true },
-  { id: "faqs", title: "FAQs", url: "/faqs", active: true },
+  { id: "portfolio", title: "Portfolio", url: "/portfolio", active: true },
+  { id: "blogs", title: "Blogs", url: "/blogs", active: true },
 ];
