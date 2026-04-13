@@ -3,7 +3,7 @@ import axios from "axios";
 
 // const API_URL = import.meta.env.MODE === "development" ? "http://localhost:4000/api/auth" : "/api/auth";
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:4000/api/auth" : "/api/auth";
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === "development" ? "http://localhost:4000/api/auth" : "/api/auth");
 
 axios.defaults.withCredentials = true;
 
@@ -69,7 +69,8 @@ export const useAuthStore = create((set) => ({
       const response = await axios.get(`${API_URL}/check-auth`, {
         withCredentials: true
       });
-      set({ user: response.data.user, isAuthenticated: true, isCheckingAuth: false });
+      const user = response.data.user;
+      set({ user, isAuthenticated: !!user, isCheckingAuth: false });
     } catch (error) {
       set({
         error: error.response?.data?.message || "Auth check failed",
