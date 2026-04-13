@@ -164,50 +164,7 @@ const Header = () => {
             {/* RIGHT: start project + menu */}
             <div className="flex items-center gap-6">
 
-              {/* User Authentication Menu */}
-            {isAuthenticated ? (
-              <div className="relative inline-block text-justify">
-               <button
-                onClick={toggleDropdown}
-                className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
-              >
-                 {user?.username || "Loading..."}
-               </button>
-
-            {isDropdownOpen && (
-               <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
-                  <button
-                    onClick={() => {
-                      logout();
-                      navigate("/");
-                      handleLinkClick();
-                    }}
-                    className="block px-3 py-1 text-gray-700 hover:bg-gray-100 w-full text-left"
-                  >
-                    Logout
-                  </button>
-                </div>
-            )}
-        </div>
-          ) : (
-        <>
-        <Link
-          to="/LoginPage"
-          className="hidden md:block py-2 px-4 hover:text-yellow-400"
-          onClick={handleLinkClick}
-        >
-          Login
-        </Link>
-
-        <Link
-          to="/SignUpPage"
-          className="hidden md:block py-2 px-4 hover:text-yellow-400"
-          onClick={handleLinkClick}
-        >
-          Signup
-        </Link>
-      </>
-    )}
+              
               <button
                 onClick={() => {
                   navigate("/start-project");
@@ -298,6 +255,52 @@ const Header = () => {
                   >
                     Start Project <ImArrowUpRight2 />
                   </button>
+
+                  {/* User Authentication Menu */}
+                  {isAuthenticated ? (
+                    <div className="relative inline-block text-justify">
+                      <button
+                        onClick={toggleDropdown}
+                        className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
+                      >
+                        {user?.username}
+                      </button>
+
+                      {isDropdownOpen && (
+                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                          <button
+                            onClick={() => {
+                              logout();
+                              navigate("/");
+                              handleLinkClick();
+                            }}
+                            className="block px-3 py-1 text-gray-700 hover:bg-gray-100 w-full text-left"
+                          >
+                            Logout
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <>
+                      <Link
+                        to="/LoginPage"
+                        className="hidden md:block py-2 px-4 hover:text-yellow-400"
+                        onClick={handleLinkClick}
+                      >
+                        Login
+                      </Link>
+
+                      <Link
+                        to="/SignUpPage"
+                        className="hidden md:block py-2 px-4 hover:text-yellow-400"
+                        onClick={handleLinkClick}
+                      >
+                        Signup
+                      </Link>
+                    </>
+                  )}
+
                 </div>
               </div>
             </div>

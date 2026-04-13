@@ -1,7 +1,9 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
+// const API_URL = import.meta.env.MODE === "development" ? "http://localhost:4000/api/auth" : "/api/auth";
+
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:4000/api/auth" : "/api/auth";
 
 axios.defaults.withCredentials = true;
 
@@ -13,10 +15,10 @@ export const useAuthStore = create((set) => ({
   isCheckingAuth: true,
   message: null,
 
-  signup: async (email, password, name) => {
+  signup: async (email, password, username) => {
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.post(`${API_URL}/signup`, { email, password, name });
+      const response = await axios.post(`${API_URL}/signup`, { email, password, username });
       set({ user: response.data.user, isAuthenticated: true, isLoading: false });
     } catch (error) {
       set({ error: error.response.data.message || "Error signing up", isLoading: false });
@@ -63,10 +65,17 @@ export const useAuthStore = create((set) => ({
   checkAuth: async () => {
     set({ isCheckingAuth: true, error: null });
     try {
-      const response = await axios.get(`${API_URL}/check-auth`);
+      // const response = await axios.get(`${API_URL}/check-auth`);
+      const response = await axios.get(`${API_URL}/check-auth`, {
+        withCredentials: true
+      });
       set({ user: response.data.user, isAuthenticated: true, isCheckingAuth: false });
     } catch (error) {
-      set({ error: null, isCheckingAuth: false, isAuthenticated: false });
+      set({
+        error: error.response?.data?.message || "Auth check failed",
+        isCheckingAuth: false,
+        isAuthenticated: false
+      });
     }
   },
   forgotPassword: async (email) => {

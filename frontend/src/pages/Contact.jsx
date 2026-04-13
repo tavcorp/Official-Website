@@ -32,6 +32,17 @@ const Contact = () => {
 
           <div>
             <label className="block text-sm font-medium mb-1">
+              subject
+            </label>
+            <textarea
+              rows="1"
+              placeholder="Your Message"
+              className="w-full px-3 py-2 rounded bg-[#1B1B1B] border border-[#DF9931] focus:outline-none focus:ring-2 focus:ring-[#DF9931] resize-none"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-1">
               Message
             </label>
             <textarea

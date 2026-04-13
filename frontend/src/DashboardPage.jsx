@@ -18,7 +18,7 @@ const DashboardPage = () => {
 
       <div style={styles.card}>
         <h3>Profile Information</h3>
-        <p>Name: {user.name}</p>
+        <p>Name: {user.username}</p>
         <p>Email: {user.email}</p>
       </div>
 

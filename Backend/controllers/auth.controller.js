@@ -1,9 +1,9 @@
 import bcryptjs from 'bcrypt';
 import crypto from "crypto";
 
-import { User } from '../models/user.model.js';
 import { generateTokenAndSetCookie } from '../utils/generateTokenAndSetCookie.js';
 import { sendVerificationEmail, sendWelcomeEmail, sendResetPasswordEmail, sendResetSuccessEmail } from '../mailtrap/emails.js'
+import { User } from '../models/user.model.js';
 
 export const signup = async (req, res) => {
 
@@ -43,8 +43,6 @@ export const signup = async (req, res) => {
     generateTokenAndSetCookie(res, user._id);
 
     await sendVerificationEmail(user.email, user.verificationToken);
-
-
 
     // this is for terminnal 
     res.status(201).json({
@@ -156,7 +154,7 @@ export const forgotPassword = async (req, res) => {
     await user.save();
 
     // Send reset email
-    await sendResetPasswordEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+    await sendResetPasswordEmail(user.email, `${process.env.BASE_URL}/reset-password/${resetToken}`);
 
     res.status(200).json({ success: true, message: "Password reset link sent to your email" });
 
@@ -199,6 +197,10 @@ export const resetPassword = async (req, res) => {
 
 export const checkAuth = async (req, res) => {
   try {
+
+    // console.log("HEADERS:", req.headers);
+    console.log("COOKIES:", req.cookies);
+    
     const user = await User.findById(req.userId);
 
     if (!user) {
