@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* optional: some tiny reset so it’s obvious Tailwind loaded */
-body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
 /* Navbar slide down animation */
 @keyframes slideDown {
   0% {

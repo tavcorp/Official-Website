@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./utils/ScrollToTop";
+import LoadingPage from "./components/LoadingPage";
 
 // Public Pages
 import Home from "./pages/Home";
@@ -74,15 +75,11 @@ const App = () => {
 
   //  Replace spinner with simple UI fallback
   if (isCheckingAuth) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-lg font-medium">Loading...</p>
-      </div>
-    );
+    return <LoadingPage />;
   }
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="relative w-full">
       <ScrollToTop />
 
       <Header />

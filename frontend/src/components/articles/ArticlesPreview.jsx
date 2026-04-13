@@ -1,7 +1,9 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { articlesData } from "../../data/articlesData";
 import ArticleCard from "../ui/ArticleCard";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 const ArticlesSection = () => {
   return (
     <article>
@@ -39,8 +41,8 @@ const ArticlesSection = () => {
             </a>
           </div>
 
-          {/* Cards Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+          {/* Desktop Cards Section */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6" data-aos="fade-up">
             {articlesData.map((item, index) => (
               <div key={item.id} data-aos="fade-up" data-aos-delay={index * 100}>
                 <ArticleCard
@@ -51,6 +53,29 @@ const ArticlesSection = () => {
                 />
               </div>
             ))}
+          </div>
+
+          {/* Mobile Swiper Section */}
+          <div className="block md:hidden w-full overflow-hidden mt-6" data-aos="fade-up">
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={20}
+              slidesPerView={1.15}
+              loop={true}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              className="articles-mobile-swiper pb-4"
+            >
+              {articlesData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <ArticleCard
+                    experience={item.experience}
+                    date={item.date}
+                    title={item.title}
+                    image={item.image}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>

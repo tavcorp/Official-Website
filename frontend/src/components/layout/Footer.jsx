@@ -1,6 +1,5 @@
 // src/components/layout/Footer.jsx
 import React from "react";
-import Banner from "/images/Banner.jpeg";
 import { Link } from "react-router-dom";
 
 
@@ -55,7 +54,7 @@ const Footer = () => {
           {/* Right columns */}
           <div className="md:col-span-6 lg:col-span-7">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
-              
+
               {/* Left inner column (Work Inquiry + Abuja) */}
               <div className="flex flex-col gap-10 md:gap-12">
                 <div>
@@ -132,7 +131,7 @@ const Footer = () => {
         {/* Banner (responsive) */}
         <div className="mt-8 sm:mt-10 w-full lg:pl-[2px]">
           <img
-            src={Banner}
+            src="https://res.cloudinary.com/de3ryzm92/image/upload/c_fill,q_auto,f_auto/v1776084032/Banner_jkopjo.jpg"
             alt="Banner"
             className="w-full rounded-lg sm:rounded-xl object-cover"
           />
