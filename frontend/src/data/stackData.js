@@ -3,13 +3,13 @@ export const stackData = [
     id: 1,
     highlights: ["Top-notch", "Dedicated Support", "Flexible Pricing"],
     desc: "We help business elevate their value through custom software development, automations, QA and consulting services.",
-    image: '/images/FRAME1.jpg'
+    image: 'https://res.cloudinary.com/de3ryzm92/image/upload/c_fill,q_auto,f_auto/v1776083626/Heading_nubsdi.png'
   },
   {
     id: 2,
     highlights: ["Agile Methodology", "User-Centric Design", "Robust Architecture"],
     desc: "Our team specializes in creating scalable and efficient software solutions tailored to your business needs.",
-    image: '/images/Frame2.jpg',
+    image: 'https://res.cloudinary.com/de3ryzm92/image/upload/w_400,h_300,c_fill,q_auto,f_auto/v1776082308/article-image-2_tjcjjn.jpg',
   },
   {
     id: 3,

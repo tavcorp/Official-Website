@@ -1,6 +1,6 @@
 .Hero {
-  background: #DF9931;
-  background: linear-gradient(190deg, rgba(223, 153, 49, 1) 40%, #FFFFFF 63%);
+  background: #E09833;
+  background: linear-gradient(190deg, rgba(224, 152, 51, 1) 40%, #FFFFFF 63%);
   min-height: 85vh;
   display: flex;
   flex-direction: column;
