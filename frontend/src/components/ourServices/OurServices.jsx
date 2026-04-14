@@ -57,7 +57,7 @@ const OurServices = () => {
       <div className="w-[90%] lg:w-[68%] mx-auto" data-aos="fade-up">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 px-1 pb-10 gap-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-0 md:mb-12 px-1 pb-2 md:pb-10 gap-4 md:gap-6">
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold whitespace-nowrap">
             Our<span 
               style={{
@@ -73,7 +73,7 @@ const OurServices = () => {
             href="#"
             className="inline-flex items-center justify-center border border-amber-400 text-amber-400 rounded-full px-3 py-2 sm:px-4 sm:py-1.5 hover:bg-amber-400 hover:text-black transition font-bold w-fit"
           >
-            <span className="text-lg">See our Approach</span>
+            <span className="text-xs sm:text-lg">See our Approach</span>
             <MdKeyboardArrowRight size={24} className="ml-2" />
           </a>
         </div>

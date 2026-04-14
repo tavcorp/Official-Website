@@ -17,7 +17,7 @@ const Featured = () => {
     <div className="h-full w-full bg-white-100 pb-0 pt-0">
         <div className="w-[90%] lg:w-[68%] mx-auto" data-aos="fade-up">
         {/* Heading */}
-        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center py-4 mb-6 gap-4 sm:gap-6 md:gap-0">
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center py-4 mb-2 md:mb-6 gap-4 sm:gap-6 md:gap-0">
 
           {/* Heading Text */}
           <div className="heading">
@@ -31,7 +31,7 @@ const Featured = () => {
                   fontStyle: "italic",
                   fontWeight: 600
                 }}
-                className="text-[#DF9931] ml-3 text-4xl sm:text-5xl md:text-[56px] leading-none"
+                className="text-[#DF9931] ml-1 text-4xl sm:text-5xl md:text-[56px] leading-none"
               >
                 Works
               </span>
@@ -45,8 +45,8 @@ const Featured = () => {
           inline-flex items-center justify-center
           border border-black text-black
           rounded-[2rem]
-          px-5 py-2.5 sm:px-6 sm:py-3
-          font-bold text-base sm:text-[17px]
+          px-3 py-2 sm:px-6 sm:py-3
+          font-bold text-xs sm:text-[17px]
           hover:bg-black hover:text-white
           transition duration-300 w-fit
         "

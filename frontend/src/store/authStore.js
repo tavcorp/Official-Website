@@ -65,10 +65,15 @@ export const useAuthStore = create((set) => ({
   checkAuth: async () => {
     set({ isCheckingAuth: true, error: null });
     try {
-      // const response = await axios.get(`${API_URL}/check-auth`);
-      const response = await axios.get(`${API_URL}/check-auth`, {
-        withCredentials: true
-      });
+      // Start both auth check and minimum loading time in parallel
+      const [response] = await Promise.all([
+        axios.get(`${API_URL}/check-auth`, {
+          withCredentials: true
+        }),
+        // Minimum loading time to allow images to load (3 seconds)
+        new Promise(resolve => setTimeout(resolve, 3000))
+      ]);
+      
       const user = response.data.user;
       set({ user, isAuthenticated: !!user, isCheckingAuth: false });
     } catch (error) {
