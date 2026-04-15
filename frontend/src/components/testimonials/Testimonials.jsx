@@ -13,22 +13,52 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   return (
-    <div className="bg-black text-white py-16 md:py-20 lg:py-24">
+    <div className="bg-black text-white py-8 md:py-12 lg:py-16">
       <div className="w-[95%] sm:w-[90%] lg:w-[68%] mx-auto bg-[#181818] py-12 px-3 sm:px-6 md:py-16 md:px-12 lg:px-16 rounded-2xl" data-aos="fade-up">
 
-        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-0" data-aos="zoom-in" data-aos-delay="100">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-2 sm:gap-4 md:gap-0" data-aos="zoom-in" data-aos-delay="100">
 
-          {/* Left Icon */}
-          <MdMessage
-            className="
+          {/* Left Icon wit
+          h Circular Text */}
+          <div className="relative flex items-center justify-center flex-shrink-0 self-start mt-0 sm:mt-2 md:mt-4 -ml-4 sm:-ml-6 md:ml-0 w-[160px] h-[160px] sm:w-[190px] sm:h-[190px] md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px]">
+            <svg 
+              viewBox="0 0 200 200" 
+              className="absolute inset-0 w-full h-full origin-center z-20 pointer-events-none"
+            >
+              <defs>
+                <path 
+                  id="circlePath" 
+                  d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" 
+                  fill="none" 
+                />
+              </defs>
+              <text 
+                fill="#DF9931" 
+                fontSize="16" 
+                fontWeight="600" 
+                letterSpacing="4" 
+                className="text-sm sm:text-base md:text-lg"
+              >
+                <textPath 
+                  href="#circlePath" 
+                  startOffset="50%" 
+                  textAnchor="middle" 
+                  textLength="470" 
+                  lengthAdjust="spacing"
+                >
+                  TRUSTED BY CLIENTS - TESTIMONIAL -
+                </textPath>
+              </text>
+            </svg>
+            
+            <MdMessage
+              className="
     text-[#DF9931]
     text-[90px] sm:text-[110px] md:text-[180px] lg:text-[240px]
-    flex-shrink-0
-    self-start
-    mt-0 sm:mt-2 md:mt-4
-    ml-2 sm:ml-4 md:ml-0
+    relative z-10
   "
-          />
+            />
+          </div>
 
           {/* Right Swiper */}
           <div className="flex-1 min-w-0 w-full mt-2 md:mt-0">
@@ -56,7 +86,7 @@ const Testimonials = () => {
         </div>
 
         {/* Logos Section - Desktop */}
-        <div className="mt-24 hidden md:flex flex-wrap justify-between items-center gap-0 px-8">
+        <div className="mt-12 hidden md:flex flex-wrap justify-between items-center gap-0 px-8">
           {/* archin */}
           <div className="flex items-center justify-center h-[72px] w-[130px] border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer">
             <span className="font-bold text-2xl tracking-tighter lowercase text-white">archin</span>
@@ -118,6 +148,7 @@ const Testimonials = () => {
             <SwiperSlide>
               <div className="flex items-center justify-center h-[50px] sm:h-[60px] w-[110px] sm:w-[120px] border border-white/20 rounded-[2rem] hover:bg-white/5 transition duration-300 cursor-pointer mx-auto">
                 <FaGithub className="text-2xl sm:text-3xl text-white" />
+            
               </div>
             </SwiperSlide>
             <SwiperSlide>

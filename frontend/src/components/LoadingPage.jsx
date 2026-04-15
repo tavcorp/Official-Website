@@ -11,13 +11,12 @@ const LoadingPage = () => {
       />
       
       {/* Bottom Image */}
-      <img 
+      {/* <img 
         src="https://res.cloudinary.com/de3ryzm92/image/upload/c_fill,q_auto,f_auto/v1776084953/Crop_Main_Logo_ntei2c.png" 
         alt="Loading" 
         className="h-10 md:h-12 object-contain opacity-80"
-      />
+      /> */}
     </div>
   );
 };
-
 export default LoadingPage;

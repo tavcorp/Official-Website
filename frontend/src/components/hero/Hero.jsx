@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { stackData } from "../../data/stackData";
 import StackCard from '../ui/stackCard';
 import styles from './hero.module.css';
@@ -19,6 +19,20 @@ const Hero = () => {
       });
     }
   };
+
+  // 3. Auto-rotate cards every 1 second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCards((prevCards) => {
+        const newCards = [...prevCards];
+        const firstCard = newCards.shift();
+        newCards.push(firstCard);
+        return newCards;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className={styles.Hero}>

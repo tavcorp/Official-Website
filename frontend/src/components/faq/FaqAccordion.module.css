@@ -70,10 +70,16 @@
 }
 
 .cardTop h1 {
-  font-size: 1.35rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
   margin: 0;
+}
+
+@media (min-width: 640px) {
+  .cardTop h1 {
+    font-size: 1.35rem;
+  }
 }
 
 .icon {
@@ -83,7 +89,7 @@
 }
 
 .answerP {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #ffffff;
   opacity: 0;
@@ -91,6 +97,12 @@
   overflow: hidden;
   transition: all 0.3s ease;
   max-height: 0;
+}
+
+@media (min-width: 640px) {
+  .answerP {
+    font-size: 0.95rem;
+  }
 }
 
 /* Logic for the Open State */
