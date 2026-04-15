@@ -23,17 +23,17 @@ const SignUpPage = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2>Create Account</h2>
+    <div className="w-full max-w-md mx-auto px-4 py-8 sm:px-6 md:py-12 border border-gray-300 rounded-lg">
+      <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
 
-      <form onSubmit={handleSignUp} style={styles.form}>
+      <form onSubmit={handleSignUp} className="flex flex-col gap-4">
         <input
           type="text"
           placeholder="Full Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          style={styles.input}
+          className="px-3 py-2 border border-gray-300 rounded text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <input
@@ -42,7 +42,7 @@ const SignUpPage = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={styles.input}
+          className="px-3 py-2 border border-gray-300 rounded text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <input
@@ -51,19 +51,23 @@ const SignUpPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={styles.input}
+          className="px-3 py-2 border border-gray-300 rounded text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
-        {error && <p style={styles.error}>{error}</p>}
+        {error && <p className="text-red-600 text-center text-sm">{error}</p>}
 
-        <button type="submit" disabled={isLoading} style={styles.button}>
+        <button 
+          type="submit" 
+          disabled={isLoading} 
+          className="px-4 py-2 bg-blue-600 text-white rounded font-medium hover:bg-blue-700 disabled:bg-gray-400 transition"
+        >
           {isLoading ? "Signing up..." : "Sign Up"}
         </button>
       </form>
 
-      <div style={styles.footer}>
-        <p>
-          Already have an account? <Link to="/LoginPage">Login</Link>
+      <div className="mt-6 text-center">
+        <p className="text-sm">
+          Already have an account? <Link to="/LoginPage" className="text-blue-600 hover:underline font-medium">Login</Link>
         </p>
       </div>
     </div>
@@ -71,34 +75,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-
-const styles = {
-  container: {
-    maxWidth: "400px",
-    margin: "50px auto",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    textAlign: "center",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-  },
-  input: {
-    padding: "10px",
-    fontSize: "16px",
-  },
-  button: {
-    padding: "10px",
-    fontSize: "16px",
-    cursor: "pointer",
-  },
-  error: {
-    color: "red",
-  },
-  footer: {
-    marginTop: "20px",
-  },
-};
