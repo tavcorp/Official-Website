@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styles from './hero1.module.css';
 import { IoIosArrowForward } from "react-icons/io";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
@@ -6,6 +7,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 import Counter from '../ui/Counter';
 
 const Hero1 = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.Hero1}>
       <div className={styles.container}>
@@ -28,8 +30,8 @@ const Hero1 = () => {
           </div>
 
           <div className={styles.right} data-aos="fade-left" data-aos-delay="200">
-            <p>Based in Abuja, we're a digital products design & development studio that passoinate with the creation high applicability of digital experiences.</p>
-            <button type="button">
+            <p>Based in Africa, we are a premium multidisciplinary studio, combining design, development, marketing, and consultancy to help brands grow across industries and creative sectors.</p>
+            <button type="button" onClick={() => navigate('/studio')}>
               Learn more <IoIosArrowForward />
             </button>
           </div>
