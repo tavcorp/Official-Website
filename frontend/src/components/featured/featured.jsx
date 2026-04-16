@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { featuredData } from "../../data/featuredData";
 import FeaturedCard from "../ui/featuredCard";
@@ -12,9 +13,10 @@ import "./featured.css";
 
 
 const Featured = () => {
+  const navigate = useNavigate();
 
   return (
-    <div className="h-full w-full bg-white-100 pb-0 pt-0">
+    <div className="h-full w-full bg-white-100 pb-0 pt-0 md:mt-4 lg:mt-5">
         <div className="w-[90%] lg:w-[68%] mx-auto" data-aos="fade-up">
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center py-4 mb-2 md:mb-6 gap-4 sm:gap-6 md:gap-0">
@@ -41,6 +43,7 @@ const Featured = () => {
           {/* Button */}
           <div className="button">
             <button
+              onClick={() => navigate("/portfolio")}
               className="
           inline-flex items-center justify-center
           border border-black text-black
