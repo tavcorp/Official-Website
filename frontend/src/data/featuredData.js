@@ -19,14 +19,14 @@ const featuredData = [
   },
   {
     id: 4,
-    image: '/images/featureBanner4.jpg',
-    title: "Featured Item Four",
-    description: "Description of featured item four"
+    image: 'https://res.cloudinary.com/de3ryzm92/image/upload/v1776434617/villa_pjeuqg.png',
+    title: "Villa Vagues - A luxury contemporary home",
+    description: "Architectural Design • Visualization • Project Consultancy • Procurement"
   },
   {
     id: 5,
-    image: '/images/featureBanner5.jpg',
-    title: "Featured Item Five",
+    image: 'https://res.cloudinary.com/de3ryzm92/image/upload/v1776436283/crub_ti6juh.jpg',
+    title: "Cur8 - A digital NFT marketplace ",
     description: "Description of featured item five"
   }
 ];

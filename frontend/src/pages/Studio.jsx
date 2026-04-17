@@ -1,25 +1,24 @@
 const Studio = () => {
   return (
-    <div className="pt-24 min-h-screen w-full bg-gray-100 px-4 sm:px-8">
-      <div className="max-w-6xl mx-auto">
-
+    <div className="pt-24 min-h-screen w-full px-4 sm:px-8" style={{ backgroundColor: "#1B1B1B" }}>
+      <div className="mx-auto w-[95%] md:w-[70%]">
         {/* Header */}
         <div className="text-center mb-20">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Studios
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto">
             Our creative space where ideas, technology, and strategy come
             together to build meaningful digital experiences.
           </p>
         </div>
 
         {/* Our Creative Space */}
-        <div className="bg-white rounded-2xl shadow-md p-10 mb-20">
-          <h2 className="text-2xl font-semibold mb-4">
+        <div className="rounded-2xl shadow-md p-4 sm:p-10 mb-20" style={{ backgroundColor: "#252525" }}>
+          <h2 className="text-2xl font-semibold mb-4 text-white" style={{ color: "#DF9931" }}>
             Our Creative Space
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed">
             At Tavcorp, our studio is more than just an office - it’s a creative
             hub and technology playground where ideas come to life and business
             challenges are solved. Designed for collaboration and innovation,
@@ -31,8 +30,8 @@ const Studio = () => {
         {/* What Happens Here */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
 
-          <div className="bg-black text-white rounded-2xl p-10">
-            <h2 className="text-2xl font-semibold mb-4">
+          <div className="text-white rounded-2xl p-4 sm:p-10" style={{ backgroundColor: "#252525" }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: "#DF9931" }}>
               What Happens Here
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -49,11 +48,11 @@ const Studio = () => {
           </div>
 
           {/* Visual / Highlight Card */}
-          <div className="bg-white rounded-2xl shadow-md p-10 flex flex-col justify-center">
-            <h3 className="text-xl font-semibold mb-4">
+          <div className="rounded-2xl shadow-md p-4 sm:p-10 flex flex-col justify-center" style={{ backgroundColor: "#252525" }}>
+            <h3 className="text-xl font-semibold mb-4 text-white" style={{ color: "#DF9931" }}>
               A Space Built for Innovation
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Our environment encourages curiosity, experimentation, and
               forward thinking - ensuring every project benefits from fresh
               perspectives and focused execution.
@@ -63,47 +62,47 @@ const Studio = () => {
         </div>
 
         {/* Why Our Studio Stands Out */}
-        <div className="bg-white rounded-2xl shadow-md p-10 mb-20">
-          <h2 className="text-2xl font-semibold mb-8 text-center">
+        <div className="rounded-2xl shadow-md p-4 sm:p-10 mb-20" style={{ backgroundColor: "#252525" }}>
+          <h2 className="text-2xl font-semibold mb-8 text-center text-white" style={{ color: "#DF9931" }}>
             Why Our Studio Stands Out
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="border rounded-xl p-6">
-              <h4 className="font-semibold mb-2">
+            <div className="border border-gray-700 rounded-xl p-3 sm:p-6">
+              <h4 className="font-semibold mb-2 text-white" style={{ color: "#DF9931" }}>
                 Collaborative Environment
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Designed to encourage teamwork, communication, and idea
                 exchange across disciplines.
               </p>
             </div>
 
-            <div className="border rounded-xl p-6">
-              <h4 className="font-semibold mb-2">
+            <div className="border border-gray-700 rounded-xl p-3 sm:p-6">
+              <h4 className="font-semibold mb-2 text-white" style={{ color: "#DF9931" }}>
                 Expert Team
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Skilled professionals across branding, design, and technology
                 working together under one roof.
               </p>
             </div>
 
-            <div className="border rounded-xl p-6">
-              <h4 className="font-semibold mb-2">
+            <div className="border border-gray-700 rounded-xl p-3 sm:p-6">
+              <h4 className="font-semibold mb-2 text-white" style={{ color: "#DF9931" }}>
                 Innovative Processes
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Streamlined workflows and cutting-edge tools to solve complex
                 business problems efficiently.
               </p>
             </div>
 
-            <div className="border rounded-xl p-6">
-              <h4 className="font-semibold mb-2">
+            <div className="border border-gray-700 rounded-xl p-3 sm:p-6">
+              <h4 className="font-semibold mb-2 text-white" style={{ color: "#DF9931" }}>
                 Futuristic Design
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 A studio space that reflects our forward - thinking mindset and
                 premium standards.
               </p>
@@ -112,8 +111,8 @@ const Studio = () => {
         </div>
 
         {/* CTA */}
-        <div className="bg-black text-white rounded-2xl p-12 text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+        <div className="bg-black text-white rounded-2xl p-6 sm:p-12 text-center mb-0">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4" style={{ color: "#DF9931" }}>
             Step inside our studio
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-6">
