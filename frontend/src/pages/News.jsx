@@ -1,35 +1,35 @@
 const News = () => {
   return (
-    <div className="pt-24 min-h-screen w-full bg-gray-100 px-4 sm:px-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="pt-24 min-h-screen w-full px-4 sm:px-8" style={{ backgroundColor: "#1B1B1B", color: "#F1F1F1" }}>
+      <div className="mx-auto w-[95%] md:w-[70%]">
 
         {/* Header */}
         <div className="mb-12 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }}>
             Latest News & Updates
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Stay updated with our latest announcements, product updates,
             achievements, and insights from our team.
           </p>
         </div>
 
         {/* Featured News */}
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-12">
+        <div className="rounded-2xl shadow-md overflow-hidden mb-12" style={{ backgroundColor: "#252525" }}>
           {/* 
           <div className="h-56 bg-gray-200 flex items-center justify-center">
             <span className="text-gray-500 text-lg">Featured Image</span>
           </div>
           */}
-          <div className="p-8">
-            <span className="text-sm text-gray-500">July 2023</span>
-            <h2 className="text-2xl font-bold mt-2 mb-4">
+          <div className="p-4 sm:p-8">
+            <span className="text-sm text-gray-400">July 2023</span>
+            <h2 className="text-2xl font-bold mt-2 mb-4" style={{ color: "#DF9931" }}>
               Tavcorp Officially Launches Its Creative & Tech Studio 🚀
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-300 mb-6">
               Tavcorp formally opened its creative studio in Abuja, marking the beginning of a new era in branding, design, and digital product development. The launch reflects the company’s commitment to helping businesses solve design and technology challenges through innovation, strategy, and craftsmanship. Tavcorp now serves brands locally and globally with integrated creative and technical solutions.
             </p>
-            <button className="text-black font-medium hover:underline">
+            <button className="text-white font-medium hover:underline">
               Read Full Story →
             </button>
           </div>
@@ -39,29 +39,29 @@ const News = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* News Item */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-            <span className="text-xs text-gray-500">Ongoing</span>
-            <h3 className="text-xl font-semibold mt-2 mb-3">
+          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }}>
+            <span className="text-xs text-gray-400">Ongoing</span>
+            <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
               Tavcorp Expands Its Digital Product Capabilities
             </h3>
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-gray-300 text-sm mb-4">
               Tavcorp continues to deepen its expertise in automation, custom software development, and website design, strengthening its position as a full-service creative and technology studio. The company is focused on building scalable digital products that improve business efficiency, customer experience, and long-term brand value.
             </p>
-            <button className="text-sm font-medium text-black hover:underline">
+            <button className="text-sm font-medium text-white hover:underline">
               Read More →
             </button>
           </div>
 
           {/* News Item */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-            <span className="text-xs text-gray-500">Ongoing</span>
-            <h3 className="text-xl font-semibold mt-2 mb-3">
+          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }}>
+            <span className="text-xs text-gray-400">Ongoing</span>
+            <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
               Tavcorp Strengthens Its Collaborative Studio Model
             </h3>
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-gray-300 text-sm mb-4">
               Built as both a creative space and tech hub, the Tavcorp studio is designed to foster collaboration, experimentation, and problem-solving. By combining an expert team with innovative processes, the studio supports brands from strategy to execution, ensuring every project is intentional, functional, and visually compelling.
             </p>
-            <button className="text-sm font-medium text-black hover:underline">
+            <button className="text-sm font-medium text-white hover:underline">
               Read More →
             </button>
           </div>
