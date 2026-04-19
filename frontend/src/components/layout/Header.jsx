@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import { useAuth } from "../../store/auth";
 import { useAuthStore } from "../../store/authStore";
-import { mainFour, otherItems, pages } from "./HeaderData";
+import { mainFour, pages } from "./HeaderData";
 
 
 const Header = () => {
@@ -229,33 +229,6 @@ const Header = () => {
               </div>
 
               <div>
-                <h3 className="text-sm font-semibold mb-3">More</h3>
-                <div className="grid gap-1">
-                  {otherItems.map((it) => (
-
-                    <button
-                      key={it.id}
-                      onClick={() => {
-                        navigate(it.url);
-                        setDesktopMenuOpen(false);
-                      }}
-                      className="w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
-                    >
-                      {it.title}
-                    </button>
-
-                  ))}
-
-                  <button
-                    onClick={() => {
-                      navigate("/start-project");
-                      setDesktopMenuOpen(false);
-                    }}
-                    className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded bg-[#DF9931] text-[#1B1B1B] font-semibold hover:bg-[#E8A649]"
-                  >
-                    Start Project <ImArrowUpRight2 />
-                  </button>
-
                   {/* User Authentication Menu */}
                   {isAuthenticated ? (
                     <div className="relative inline-block text-justify">
@@ -301,7 +274,6 @@ const Header = () => {
                     </>
                   )}
 
-                </div>
               </div>
             </div>
           </div>
@@ -356,23 +328,6 @@ const Header = () => {
                   </ul>
                 )}
               </li>
-              <li className="mt-1 border-t border-gray-700" />
-              {otherItems.map((it) => (
-
-                <li key={it.id}>
-                  <button
-                    onClick={() => {
-                      navigate(it.url);
-                      closeAll();
-                    }}
-                    className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
-                  >
-                    {it.title}
-                  </button>
-                </li>
-
-
-              ))}
               {!isAuthenticated && (
                 <>
                   <li className="mt-1 border-t border-gray-700" />

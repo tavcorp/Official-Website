@@ -96,16 +96,16 @@ export const projects = [
    {
     name: "Transity",
     service: "Branding & Motion Graphics",
-    image: "",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776587221/tran7_f3okkn.jpg",
     overview: "Transity required a visual identity that could communicate movement, speed, and innovation.",
     challenge: "Translating brand values into dynamic visual assets.",
     solution: "We created a strong brand identity supported by motion graphics that enhanced brand storytelling.",
     outcome: "A modern, energetic brand with engaging visual motion assets.",
     gallery: [
-      "",
-      "",
-      "",
-      ""
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776587219/tran1_ulhd2r.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776587220/tran5_rk80p5.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776587221/tran8_eovpef.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776587219/tran2_ddysjq.jpg"
     ]
   },
     {
@@ -123,34 +123,38 @@ export const projects = [
       ""
     ]
   },
-  {
-    name: "Lote",
-    service: "Packaging Design",
-    image: "",
-    overview: "Lote required packaging that was clean, functional, and visually appealing.",
-    challenge: "Designing packaging that communicated quality while remaining minimal.",
-    solution: "We created refined packaging system with strong visual hierarchy.",
-    outcome: "Packaging that enhanced product presentation and shelf appeal.",
-    gallery: [
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  {
+    {
     name: "Herbalist",
     service: "Branding & Packaging Design",
-    image: "",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586507/herbal5_jnbdgi.jpg",
     overview: "Herbalist needed branding rooted in trust and authenticity.",
     challenge: "Creating a balance between modern branding and natural appeal.",
     solution: "We developed a cohesive brand identity and packaging design inspired by wellness and simplicity.",
     outcome: "A calm, professional brand presence with strong market appeal.",
     gallery: [
-      "",
-      "",
-      "",
-      ""
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586571/herbal9_e1pyiv.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586740/herbal6_m0vwhl.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586537/herbal1_jcdudr.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586532/herbal7_til09h.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586502/herbal4_v6pqqu.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586535/herbal3_nmycve.jpg"
+    ]
+  },
+  {
+    name: "Lote",
+    service: "Packaging Design",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586933/lote1_rpmdrx.jpg",
+    overview: "Lote required packaging that was clean, functional, and visually appealing.",
+    challenge: "Designing packaging that communicated quality while remaining minimal.",
+    solution: "We created refined packaging system with strong visual hierarchy.",
+    outcome: "Packaging that enhanced product presentation and shelf appeal.",
+    gallery: [
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586931/lote4_pavaee.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586932/lote5_c1jnsn.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586933/lote2_xwfvls.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586933/lote3_yonw1c.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586932/lote8_sqfi92.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776586932/lote6_cedf2h.jpg"
     ]
   },
   {
