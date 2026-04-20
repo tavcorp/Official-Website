@@ -4,18 +4,18 @@ const News = () => {
       <div className="mx-auto w-[95%] md:w-[70%]">
 
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }}>
+        <div className="mb-12 text-center" data-aos="fade-up">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100">
             Latest News & Updates
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Stay updated with our latest announcements, product updates,
             achievements, and insights from our team.
           </p>
         </div>
 
         {/* Featured News */}
-        <div className="rounded-2xl shadow-md overflow-hidden mb-12" style={{ backgroundColor: "#252525" }}>
+        <div className="rounded-2xl shadow-md overflow-hidden mb-12" style={{ backgroundColor: "#252525" }} data-aos="fade-up" data-aos-delay="100">
           {/* 
           <div className="h-56 bg-gray-200 flex items-center justify-center">
             <span className="text-gray-500 text-lg">Featured Image</span>
@@ -39,7 +39,7 @@ const News = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* News Item */}
-          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }}>
+          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }} data-aos="slide-up" data-aos-delay="100">
             <span className="text-xs text-gray-400">Ongoing</span>
             <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
               Tavcorp Expands Its Digital Product Capabilities
@@ -53,7 +53,7 @@ const News = () => {
           </div>
 
           {/* News Item */}
-          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }}>
+          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }} data-aos="slide-up" data-aos-delay="200">
             <span className="text-xs text-gray-400">Ongoing</span>
             <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
               Tavcorp Strengthens Its Collaborative Studio Model
@@ -99,14 +99,14 @@ const News = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#DF9931" }}>
+        <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="100">
+          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="200">
             Never miss an update
           </h2>
-          <p className="text-white mb-6">
+          <p className="text-white mb-6" data-aos="fade-up" data-aos-delay="250">
             Subscribe to get the latest news delivered directly to your inbox.
           </p>
-          <button className="bg-white text-black px-8 py-3 rounded-lg transition mb-10" onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
+          <button className="bg-white text-black px-8 py-3 rounded-lg transition mb-10" data-aos="zoom-in" data-aos-delay="300" onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
             Subscribe Now
           </button>
         </div>

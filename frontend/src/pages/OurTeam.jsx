@@ -125,11 +125,11 @@ const OurTeam = () => {
       <div className="mx-auto w-[95%] md:w-[70%]">
 
         {/* Header */}
-        <div className="text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6" style={{ color: "#DF9931" }}>
+        <div className="text-center mb-20" data-aos="fade-up">
+          <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
             The Tavcorp Collective
           </h1>
-          <p className="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
             At Tavcorp, our strength lies in a compact, multidisciplinary team of
             creative thinkers, technical experts, and problem-solvers. We work
             collaboratively to design meaningful brands and build intelligent
@@ -141,7 +141,7 @@ const OurTeam = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
           {/* Brand & Strategy */}
-          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }} data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
             <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Brand & Strategy
             </h3>
@@ -154,7 +154,7 @@ const OurTeam = () => {
           </div>
 
           {/* Design */}
-          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }} data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
             <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Design
             </h3>
@@ -167,7 +167,7 @@ const OurTeam = () => {
           </div>
 
           {/* Technology & Development */}
-          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }} data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
             <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Technology & Development
             </h3>
@@ -180,7 +180,7 @@ const OurTeam = () => {
           </div>
 
           {/* Innovation & Product */}
-          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }}>
+          <div className="rounded-2xl p-4 sm:p-10 shadow-sm hover:shadow-lg transition" style={{ backgroundColor: "#f5f5f5" }} data-aos="fade-up" data-aos-delay="250" data-aos-duration="700">
             <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
               Innovation & Product
             </h3>
@@ -195,8 +195,8 @@ const OurTeam = () => {
         </div>
 
         {/* How We Work */}
-        <div className="mt-24 text-center">
-          <h2 className="text-3xl font-semibold text-black mb-10" style={{ color: "#DF9931" }}>
+        <div className="mt-24 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-semibold text-black mb-10" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
             How We Work Together
           </h2>
 
@@ -223,6 +223,9 @@ const OurTeam = () => {
                 key={index}
                 className="rounded-xl p-3 sm:p-6 shadow-sm hover:shadow-md transition"
                 style={{ backgroundColor: "#f5f5f5" }}
+                data-aos="fade-up"
+                data-aos-delay={`${100 + (index * 50)}`}
+                data-aos-duration="700"
               >
                 <h4 className="font-semibold text-black mb-2" style={{ color: "#DF9931" }}>
                   {item.title}
@@ -236,15 +239,15 @@ const OurTeam = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-28 text-center">
-          <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }}>
+        <div className="mt-28 text-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="700">
+          <h3 className="text-2xl font-semibold text-black mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
             Want to join the Tavcorp Collective?
           </h3>
-          <p className="text-gray-700 mb-8">
+          <p className="text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
             We're always looking for sharp minds, creative thinkers, and builders
             who care about quality.
           </p>
-          <button className="bg-white text-black px-10 py-4 rounded-lg font-medium border border-black transition" style={{ hover: { backgroundColor: "#DF9931" } }} onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
+          <button className="bg-white text-black px-10 py-4 rounded-lg font-medium border border-black transition" style={{ hover: { backgroundColor: "#DF9931" } }} data-aos="zoom-in" data-aos-delay="200" data-aos-duration="700" onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
             View Careers
           </button>
         </div>

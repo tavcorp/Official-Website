@@ -121,13 +121,13 @@ export default function ServicesAndPricing() {
     <div className="min-h-screen px-6 py-16 pt-24" style={{ backgroundColor: "#1B1B1B", color: "#F1F1F1" }}>
       <div className="mx-auto w-[100%] md:w-[70%] space-y-12">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h1 className="text-4xl font-bold text-white" style={{ color: "#DF9931" }}>Our Services & Pricing</h1>
-          <p className="text-gray-400">
+        <div className="text-center max-w-3xl mx-auto space-y-4" data-aos="fade-up">
+          <h1 className="text-4xl font-bold text-white" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100">Our Services & Pricing</h1>
+          <p className="text-gray-400" data-aos="fade-up" data-aos-delay="200">
             At Tavcorp, we provide strategic creative and technology solutions
             designed to solve real business problems. Our services are tailored to each client's goal, scope, and stage of growth, ensuring every solution delivers measurable value. 
           </p>
-          <p> 
+          <p data-aos="fade-up" data-aos-delay="300">
             All services are <strong style={{ color: "#DF9931" }}>custom-priced</strong> based on scope,
             complexity, and requirements.<br></br>
             A <strong style={{ color: "#DF9931" }}>percentage of payment may be required before work begins
@@ -147,6 +147,8 @@ export default function ServicesAndPricing() {
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              data-aos="zoom-in"
+              data-aos-delay={`${100 + (index * 100)}`}
             >
               <h2 className="text-xl font-semibold mb-2" style={{ color: hoveredIndex === index ? "#FFFFFF" : "#DF9931" }}>{service.title}</h2>
               <p className={`mb-4 ${hoveredIndex === index ? "text-white" : "text-gray-300"}`}>{service.description}</p>
