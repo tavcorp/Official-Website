@@ -261,6 +261,26 @@ const Header = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Login/Signup for non-authenticated users */}
+              {!isAuthenticated && (
+                <div className="mt-6 border-t border-gray-700 pt-4">
+                  <Link
+                    to="/LoginPage"
+                    className="block py-2 px-2 rounded hover:bg-gray-800 hover:text-yellow-400 transition text-sm"
+                    onClick={() => setDesktopMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/SignUpPage"
+                    className="block py-2 px-2 rounded hover:bg-gray-800 hover:text-yellow-400 transition text-sm"
+                    onClick={() => setDesktopMenuOpen(false)}
+                  >
+                    Signup
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         )}
