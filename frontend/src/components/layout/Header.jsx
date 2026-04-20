@@ -26,14 +26,14 @@ const Header = () => {
 
   // 
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen((prev) => !prev);
   };
 
   const handleLinkClick = () => {
-    setIsDropdownOpen(false);
+    setIsProfileDropdownOpen(false);
     closeAll(); // optional: also close menu
   };
 
@@ -162,7 +162,7 @@ const Header = () => {
             </div>
 
             {/* RIGHT: start project + menu */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 md:gap-4">
 
               <button
                 onClick={() => {
@@ -174,18 +174,38 @@ const Header = () => {
               </button>
 
               {isAuthenticated && user?.username && (
-                <>
+                <div className="relative">
                   {/* Desktop: Show full name with white bg */}
-                  <div className="hidden md:block px-4 py-2 rounded-full bg-white text-black font-semibold">
+                  <button
+                    onClick={toggleProfileDropdown}
+                    className="hidden md:block px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition"
+                  >
                     <span>{user.username}</span>
-                  </div>
+                  </button>
                   {/* Mobile: Show initial in circle with white bg */}
-                  <div className="md:hidden">
-                    <div className="w-10 h-10 rounded-full bg-white text-white flex items-center justify-center font-bold text-lg">
-                      {user.username.charAt(0).toUpperCase()}
+                  <button
+                    onClick={toggleProfileDropdown}
+                    className="md:hidden w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold text-lg hover:bg-gray-200 transition"
+                  >
+                    {user.username.charAt(0).toUpperCase()}
+                  </button>
+
+                  {/* Logout Dropdown */}
+                  {isProfileDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-red-600 rounded-md shadow-lg z-50">
+                      <button
+                        onClick={() => {
+                          logout();
+                          navigate("/");
+                          setIsProfileDropdownOpen(false);
+                        }}
+                        className="block px-4 py-3 text-white w-full text-left font-semibold hover:bg-red-700 rounded-md transition"
+                      >
+                        Logout
+                      </button>
                     </div>
-                  </div>
-                </>
+                  )}
+                </div>
               )}
 
               <div className="relative">
@@ -223,7 +243,7 @@ const Header = () => {
             aria-modal="true"
           >
             {/* ... Menu Content ... */}
-            <div className="grid grid-cols-2 gap-6 text-gray-200">
+            <div className="text-gray-200">
               <div>
                 <h3 className="text-sm font-semibold mb-3">Pages</h3>
                 <div className="grid gap-1">
@@ -240,54 +260,6 @@ const Header = () => {
                     </button>
                   ))}
                 </div>
-              </div>
-
-              <div>
-                  {/* User Authentication Menu */}
-                  {isAuthenticated ? (
-                    <div className="relative inline-block text-justify">
-                      <button
-                        onClick={toggleDropdown}
-                        className="bg-blue-200 text-gray-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 text-md ml-2"
-                      >
-                        {user?.username}
-                      </button>
-
-                      {isDropdownOpen && (
-                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
-                          <button
-                            onClick={() => {
-                              logout();
-                              navigate("/");
-                              handleLinkClick();
-                            }}
-                            className="block px-3 py-1 text-gray-700 hover:bg-gray-100 w-full text-left"
-                          >
-                            Logout
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <>
-                      <Link
-                        to="/LoginPage"
-                        className="hidden md:block py-2 px-4 hover:text-yellow-400"
-                        onClick={handleLinkClick}
-                      >
-                        Login
-                      </Link>
-
-                      <Link
-                        to="/SignUpPage"
-                        className="hidden md:block py-2 px-4 hover:text-yellow-400"
-                        onClick={handleLinkClick}
-                      >
-                        Signup
-                      </Link>
-                    </>
-                  )}
-
               </div>
             </div>
           </div>
