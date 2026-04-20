@@ -60,7 +60,7 @@ const Footer = () => {
                 <div>
                   <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">Work Inquiry</h5>
                   <p className="text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium">hello@wearetavcorp.com</p>
-                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 font-medium">+234-816-609-0757</p>
+                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 font-medium">+234-816-608-0757</p>
                 </div>
 
                 <div>

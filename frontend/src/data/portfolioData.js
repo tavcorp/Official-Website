@@ -159,17 +159,17 @@ export const projects = [
   },
   {
     name: "Metra",
-    service: "3D & Product Design",
-    image: "",
+    service: "An AI Robot Case Study",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673483/1_fqi7h1.png",
     overview: "Metra required realistic product visuals to support development and presentation.",
     challenge: "Translating concepts into detailed, accurate 3D representations.",
     solution: "We delivered high-quality 3D and product design visuals.",
     outcome: "Clear, realistic product visuals ready for presentation and production.",
     gallery: [
-      "",
-      "",
-      "",
-      ""
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673483/3_hxfsaq.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673481/6_k0jhna.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673489/5_gtltt4.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673482/2_ee7xkx.png"
     ]
   },
   {
@@ -200,6 +200,21 @@ export const projects = [
       "",
       "",
       ""
+    ]
+  },
+  {
+    name: "Alaafia Wa",
+    service: "A Museum Architectural Visualization",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673726/1_jk3uan.png",
+    overview: "",
+    challenge: "",
+    solution: "",
+    outcome: "",
+    gallery: [
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673714/5_zxcuja.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673721/4_qdnh3a.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673717/9_urdsoz.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673715/2_l9piv0.png"
     ]
   },
 ];

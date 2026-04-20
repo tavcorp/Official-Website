@@ -100,13 +100,13 @@ const News = () => {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#DF9931" }}>
             Never miss an update
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-white mb-6">
             Subscribe to get the latest news delivered directly to your inbox.
           </p>
-          <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition mb-10">
+          <button className="bg-white text-black px-8 py-3 rounded-lg transition mb-10" onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
             Subscribe Now
           </button>
         </div>

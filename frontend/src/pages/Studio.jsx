@@ -4,7 +4,7 @@ const Studio = () => {
       <div className="mx-auto w-[95%] md:w-[70%]">
         {/* Header */}
         <div className="text-center mb-20">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }}>
             Studios
           </h1>
           <p className="text-white max-w-2xl mx-auto">
@@ -111,15 +111,15 @@ const Studio = () => {
         </div>
 
         {/* CTA */}
-        <div className="bg-black text-white rounded-2xl p-6 sm:p-12 text-center mb-0">
+        <div className="rounded-2xl p-6 sm:p-12 text-center mb-0">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4" style={{ color: "#DF9931" }}>
             Step inside our studio
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-6">
+          <p className="text-white max-w-2xl mx-auto mb-6">
             See how Tavcorp transforms ideas into reality through creativity,
             technology, and collaboration.
           </p>
-          <button className="bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition">
+          <button className="bg-white text-black px-8 py-3 rounded-lg font-medium transition" onMouseEnter={(e) => { e.target.style.backgroundColor = "#DF9931"; e.target.style.color = "white"; }} onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; e.target.style.color = "black"; }}>
             Visit Our Studio
           </button>
         </div>

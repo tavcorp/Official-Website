@@ -23,7 +23,7 @@ export default function Portfolio() {
           data-aos="fade-up" 
           data-aos-duration="1500"
         >
-          <h1 className="text-4xl font-bold text-white">Portfolio</h1>
+          <h1 className="text-4xl font-bold text-white" style={{ color: "#DF9931" }}>Portfolio</h1>
           <p className="text-white">
             We collaborate with ambitious brands to solve design, technology,
             and product challenges through strategic thinking and creative

@@ -7,7 +7,7 @@ const Blog = () => {
     <section className={styles.blogSection}>
       <div className={styles.blogContainer}>
         <header className={styles.blogHeader}>
-          <h1>Blog & Insights</h1>
+          <h1 style={{ color: "#DF9931" }}>Blog & Insights</h1>
           <p>
             Thoughts, strategies, and insights on branding, technology, and
             digital innovation.
@@ -18,7 +18,7 @@ const Blog = () => {
           {posts.map((post) => (
             <article key={post.id} className={styles.blogCard}>
               <div className={styles.blogCardContent}>
-                <h2>{post.title}</h2>
+                <h2 style={{ color: "#DF9931" }}>{post.title}</h2>
                 <p className={styles.blogDescription}>{post.description}</p>
 
                 {post.content.map((text, index) => (

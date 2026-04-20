@@ -15,7 +15,7 @@ const Hero1 = () => {
         {/* --- TOP SECTION (Headline + Description) --- */}
         <div className={styles.topSection} data-aos="fade-up">
           <div className={styles.left} data-aos="fade-right" data-aos-delay="100">
-            <span>Crafting,</span>
+            <span>Crafting</span>
             <span>Brands and</span>
             <span 
               style={{
