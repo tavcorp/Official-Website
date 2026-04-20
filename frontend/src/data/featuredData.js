@@ -27,7 +27,7 @@ const featuredData = [
     id: 5,
     image: 'https://res.cloudinary.com/de3ryzm92/image/upload/v1776436283/crub_ti6juh.jpg',
     title: "Cur8 - A digital NFT marketplace ",
-    description: "Description of featured item five"
+    description: "Mobile App • UI • Product Development • Branding"
   }
 ];
 

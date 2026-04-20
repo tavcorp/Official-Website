@@ -37,6 +37,8 @@
   max-width: 760px;
   /* adjust as needed */
   box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 !important;
 }
 
 /* Make sure card is visible (z-index) */

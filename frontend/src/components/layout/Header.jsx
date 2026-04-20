@@ -333,7 +333,7 @@ const Header = () => {
                   <li className="mt-1 border-t border-gray-700" />
                   <li>
                     <Link
-                      to="/login"
+                      to="/LoginPage"
                       className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
                       onClick={closeAll}
                     >
@@ -342,7 +342,7 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/signup"
+                      to="/SignUpPage"
                       className="block py-2 px-2 rounded hover:bg-gray-800 font-medium"
                       onClick={closeAll}
                     >

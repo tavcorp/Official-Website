@@ -122,7 +122,7 @@ export default function ServicesAndPricing() {
       <div className="mx-auto w-[100%] md:w-[70%] space-y-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h1 className="text-4xl font-bold text-white">Our Services & Pricing</h1>
+          <h1 className="text-4xl font-bold text-white" style={{ color: "#DF9931" }}>Our Services & Pricing</h1>
           <p className="text-gray-400">
             At Tavcorp, we provide strategic creative and technology solutions
             designed to solve real business problems. Our services are tailored to each client's goal, scope, and stage of growth, ensuring every solution delivers measurable value. 
