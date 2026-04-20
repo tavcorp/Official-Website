@@ -162,9 +162,8 @@ const Header = () => {
             </div>
 
             {/* RIGHT: start project + menu */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4">
 
-              
               <button
                 onClick={() => {
                   navigate("/start-project");
@@ -173,6 +172,21 @@ const Header = () => {
               >
                 Start Project <ImArrowUpRight2 />
               </button>
+
+              {isAuthenticated && user?.username && (
+                <>
+                  {/* Desktop: Show full name with white bg */}
+                  <div className="hidden md:block px-4 py-2 rounded-full bg-white text-black font-semibold">
+                    <span>{user.username}</span>
+                  </div>
+                  {/* Mobile: Show initial in circle with white bg */}
+                  <div className="md:hidden">
+                    <div className="w-10 h-10 rounded-full bg-white text-white flex items-center justify-center font-bold text-lg">
+                      {user.username.charAt(0).toUpperCase()}
+                    </div>
+                  </div>
+                </>
+              )}
 
               <div className="relative">
                 <button
