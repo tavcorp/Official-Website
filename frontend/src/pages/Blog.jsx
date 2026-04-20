@@ -6,17 +6,23 @@ const Blog = () => {
   return (
     <section className={styles.blogSection}>
       <div className={styles.blogContainer}>
-        <header className={styles.blogHeader}>
-          <h1 style={{ color: "#DF9931" }}>Blog & Insights</h1>
-          <p>
+        <header className={styles.blogHeader} data-aos="fade-up">
+          <h1 style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">Blog & Insights</h1>
+          <p data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
             Thoughts, strategies, and insights on branding, technology, and
             digital innovation.
           </p>
         </header>
 
         <div className={styles.blogGrid}>
-          {posts.map((post) => (
-            <article key={post.id} className={styles.blogCard}>
+          {posts.map((post, index) => (
+            <article 
+              key={post.id} 
+              className={styles.blogCard}
+              data-aos="fade-up"
+              data-aos-delay={`${100 + (index * 50)}`}
+              data-aos-duration="700"
+            >
               <div className={styles.blogCardContent}>
                 <h2 style={{ color: "#DF9931" }}>{post.title}</h2>
                 <p className={styles.blogDescription}>{post.description}</p>

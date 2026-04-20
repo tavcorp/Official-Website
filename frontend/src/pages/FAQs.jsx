@@ -14,12 +14,12 @@ const FAQs = () => {
       <div className="mx-auto w-[95%] md:w-[50%]">
 
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-14" data-aos="fade-up">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span>Frequently Asked </span>
-            <span style={{ color: "#DF9931", fontStyle: "italic", fontWeight: 600 }}>Questions</span>
+            <span data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">Frequently Asked </span>
+            <span style={{ color: "#DF9931", fontStyle: "italic", fontWeight: 600 }} data-aos="zoom-in" data-aos-delay="150" data-aos-duration="700">Questions</span>
           </h1>
-          <p className="text-gray-400">
+          <p className="text-gray-400" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
             Find answers to common questions about our services, process, and
             collaboration.
           </p>
@@ -34,6 +34,9 @@ const FAQs = () => {
               style={{ 
                 backgroundColor: openIndex === id ? "#DF9931" : "#252525"
               }}
+              data-aos="fade-up"
+              data-aos-delay={`${100 + (id * 50)}`}
+              data-aos-duration="700"
             >
               <button
                 onClick={() => toggleFAQ(id)}
@@ -57,14 +60,14 @@ const FAQs = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <h2 className="text-2xl font-semibold mb-4 text-white">
+        <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+          <h2 className="text-2xl font-semibold mb-4 text-white" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="700">
             Still have questions?
           </h2>
-          <p className="text-gray-400 mb-6">
+          <p className="text-gray-400 mb-6" data-aos="fade-up" data-aos-delay="180" data-aos-duration="700">
             Feel free to reach out to us. We're happy to help.
           </p>
-          <button className="bg-white text-black px-8 py-3 rounded-lg hover:bg-gray-200 transition mb-2 font-medium">
+          <button className="bg-white text-black px-8 py-3 rounded-lg hover:bg-gray-200 transition mb-2 font-medium" data-aos="zoom-in" data-aos-delay="210" data-aos-duration="700">
             Contact Us
           </button>
         </div>
