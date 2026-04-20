@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './styleBlog.module.css';
 import { posts } from '../data/blogData';
 
 const Blog = () => {
+  const [expandedPost, setExpandedPost] = useState(null);
+
+  const toggleExpand = (postId) => {
+    setExpandedPost(expandedPost === postId ? null : postId);
+  };
+
   return (
     <section className={styles.blogSection}>
       <div className={styles.blogContainer}>
@@ -25,21 +31,46 @@ const Blog = () => {
             >
               <div className={styles.blogCardContent}>
                 <h2 style={{ color: "#DF9931" }}>{post.title}</h2>
-                <p className={styles.blogDescription}>{post.description}</p>
+                
+                {/* Show only first paragraph initially */}
+                <p className={styles.blogText}>
+                  {post.content[0]}
+                </p>
 
-                {post.content.map((text, index) => (
-                  <p key={index} className={styles.blogText}>
-                    {text}
-                  </p>
-                ))}
+                {/* Show remaining content only when expanded */}
+                {expandedPost === post.id && (
+                  <>
+                    {post.content.slice(1).map((text, index) => (
+                      <p key={index} className={styles.blogText}>
+                        {text}
+                      </p>
+                    ))}
 
-                <ul className={styles.blogList}>
-                  {post.points.map((point, index) => (
-                    <li key={index}>{point}</li>
-                  ))}
-                </ul>
+                    <ul className={styles.blogList}>
+                      {post.points.map((point, index) => (
+                        <li key={index}>{point}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
 
-                {/* <button className={styles.blogButton}>Contact Tavcorp</button> */}
+                {/* Read More / Read Less button */}
+                <button 
+                  onClick={() => toggleExpand(post.id)}
+                  className={styles.blogButton}
+                  style={{ 
+                    color: "#DF9931", 
+                    background: "none", 
+                    border: "none", 
+                    cursor: "pointer",
+                    marginTop: "1rem",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    textDecoration: "underline"
+                  }}
+                >
+                  {expandedPost === post.id ? "Read Less ▲" : "Read More →"}
+                </button>
               </div>
             </article>
           ))}
