@@ -6,14 +6,14 @@ import { MailtrapClient } from "mailtrap";
 
 const TOKEN = process.env.MAILTRAP_API_TOKEN;
 
-console.log("TOKEN:", TOKEN);
+// console.log("TOKEN:", TOKEN);
 // console.log("ENV CHECK:", process.env);
 
 export const mailtrapClient = new MailtrapClient({
   token: TOKEN,
 });
 
-console.log("MAILTRAP TOKEN FINAL:", process.env.MAILTRAP_API_TOKEN);
+// console.log("MAILTRAP TOKEN FINAL:", process.env.MAILTRAP_API_TOKEN);
 
 export const sender = {
   email: "hello@demomailtrap.co",
