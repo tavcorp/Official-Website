@@ -5,7 +5,7 @@ const News = () => {
 
         {/* Header */}
         <div className="mb-12 text-center" data-aos="fade-up">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100">
             Latest News & Updates
           </h1>
           <p className="text-white max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">

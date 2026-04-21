@@ -88,7 +88,7 @@ const Contact = () => {
     <div className="min-h-screen bg-[#1B1B1B] flex items-center justify-center px-4 pt-24 pb-12">
       <div className="w-full max-w-md bg-[#252525] rounded-xl shadow-lg p-6 text-[#F1F1F1] ">
 
-        <h2 className="text-2xl font-bold mb-6 text-center text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center text-white">
           Contact Us
         </h2>
 

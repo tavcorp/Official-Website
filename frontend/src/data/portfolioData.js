@@ -78,19 +78,19 @@ export const projects = [
       "https://res.cloudinary.com/de3ryzm92/image/upload/v1776435914/villa3_ieeqgh.png"
     ]
   },
-{
-    name: "Cur8",
-    service: "Mobile App Development",
-    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436578/cur2_thbi4g.png",
-    overview: "Cur8 sought a mobile solution designed around ease of use and functionality.",
-    challenge: "Delivering a smooth app experience while maintaining performance and reliability.",
-    solution: "We built a streamlined mobile application focused on intuitive navigation and efficient performance.",
-    outcome: "A dependable mobile app that enhances user engagement.",
+  {
+    name: "Excape",
+    service: "Social Media Marketing",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776780934/51_cvmfpb.png",
+    overview: "Excape sought to improve brand visibility and engagement online.",
+    challenge: "Creating consistent, engaging digital content.",
+    solution: "We developed a focused social media strategy aligned with brand goals.",
+    outcome: "Improved brand presence and audience engagement.",
     gallery: [
-      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436565/cur3_lb5pgo.jpg",
-      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436566/cur4_x1mlkq.jpg",
-      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436283/crub_ti6juh.jpg",
-      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776437346/cuyr_crzpkd.jpg"
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776780929/52_jtaglk.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776780930/49_e3lzyy.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776780934/48_tmxe1i.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776780939/50_pf4bix.png"
     ]
   },
    {
@@ -172,44 +172,29 @@ export const projects = [
       "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673482/2_ee7xkx.png"
     ]
   },
-  {
-    name: "Excape",
-    service: "Social Media Marketing",
-    image: "",
-    overview: "Excape sought to improve brand visibility and engagement online.",
-    challenge: "Creating consistent, engaging digital content.",
-    solution: "We developed a focused social media strategy aligned with brand goals.",
-    outcome: "Improved brand presence and audience engagement.",
+{
+    name: "Cur8",
+    service: "Mobile App Development",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436566/cur4_x1mlkq.jpg",
+    overview: "Cur8 sought a mobile solution designed around ease of use and functionality.",
+    challenge: "Delivering a smooth app experience while maintaining performance and reliability.",
+    solution: "We built a streamlined mobile application focused on intuitive navigation and efficient performance.",
+    outcome: "A dependable mobile app that enhances user engagement.",
     gallery: [
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    name: "Dootify",
-    service: "Branding & Packaging Design",
-    image: "",
-    overview: "Dootify needed a distinctive brand identity and packaging system.",
-    challenge: "Standing out in a competitive market with unique design.",
-    solution: "We designed a bold brand identity and cohesive packaging.",
-    outcome: "A recognizable brand with strong visual consistency.",
-    gallery: [
-      "",
-      "",
-      "",
-      ""
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436565/cur3_lb5pgo.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436578/cur2_thbi4g.png",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776436283/crub_ti6juh.jpg",
+      "https://res.cloudinary.com/de3ryzm92/image/upload/v1776437346/cuyr_crzpkd.jpg"
     ]
   },
   {
     name: "Alaafia Wa",
     service: "A Museum Architectural Visualization",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673726/1_jk3uan.png",
-    overview: "",
-    challenge: "",
-    solution: "",
-    outcome: "",
+    overview: " ALAAFIA WA, a home of peace as it name says required a complete visual and brand identity for a museum of art that enlightens culture and also serves as a memorial building for a late president.",
+    challenge: "Balancing solemn memorial tones with an inviting art museum atmosphere across 3D modeling, architectural visualization, photography, and branding.",
+    solution: "We produced high-fidelity 3D models and architectural renderings, captured site photography, and developed a unified brand language that honors his legacy while celebrating art.",
+    outcome: "A compelling, emotionally resonant presentation package that secured stakeholder approval and clearly communicates the building’s dual purpose as both memorial and cultural venue.",
     gallery: [
       "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673714/5_zxcuja.png",
       "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673721/4_qdnh3a.png",
@@ -217,4 +202,19 @@ export const projects = [
       "https://res.cloudinary.com/de3ryzm92/image/upload/v1776673715/2_l9piv0.png"
     ]
   },
+  // {
+  //   name: "Dootify",
+  //   service: "Branding & Packaging Design",
+  //   image: "",
+  //   overview: "Dootify needed a distinctive brand identity and packaging system.",
+  //   challenge: "Standing out in a competitive market with unique design.",
+  //   solution: "We designed a bold brand identity and cohesive packaging.",
+  //   outcome: "A recognizable brand with strong visual consistency.",
+  //   gallery: [
+  //     "",
+  //     "",
+  //     "",
+  //     ""
+  //   ]
+  // },
 ];

@@ -34,12 +34,18 @@
 }
 
 .blogHeader h1 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
 @media (min-width: 640px) {
+  .blogHeader h1 {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
   .blogHeader h1 {
     font-size: 48px;
   }
