@@ -19,7 +19,7 @@ const FAQs = () => {
             <span data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">Frequently Asked </span>
             <span style={{ color: "#DF9931", fontStyle: "italic", fontWeight: 600 }} data-aos="zoom-in" data-aos-delay="150" data-aos-duration="700">Questions</span>
           </h1>
-          <p className="text-gray-400" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+          <p className="text-white" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
             Find answers to common questions about our services, process, and
             collaboration.
           </p>
@@ -61,10 +61,10 @@ const FAQs = () => {
 
         {/* CTA */}
         <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
-          <h2 className="text-2xl font-semibold mb-4 text-white" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="700">
+          <h2 className="text-2xl font-semibold mb-4" style={{ color: "#DD992F" }} data-aos="zoom-in" data-aos-delay="150" data-aos-duration="700">
             Still have questions?
           </h2>
-          <p className="text-gray-400 mb-6" data-aos="fade-up" data-aos-delay="180" data-aos-duration="700">
+          <p className="text-white mb-6" data-aos="fade-up" data-aos-delay="180" data-aos-duration="700">
             Feel free to reach out to us. We're happy to help.
           </p>
           <button className="bg-white text-black px-8 py-3 rounded-lg hover:bg-gray-200 transition mb-2 font-medium" data-aos="zoom-in" data-aos-delay="210" data-aos-duration="700">

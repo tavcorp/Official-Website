@@ -8,7 +8,7 @@ const News = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100">
             Latest News & Updates
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-white max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Stay updated with our latest announcements, product updates,
             achievements, and insights from our team.
           </p>
