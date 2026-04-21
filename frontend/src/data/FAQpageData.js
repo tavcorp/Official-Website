@@ -49,7 +49,7 @@ export const faqSections = [
         question: "What if I'm not sure what I need?",
         answer: "We help you figure that out. Start with a consultation or guided onboarding.",
         linkText: "Get Clarity →",
-        link: "https://verafromtavcorp.setmore.com/services/2428390c-3fe9-41da-aee6-08d0875bbcd3",
+        link: "https://tavcorp.setmore.com/services/2428390c-3fe9-41da-aee6-08d0875bbcd3",
       },
       {
         id: 8,
@@ -110,7 +110,7 @@ export const faqSections = [
         question: "What does strategy & consulting include?",
         answer: "Brand positioning, product direction, and growth systems tailored to execution.",
         linkText: "Book a Strategy Session →",
-        link: "https://verafromtavcorp.setmore.com/services/4cb6ed61-6e63-452e-a5b8-a6bfa27744b7",
+        link: "https://tavcorp.setmore.com/services/4cb6ed61-6e63-452e-a5b8-a6bfa27744b7",
       },
       {
         id: 16,
@@ -199,7 +199,7 @@ export const faqSections = [
         question: "Do you offer custom solutions beyond listed services?",
         answer: "Yes. We build around your needs, not fixed packages.",
         linkText: "Request Custom Solution →",
-        link: "https://verafromtavcorp.setmore.com/services/ff7be37e-4078-4e86-9693-0d4feef4daf5",
+        link: "https://tavcorp.setmore.com/services/ff7be37e-4078-4e86-9693-0d4feef4daf5",
       },
       {
         id: 28,
