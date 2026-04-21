@@ -34,6 +34,8 @@ const FaqAccordion = () => {
                 id={item.id}
                 question={item.question}
                 answer={item.answer}
+                link={item.link}
+                linkText={item.linkText}
                 open={showSelection === item.id}
                 toggle={toggleAnswer}
                 styles={styles} // Pass the styles object down

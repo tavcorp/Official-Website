@@ -126,7 +126,7 @@ const OurTeam = () => {
 
         {/* Header */}
         <div className="text-center mb-20" data-aos="fade-up">
-          <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
             The Tavcorp Collective
           </h1>
           <p className="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">

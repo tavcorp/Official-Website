@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const QuestionCard = ({ id, question, answer, open, toggle, styles }) => {
+const QuestionCard = ({ id, question, answer, link, linkText, open, toggle, styles }) => {
   return (
     <div className={`${styles.questionCard} ${open ? styles.activeCard : ""}`}>
       <div className={styles.cardTop} onClick={() => toggle(id)}>
@@ -10,6 +11,11 @@ const QuestionCard = ({ id, question, answer, open, toggle, styles }) => {
 
       <div className={styles.answerP}>
         <p>{answer}</p>
+        {link && linkText && (
+          <Link to={link} className={styles.exploreLink}>
+            {linkText}
+          </Link>
+        )}
       </div>
     </div>
   );

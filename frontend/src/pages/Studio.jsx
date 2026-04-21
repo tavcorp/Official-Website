@@ -4,7 +4,7 @@ const Studio = () => {
       <div className="mx-auto w-[95%] md:w-[70%]">
         {/* Header */}
         <div className="text-center mb-20" data-aos="fade-up">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
             Studios
           </h1>
           <p className="text-white max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
@@ -14,17 +14,26 @@ const Studio = () => {
         </div>
 
         {/* Our Creative Space */}
-        <div className="rounded-2xl shadow-md p-4 sm:p-10 mb-20" style={{ backgroundColor: "#252525" }} data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
-          <h2 className="text-2xl font-semibold mb-4 text-white" style={{ color: "#DF9931" }}>
-            Our Creative Space
-          </h2>
-          <p className="text-gray-300 leading-relaxed">
-            At Tavcorp, our studio is more than just an office - it’s a creative
-            hub and technology playground where ideas come to life and business
-            challenges are solved. Designed for collaboration and innovation,
-            our space empowers our team and clients to explore, experiment, and
-            achieve extraordinary results.
-          </p>
+        <div className="rounded-2xl shadow-md mb-20 flex flex-col md:flex-row overflow-hidden" style={{ backgroundColor: "#252525" }} data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+          <div className="p-4 sm:p-10 md:w-1/2 flex flex-col justify-center">
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: "#DF9931" }}>
+              Our Creative Space
+            </h2>
+            <p className="text-gray-300 leading-relaxed">
+              At Tavcorp, our studio is more than just an office - it’s a creative
+              hub and technology playground where ideas come to life and business
+              challenges are solved. Designed for collaboration and innovation,
+              our space empowers our team and clients to explore, experiment, and
+              achieve extraordinary results.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 h-64 md:h-[350px] lg:h-[400px] flex justify-center items-center p-4 sm:p-6" style={{ backgroundColor: "#252525" }}>
+            <img 
+              src="https://res.cloudinary.com/de3ryzm92/image/upload/v1776787538/acreative_sds7eh.jpg" 
+              alt="Creative Space" 
+              className="max-w-full max-h-full object-contain rounded-2xl"
+            />
+          </div>
         </div>
 
         {/* What Happens Here */}

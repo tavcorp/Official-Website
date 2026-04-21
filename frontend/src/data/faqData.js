@@ -1,37 +1,44 @@
 export const faqs = [
   {
     id: 1,
-    question: "Why TavCorp instead of a full-time designer?",
-    answer:
-      "We offer a range of services including web design, development, branding, and digital marketing to help businesses establish a strong online presence.",
+    question: "What is TavCorp exactly?",
+    answer: "TavCorp is a unified system combining design, tech, media, strategy, AI, and curated products—built to help you create, scale, and operate smarter.",
+    linkText: "Explore Services →",
+    link: "/services-pricing",
   },
   {
     id: 2,
-    question: "Speed of design delivery?",
-    answer: "You can get a quote by contacting us through our website's contact form or by emailing us directly with details about your project.",
+    question: "Who is TavCorp for?",
+    answer: "Founders, creators, startups, and individuals building brands, products, or personal ecosystems.",
+    linkText: "See How It Fits You →",
+    link: "/our-team",
   },
   {
     id: 3,
-    question: "How to request for a design?",
-    answer:
-      "Turnaround times vary depending on the scope and complexity of the project. We typically provide an estimated timeline during the initial consultation phase.",
+    question: "How does your design service work?",
+    answer: "Submit requests, we design, refine, and deliver quickly within a structured workflow.",
+    linkText: "Submit Your First Request →",
+    link: "/start-project",
   },
   {
     id: 4,
-    question: "How do I opt-in for a subscription service?",
-    answer:
-      "Yes, we offer various support and maintenance packages to ensure your website or application remains up-to-date and functions smoothly after launch.",
+    question: "How fast is delivery?",
+    answer: "Design: scope-based\nAI & Automation: scope-based\nTech: milestone-driven",
+    linkText: "See Timelines →",
+    link: "/services-pricing",
   },
   {
     id: 5,
-    question: "Can I request for a single service?",
-    answer:
-      "Absolutely! We provide SEO optimization and digital marketing services to help increase your online visibility and drive traffic to your site.",
+    question: "Can TavCorp support me long-term?",
+    answer: "Yes. We're built for ongoing partnerships, not one-off transactions.",
+    linkText: "Become a Partner →",
+    link: "/SignUpPage",
   },
   {
     id: 6,
-    question: "What if I don't like design?",
-    answer:
-      "We have experience working with a variety of industries including technology, healthcare, e-commerce, education, and more. We tailor our services to meet the unique needs of each industry.",
+    question: "Can I scale my plan as I grow?",
+    answer: "Yes. Upgrade, expand, or customize anytime.",
+    linkText: "Scale With TavCorp →",
+    link: "/SignUpPage",
   }
 ]

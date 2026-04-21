@@ -3,8 +3,10 @@ import { articlesData } from "../../data/articlesData";
 import ArticleCard from "../ui/ArticleCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 const ArticlesSection = () => {
+  const navigate = useNavigate();
   return (
     <article>
       <section id="articles" className="py-20 bg-[#262626] text-white">
@@ -24,8 +26,8 @@ const ArticlesSection = () => {
             </h2>
 
             {/* Button */}
-            <a
-              href="/articles"
+            <button
+              onClick={() => navigate("/blogs")}
               className="
         inline-flex items-center justify-center
         border border-[#DF9931] text-[#DF9931]
@@ -38,7 +40,7 @@ const ArticlesSection = () => {
             >
               See all articles
               <IoIosArrowForward className="text-xl ml-2" />
-            </a>
+            </button>
           </div>
 
           {/* Desktop Cards Section */}
