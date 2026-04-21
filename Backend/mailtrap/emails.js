@@ -1,4 +1,4 @@
-import { VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_REQUEST_TEMPLATE, PASSWORD_RESET_SUCCESS_TEMPLATE } from "./emailTemplates.js"
+import { VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_REQUEST_TEMPLATE, PASSWORD_RESET_SUCCESS_TEMPLATE, WELCOME_EMAIL_TEMPLATE } from "./emailTemplates.js"
 import { mailtrapClient, sender } from "../mailtrap/mailtrap.config.js";
 
 
@@ -22,26 +22,48 @@ export const sendVerificationEmail = async (email, verificationToken) => {
   }
 };
 
+
 export const sendWelcomeEmail = async (email, name) => {
-  const recipient = [{email}];
+  const recipient = [{ email }];
 
   try {
-    await mailtrapClient.send({
+    const response = await mailtrapClient.send({
       from: sender,
       to: recipient,
-      template_uuid: "26280e9e-3076-4fc7-b154-28b02adb44ed",
-      template_variables: {
-        company_info_name : "TavCorp",
-        name : name,
-      },
+      subject: "Welcome to TavCorp 🎉",
+      html: WELCOME_EMAIL_TEMPLATE
+        .replace("{name}", name),
+      category: "Welcome email",
     });
-    console.log("Welcome email sent successfully");
-  }catch (error) {
+
+    console.log("Welcome email sent successfully", response);
+  } catch (error) {
     console.error("Error sending welcome email:", error);
     throw new Error(`Failed to send welcome email: ${error.message}`);
   }
-
 };
+
+
+// export const sendWelcomeEmail = async (email, name) => {
+//   const recipient = [{email}];
+
+//   try {
+//     await mailtrapClient.send({
+//       from: sender,
+//       to: recipient,
+//       template_uuid: "26280e9e-3076-4fc7-b154-28b02adb44ed",
+//       template_variables: {
+//         company_info_name : "TavCorp",
+//         name : name,
+//       },
+//     });
+//     console.log("Welcome email sent successfully");
+//   }catch (error) {
+//     console.error("Error sending welcome email:", error);
+//     throw new Error(`Failed to send welcome email: ${error.message}`);
+//   }
+
+// };
 
 export const sendResetPasswordEmail = async (email, resetURL) => {
   const recipient = [{email}];
