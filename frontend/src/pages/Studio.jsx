@@ -5,7 +5,7 @@ const Studio = () => {
         {/* Header */}
         <div className="text-center mb-20" data-aos="fade-up">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ color: "#DF9931" }} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
-            Studios
+            Studio
           </h1>
           <p className="text-white max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
             Our creative space where ideas, technology, and strategy come
