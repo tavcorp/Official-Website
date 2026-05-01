@@ -17,11 +17,11 @@ jobs:
 
       # FRONTEND
       - name: 📦 Install frontend dependencies
-        working-directory: frontend
+        working-directory: Frontend
         run: npm install
 
       - name: 🛠 Build React app
-        working-directory: frontend
+        working-directory: Frontend
         run: npm run build
 
       - name: 📂 Upload frontend to FTP
@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           server-dir: /html.wearetavcorp.com/
-          local-dir: frontend/dist/
+          local-dir: Frontend/dist/
 
       # BACKEND
       - name: 📦 Install backend dependencies
