@@ -1,0 +1,68 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+name: 🚀 Deploy Fullstack App
+
+jobs:
+  deploy:
+    name: 🎉 Fullstack Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Checkout code
+        uses: actions/checkout@v4
+
+      # FRONTEND
+      - name: 📦 Install frontend dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: 🛠 Build React app
+        working-directory: frontend
+        run: npm run build
+
+      - name: 📂 Upload frontend to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.wearetavcorp.com
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          server-dir: /html.wearetavcorp.com/
+          local-dir: frontend/build/
+
+      # BACKEND
+      - name: 📦 Install backend dependencies
+        working-directory: Backend
+        run: npm install
+
+      - name: 🛠 Build backend app
+        working-directory: Backend
+        run: npm run build
+
+      - name: 📂 Upload backend `dist/` via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.wearetavcorp.com
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          server-dir: /api.wearetavcorp.com/
+          local-dir: backend/dist/
+
+      - name: 🧼 Prepare tmp directory with fresh restart.txt
+        working-directory: backend
+        run: |
+          mkdir -p tmp
+          date > tmp/restart.txt
+
+
+      - name: 📂 restart trigger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.wearetavcorp.com
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          server-dir: /api.wearetavcorp.com/tmp/
+          local-dir: backend/tmp/
