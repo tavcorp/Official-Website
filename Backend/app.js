@@ -10,6 +10,7 @@ import connectDB from './config/db.js';
 
 import authRoutes from './routes/auth.route.js';
 import contactRoute from './routes/contact.route.js';
+import adminRoute from './routes/admin-router.js';
 
 const app = express();
 
@@ -30,7 +31,6 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.raw({ type: 'application/json' }));
 
-// app.use('/users', userRoutes);
 
 // Test route
 app.get("/", (req, res) => {
@@ -39,6 +39,10 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use('/contact_form', contactRoute);
+
+// admin routes
+app.use('/api/admin', adminRoute);
+
 
 app.use((req, res) => {
   res.status(404).json({ message: "Error 404: Resource not found" });
