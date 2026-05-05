@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
+import { lazy, Suspense } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -19,7 +20,8 @@ import OurTeam from "./pages/OurTeam";
 import AboutUs from "./pages/AboutUs";
 import FAQs from "./pages/FAQs";
 import Blog from "./pages/Blog";
-import Portfolio from "./pages/Portfolio";
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+// import Portfolio from "./pages/Portfolio";
 import Terms from "./pages/term";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import OurServicesPricing from "./pages/OurSAP";
@@ -97,7 +99,16 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/blogs" element={<Blog />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        
+        <Route
+    path="/portfolio"
+    element={
+      <Suspense fallback={<div>Loading...</div>}>
+        <Portfolio />
+      </Suspense>
+    }
+  />
+
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
 

@@ -173,40 +173,7 @@ const Header = () => {
                 Start Project <ImArrowUpRight2 />
               </button>
 
-              {isAuthenticated && user?.username && (
-                <div className="relative">
-                  {/* Desktop: Show full name with white bg */}
-                  <button
-                    onClick={toggleProfileDropdown}
-                    className="hidden md:block px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition"
-                  >
-                    <span>{user.username}</span>
-                  </button>
-                  {/* Mobile: Show initial in circle with white bg */}
-                  <button
-                    onClick={toggleProfileDropdown}
-                    className="md:hidden w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold text-lg hover:bg-gray-200 transition"
-                  >
-                    {user.username.charAt(0).toUpperCase()}
-                  </button>
-
-                  {/* Logout Dropdown */}
-                  {isProfileDropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-48 bg-red-600 rounded-md shadow-lg z-50">
-                      <button
-                        onClick={() => {
-                          logout();
-                          navigate("/");
-                          setIsProfileDropdownOpen(false);
-                        }}
-                        className="block px-4 py-3 text-white w-full text-left font-semibold hover:bg-red-700 rounded-md transition"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )}
+              
 
               <div className="relative">
                 <button
@@ -263,7 +230,7 @@ const Header = () => {
               </div>
 
               {/* Login/Signup for non-authenticated users */}
-              {!isAuthenticated && (
+              {/* {!isAuthenticated && (
                 <div className="mt-6 border-t border-gray-700 pt-4">
                   <Link
                     to="/LoginPage"
@@ -280,7 +247,7 @@ const Header = () => {
                     Signup
                   </Link>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         )}
@@ -334,7 +301,7 @@ const Header = () => {
                   </ul>
                 )}
               </li>
-              {!isAuthenticated && (
+              {/* {!isAuthenticated && (
                 <>
                   <li className="mt-1 border-t border-gray-700" />
                   <li>
@@ -356,7 +323,7 @@ const Header = () => {
                     </Link>
                   </li>
                 </>
-              )}
+              )} */}
               <li className="mt-3 px-4">
 
                 <button
