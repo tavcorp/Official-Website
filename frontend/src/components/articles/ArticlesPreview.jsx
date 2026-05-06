@@ -52,6 +52,7 @@ const ArticlesSection = () => {
                   date={item.date}
                   title={item.title}
                   image={item.image}
+                  onClick={() => navigate(`/blogs/${item.id}`)}
                 />
               </div>
             ))}
@@ -74,6 +75,7 @@ const ArticlesSection = () => {
                     date={item.date}
                     title={item.title}
                     image={item.image}
+                    onClick={() => navigate(`/blogs/${item.id}`)}
                   />
                 </SwiperSlide>
               ))}

@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from './styleBlog.module.css';
 import { posts } from '../data/blogData';
+import { useParams } from 'react-router-dom';
 
 const Blog = () => {
   const [expandedPost, setExpandedPost] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (id) {
+      setExpandedPost(parseInt(id));
+    }
+  }, [id]);
 
   const toggleExpand = (postId) => {
     setExpandedPost(expandedPost === postId ? null : postId);

@@ -1,6 +1,6 @@
-const ArticleCard = ({ experience, date, title, image }) => {
+const ArticleCard = ({ experience, date, title, image, onClick }) => {
   return (
-    <div className="flex flex-col group cursor-pointer h-full">
+    <div className="flex flex-col group cursor-pointer h-full" onClick={onClick}>
       <div className="w-full h-[1px] bg-white/30 mb-5 transition-colors duration-300 group-hover:bg-white/50" />
 
       <div className="flex items-center text-xs md:text-sm mb-4 font-medium tracking-wide">
