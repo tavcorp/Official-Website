@@ -30,7 +30,7 @@ const Hero1 = () => {
           </div>
 
           <div className={styles.right} data-aos="fade-left" data-aos-delay="200">
-            <p>Based in Africa, we are a premium multidisciplinary studio, combining design, development, marketing, and consultancy to help brands grow across industries and creative sectors.</p>
+            <p>We are a premium multidisciplinary studio, combining design, development, marketing, and consultancy to help brands grow across industries and creative sectors.</p>
             <button type="button" onClick={() => navigate('/studio')}>
               Learn more <IoIosArrowForward />
             </button>
