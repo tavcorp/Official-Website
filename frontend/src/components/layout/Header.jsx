@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { ImArrowUpRight2 } from "react-icons/im";
-import Logo from "/images/Crop_Main_Logo.png";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import { useAuth } from "../../store/auth";
@@ -141,7 +140,7 @@ const Header = () => {
             {/* LEFT: logo + main links */}
             <div className="flex items-center gap-8">
               <a href="/" aria-label="Homepage" className="flex items-center">
-                <img src={Logo} alt="Logo" className="h-5 md:h-11 w-auto" />
+                <img src="https://res.cloudinary.com/de3ryzm92/image/upload/v1776084953/Crop_Main_Logo_ntei2c.png" alt="Logo" className="h-5 md:h-11 w-auto" />
               </a>
 
               <ul className="hidden md:flex items-center gap-3 text-gray-200">
