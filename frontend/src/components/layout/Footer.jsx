@@ -87,7 +87,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col gap-3.5 text-[13.5px] lg:text-[14px] text-gray-200 font-medium">
                       <Link to="/news" className="hover:text-white transition">News</Link>
-                      <Link to="/pricing" className="hover:text-white transition">Pricings</Link>
+                      <Link to="/services-pricing" className="hover:text-white transition">Pricings</Link>
                     </div>
                   </div>
                 </div>

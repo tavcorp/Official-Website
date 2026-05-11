@@ -70,7 +70,7 @@ const OurServices = () => {
           </h1>
 
           <a
-            href="#"
+            href="/services-pricing"
             className="inline-flex items-center justify-center border border-amber-400 text-amber-400 rounded-full px-3 py-2 sm:px-4 sm:py-1.5 hover:bg-amber-400 hover:text-black transition font-bold w-fit"
           >
             <span className="text-xs sm:text-lg">See our Approach</span>
