@@ -32,13 +32,13 @@ export const faqs = [
     question: "Can TavCorp support me long-term?",
     answer: "Yes. We're built for ongoing partnerships, not one-off transactions.",
     linkText: "Become a Partner →",
-    link: "/SignUpPage",
+    link: "/contact",
   },
   {
     id: 6,
     question: "Can I scale my plan as I grow?",
     answer: "Yes. Upgrade, expand, or customize anytime.",
     linkText: "Scale With TavCorp →",
-    link: "/SignUpPage",
+    link: "/contact",
   }
 ]

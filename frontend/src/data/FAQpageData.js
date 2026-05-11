@@ -124,7 +124,7 @@ export const faqSections = [
         question: "How do subscriptions work?",
         answer: "You get ongoing access to services through a structured, request-based system.",
         linkText: "View Plans →",
-        link: "/SignUpPage",
+        link: "/contact",
       },
       {
         id: 18,
@@ -150,14 +150,14 @@ export const faqSections = [
         question: "Can TavCorp support me long-term?",
         answer: "Yes. We're built for ongoing partnerships, not one-off transactions.",
         linkText: "Become a Partner →",
-        link: "/SignUpPage",
+        link: "/contact",
       },
       {
         id: 21,
         question: "Can I scale my plan as I grow?",
         answer: "Yes. Upgrade, expand, or customize anytime.",
         linkText: "Scale With TavCorp →",
-        link: "/SignUpPage",
+        link: "/contact",
       },
       {
         id: 22,
@@ -213,7 +213,7 @@ export const faqSections = [
         question: "Why TavCorp at scale?",
         answer: "Because fragmented systems break growth. TavCorp keeps everything aligned—design, tech, AI, and strategy in one flow.",
         linkText: "Work With TavCorp →",
-        link: "/SignUpPage",
+        link: "/contact",
       },
       {
         id: 30,
