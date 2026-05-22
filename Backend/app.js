@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-app.use('/contact_form', contactRoute);
+app.use('/api/contact_form', contactRoute);
 
 // admin routes
 app.use('/api/admin', adminRoute);
