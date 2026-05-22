@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CheckCircle, X, Info } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // const CONTACT_API =
 //   import.meta.env.VITE_API_URL_CONTACT ||
@@ -17,6 +19,8 @@ const defaultContactFormData = {
 
 const Contact = () => {
   const [contact, setContact] = useState(defaultContactFormData);
+  const [toast, setToast] = useState({ show: false, message: "", type: "success" });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -29,6 +33,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
+    setToast({
+      show: true,
+      message: "Sending your message...",
+      type: "info"
+    });
 
     try {
       const response = await fetch(`${CONTACT_API}/contact`, {
@@ -45,19 +56,73 @@ const Contact = () => {
         throw new Error(data.message || "Something went wrong");
       }
 
+      const submittedName = contact.username;
+      
       // Reset form after successful submission
       setContact(defaultContactFormData);
 
       console.log(data);
-      alert("Message sent successfully");
+      setToast({ 
+        show: true, 
+        message: `Thank you ${submittedName}! Your message has been sent successfully.`,
+        type: "success" 
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "success" }), 5000);
     } catch (error) {
       console.log(error);
-      alert("Message not successful");
+      setToast({ 
+        show: true, 
+        message: "Sorry, your message could not be sent. Please try again.",
+        type: "error" 
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "error" }), 5000);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#1B1B1B] flex items-center justify-center px-4 pt-24 pb-12">
+    <div className="min-h-screen bg-[#1B1B1B] flex items-center justify-center px-4 pt-24 pb-12 relative overflow-hidden">
+      
+      {/* Toast Notification */}
+      <div className="fixed top-24 left-0 right-0 md:left-auto md:right-8 z-50 flex justify-center md:block px-4 pointer-events-none">
+        <AnimatePresence>
+          {toast.show && (
+            <motion.div 
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="w-full max-w-md md:w-[400px] pointer-events-auto"
+            >
+              <div className={`flex items-center w-full bg-[#252525] rounded-xl shadow-2xl overflow-hidden border ${toast.type === 'error' ? 'border-red-500/30' : 'border-[#333]'}`}>
+              {/* Left Accent Border */}
+              <div className={`w-2 self-stretch ${toast.type === 'error' ? 'bg-red-500' : 'bg-[#DF9931]'}`}></div>
+              
+              {/* Icon & Message */}
+              <div className="flex items-center px-4 py-3 flex-1">
+                {toast.type === 'error' && <X className="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />}
+                {toast.type === 'info' && <Info className="w-6 h-6 text-[#DF9931] mr-3 flex-shrink-0 animate-pulse" />}
+                {toast.type === 'success' && <CheckCircle className="w-6 h-6 text-[#DF9931] mr-3 flex-shrink-0" />}
+                <span className="text-sm sm:text-base font-medium text-[#F1F1F1] leading-tight">
+                  {toast.message}
+                </span>
+              </div>
+              
+              {/* Close Button */}
+              <button 
+                onClick={() => setToast({ show: false, message: "", type: toast.type })}
+                className="px-4 py-3 text-gray-400 hover:text-[#DF9931] transition-colors"
+                aria-label="Close notification"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+        </AnimatePresence>
+      </div>
+
       <div className="w-full max-w-md bg-[#252525] rounded-xl shadow-lg p-6 text-[#F1F1F1]">
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center text-white">
@@ -126,9 +191,14 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full py-2 mt-2 rounded bg-[#DF9931] text-[#1B1B1B] font-semibold hover:bg-[#E8A649] transition"
+            disabled={isLoading}
+            className={`w-full py-2 mt-2 rounded font-semibold transition ${
+              isLoading 
+                ? 'bg-gray-500 text-gray-300 cursor-not-allowed' 
+                : 'bg-[#DF9931] text-[#1B1B1B] hover:bg-[#E8A649]'
+            }`}
           >
-            Send Message
+            {isLoading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
       </div>
