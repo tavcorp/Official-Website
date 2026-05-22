@@ -37,11 +37,11 @@ app.get("/", (req, res) => {
   res.send("Welcome to the backend of the website");
 });
 
-app.use("/api/auth", authRoutes);
-app.use('/api/contact_form', contactRoute);
+app.use("/auth", authRoutes);
+app.use('/contact_form', contactRoute);
 
 // admin routes
-app.use('/api/admin', adminRoute);
+app.use('/admin', adminRoute);
 
 
 app.use((req, res) => {
