@@ -66,7 +66,7 @@ const Footer = () => {
                 <div>
                   <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">RESOURCES</h5>
                   <Link to="/store" className="block text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium hover:text-white transition">Store</Link>
-                  <Link to="/quiz" className="block text-[13.5px] lg:text-[14px] text-gray-200 font-medium hover:text-white transition">Brand Health Quiz</Link>
+                  <Link to="https://tavcorp-brand-health-quiz.vercel.app/" className="block text-[13.5px] lg:text-[14px] text-gray-200 font-medium hover:text-white transition">Brand Health Quiz</Link>
                 </div>
               </div>
 
