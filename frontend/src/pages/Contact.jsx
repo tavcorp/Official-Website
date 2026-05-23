@@ -2,13 +2,13 @@ import { useState } from "react";
 import { CheckCircle, X, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// const CONTACT_API =
-//   import.meta.env.VITE_API_URL_CONTACT ||
-//   (import.meta.env.MODE === "development"
-//     ? "http://localhost:4000/contact_form"
-//     : "/contact_form");
+const CONTACT_API =
+  import.meta.env.VITE_API_URL_CONTACT ||
+  (import.meta.env.MODE === "development"
+    ? "http://localhost:4000/contact_form"
+    : "/contact_form");
 
-const CONTACT_API =  "https://api.wearetavcorp.com/contact_form";
+// const CONTACT_API =  "https://api.wearetavcorp.com/contact_form";
 
 const defaultContactFormData = {
   username: "",
