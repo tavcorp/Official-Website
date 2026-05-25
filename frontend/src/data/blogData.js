@@ -22,7 +22,7 @@ export const posts = [
       "Final remark: A rebrand at the right time feels like growing up. A rebrand at the wrong time feels like running away. Know the difference. Your customers already do."
     ],
     points: [
-     "By Kiana Olawumi"
+     "By Kiana Olawumi."
     ]
   },
   {
@@ -38,7 +38,7 @@ export const posts = [
       "So What Went Wrong?: Minimalism started as a good idea: get rid of what you don't need. But it turned into a competition for who can own the least and look the coldest. It mistook emptiness for elegance. It forgot that design serves people, not the other way around. The Better Way: You don't need mess. You don't need clutter. You need smart design. A comfortable chair that also looks nice. A shelf with a few books you actually love. A room that is calm but not creepy. Clean but not cold. Minimalism's biggest misstep? Thinking that less is always more. Sometimes, more is just more. And that's okay. So keep it tidy. Keep it simple. But please—keep it livable. Your home is not a museum. And you are not a robot."
     ],
     points: [
-      "By Favour Ipadeola"
+      "By Favour Ipadeola."
     ]
   },
  {
@@ -62,8 +62,34 @@ export const posts = [
       "Final Remark: No leader builds a perfect culture. Mistakes happen. Professionalism is measured not by absence of failure but by speed of repair. The goal is not to eliminate difference. It is to build a team where difference is not a risk but a signal to amplify. That is the work. It is slow, hard, and the only path to excellence."
     ],
     points: [
-     "By Vera Banigo"
-    ],
-    
+     "By Vera Banigo."
+    ],  
   },
+  {
+    id: 4,
+    title: "Balancing Human Creativity with AI-Generated Content",
+    content: [
+      "Over the past few years, I've watched Artificial Intelligence evolve from something people discussed as 'the future' into something many of us use almost every day. Today, AI can write articles, generate images, create designs, suggest ideas, and even help build entire marketing campaigns in minutes. As someone working in design and digital experiences, I see the appeal. AI saves time. It speeds up processes that once took hours and sometimes even days. But I've also noticed something else happening: the internet is gradually becoming filled with content that feels repetitive. It sounds polished, but often lacks personality. It says a lot without really saying anything.",
+
+      "That made me start thinking about an important question: How do we take advantage of AI without losing the human side of creativity? For me, I don't think the conversation should be about humans versus AI. I think it should be about humans working with AI.",
+
+      "AI is incredibly good at handling tasks that can be repetitive or time-consuming. I can use it to brainstorm ideas, organize thoughts, generate drafts, summarize information, or speed up research. Things that previously required a significant amount of time can happen much faster now. But speed isn't everything. Just because content can be created quickly doesn't automatically make it meaningful. People don't usually remember content because it was efficient. They remember content because it connected with them.",
+
+      "I've come across articles that were grammatically perfect but felt empty. I've seen social media posts that looked professional but sounded exactly like dozens of others. Sometimes you can almost tell immediately when something was created without any real human involvement. The issue isn't AI itself. The issue is relying on it too heavily.",
+
+      "I believe creativity goes beyond generating words, images, or ideas. Creativity comes from experiences, emotions, observations, and perspectives. It comes from understanding people. As humans, we naturally bring things that technology struggles to fully replicate. We understand emotions. We understand culture and context. We tell stories based on experiences we've lived through. We know how to recognize subtle details that make something feel authentic.",
+
+      "As a designer, I think about this often. A design isn't successful simply because it looks good. It works because it solves a problem for real people. The same applies to content. People connect with authenticity more than perfection. That is why I see AI as more of an assistant than a replacement.",
+
+      "Personally, I think the best approach is to let AI handle the repetitive parts of the process while humans remain responsible for the creative direction. I can use AI to generate ideas or create a starting point, but I still want to shape the message, add personality, and make sure it sounds real. Because at the end of the day, brands are built on trust and connection.",
+
+      "As more AI-generated content fills digital platforms, authenticity may become one of the biggest things that separates one brand from another. People want to engage with brands that feel human. They want stories they can relate to and voices that feel genuine. AI can help us work faster. But human creativity gives meaning to what we create.",
+
+      "I don't think the future belongs entirely to AI, and I don't think it belongs entirely to humans either. I think the future belongs to people who understand how to combine both in a way that creates something useful, memorable, and real. At Tavcorp, I believe technology should enhance human potential, not replace it. The goal isn't simply creating more content. It's creating content that actually matters."
+    ],
+    points: [
+     "By Johnson Okafor."
+    ]
+  },
+
 ];
