@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import { CheckCircle, X, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const NEWSLETTER_API =
-  import.meta.env.VITE_API_URL_NEWSLETTER ||
+
+const UPDATE_API =
+  import.meta.env.VITE_API_URL_SUBSCRIBE ||
   (import.meta.env.MODE === "development"
-    ? "http://localhost:4000/newsletter"
-    : "/newsletter");
+    ? "http://localhost:4000/subscribe-update"
+    : "https://api.wearetavcorp.com/subscribe-update");
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -36,13 +37,13 @@ const Footer = () => {
     });
 
     try {
-      const response = await fetch(`${NEWSLETTER_API}/subscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+         const response = await fetch(`${UPDATE_API}/sub-update`, {
+            method: "POST",
+            headers: {
+                    "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+            });
 
       const data = await response.json();
 
@@ -112,7 +113,10 @@ const Footer = () => {
       </div>
       <div className="w-[90%] lg:w-[68%] mx-auto py-10 sm:py-16" data-aos="fade-up">
         {/* Top area: newsletter left + columns right */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24" data-aos="fade-up">
+        <div
+          className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24"
+          data-aos="fade-up"
+        >
           {/* Newsletter / left */}
           <div className="md:col-span-6 lg:col-span-5">
             <h4 className="text-[22px] sm:text-2xl lg:text-[28px] font-bold text-white mb-6 md:mb-10 leading-[1.3] tracking-tight">
@@ -120,27 +124,48 @@ const Footer = () => {
               articles, trends, inspiration &amp; more
             </h4>
 
-            <label className="block text-sm font-bold text-white mb-3 tracking-wide">Email Address</label>
+            <label className="block text-sm font-bold text-white mb-3 tracking-wide">
+              Email Address
+            </label>
+
             <form
-              onSubmit={handleSubscribe}
-              className="flex w-full max-w-full sm:max-w-md bg-[#252525] border border-[#DF9931] rounded-sm shadow-inner"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                required
-                disabled={isLoading}
-                className="flex-1 bg-transparent placeholder-gray-400 px-4 sm:px-5 py-3 sm:py-3.5 outline-none text-white text-[14px] sm:text-[15px] disabled:opacity-50"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                disabled={isLoading}
-                className="px-4 sm:px-5 hover:bg-gray-700 transition text-white disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <svg stroke="currentColor" fill="none" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1.4em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+  onSubmit={handleSubscribe}
+  className="flex w-full max-w-full sm:max-w-md bg-[#252525] border border-[#DF9931] rounded-sm shadow-inner"
+>
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email address"
+    required
+    disabled={isLoading}
+    className="flex-1 bg-transparent placeholder-gray-400 px-4 sm:px-5 py-3 sm:py-3.5 outline-none text-white text-[14px] sm:text-[15px] disabled:opacity-50"
+  />
+
+  <button
+    type="submit"
+    aria-label="Subscribe"
+    disabled={isLoading}
+    className="px-4 sm:px-5 hover:bg-gray-700 transition text-white disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+                {isLoading ? (
+                  "..."
+                ) : (
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    height="1.4em"
+                    width="1.4em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                )}
               </button>
             </form>
 
@@ -158,45 +183,101 @@ const Footer = () => {
           {/* Right columns */}
           <div className="md:col-span-6 lg:col-span-7">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
-
-              {/* Left inner column (Work Inquiry + Abuja) */}
+              {/* Left inner column */}
               <div className="flex flex-col gap-10 md:gap-12">
                 <div>
-                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">Work Inquiry</h5>
-                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium">hello@wearetavcorp.com</p>
-                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 font-medium">+234-816-608-0757</p>
+                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">
+                    Work Inquiry
+                  </h5>
+
+                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium">
+                    hello@wearetavcorp.com
+                  </p>
+
+                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 font-medium">
+                    +234-816-608-0757
+                  </p>
                 </div>
 
                 <div>
-                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">RESOURCES</h5>
-                  <Link to="/store" className="block text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium hover:text-white transition">Store</Link>
-                  <Link to="https://tavcorp-brand-health-quiz.vercel.app/" className="block text-[13.5px] lg:text-[14px] text-gray-200 font-medium hover:text-white transition">Brand Health Quiz</Link>
+                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">
+                    RESOURCES
+                  </h5>
+
+                  <Link
+                    to="/store"
+                    className="block text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium hover:text-white transition"
+                  >
+                    Store
+                  </Link>
+
+                  <a
+                    href="https://tavcorp-brand-health-quiz.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[13.5px] lg:text-[14px] text-gray-200 font-medium hover:text-white transition"
+                  >
+                    Brand Health Quiz
+                  </a>
                 </div>
               </div>
 
-              {/* Right inner column (Open Position + Links) */}
+              {/* Right inner column */}
               <div className="flex flex-col gap-10 md:gap-12">
                 <div>
-                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">Open  Position</h5>
-                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium">Junior 3D Designer (Intern)</p>
-                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 font-medium">Illustrator (Remote)</p>
+                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">
+                    Open Position
+                  </h5>
+
+                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 mb-1.5 sm:mb-2.5 font-medium">
+                    Junior 3D Designer (Intern)
+                  </p>
+
+                  <p className="text-[13.5px] lg:text-[14px] text-gray-200 font-medium">
+                    Illustrator (Remote)
+                  </p>
                 </div>
 
                 <div>
-                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">Links</h5>
+                  <h5 className="text-[18px] sm:text-[22px] font-bold text-white mb-3 sm:mb-5 tracking-wide">
+                    Links
+                  </h5>
+
                   <div className="grid grid-cols-2 gap-x-6 gap-y-3">
                     <div className="flex flex-col gap-3.5 text-[13.5px] lg:text-[14px] text-gray-200 font-medium">
-                      <Link to="/terms" className="hover:text-white transition whitespace-nowrap">Terms &amp; Conditions</Link>
-                      <Link to="/privacy" className="hover:text-white transition whitespace-nowrap">Privacy Policy</Link>
+                      <Link
+                        to="/terms"
+                        className="hover:text-white transition whitespace-nowrap"
+                      >
+                        Terms &amp; Conditions
+                      </Link>
+
+                      <Link
+                        to="/privacy"
+                        className="hover:text-white transition whitespace-nowrap"
+                      >
+                        Privacy Policy
+                      </Link>
                     </div>
+
                     <div className="flex flex-col gap-3.5 text-[13.5px] lg:text-[14px] text-gray-200 font-medium">
-                      <Link to="/news" className="hover:text-white transition">News</Link>
-                      <Link to="/services-pricing" className="hover:text-white transition">Pricings</Link>
+                      <Link
+                        to="/news"
+                        className="hover:text-white transition"
+                      >
+                        News
+                      </Link>
+
+                      <Link
+                        to="/services-pricing"
+                        className="hover:text-white transition"
+                      >
+                        Pricings
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -204,7 +285,7 @@ const Footer = () => {
         {/* Horizontal divider */}
         <hr className="border-t border-[#DF9931] my-8 md:my-10" />
 
-        {/* CTA row: left big title, right socials */}
+        {/* CTA row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12 pt-4 md:pt-6 pb-2">
           <div className="flex-1 lg:pl-[2px]">
             <h2 className="text-[28px] sm:text-[40px] lg:text-[46px] font-bold text-white leading-[1.2] tracking-tight">
@@ -215,12 +296,46 @@ const Footer = () => {
           </div>
 
           <div className="w-full md:w-auto md:mr-4 lg:mr-12 mt-4 md:mt-0 lg:pl-[2px]">
-            <h6 className="text-[18px] sm:text-[22px] font-bold text-white mb-4 sm:mb-5 tracking-wide text-left">Our Socials</h6>
+            <h6 className="text-[18px] sm:text-[22px] font-bold text-white mb-4 sm:mb-5 tracking-wide text-left">
+              Our Socials
+            </h6>
+
             <div className="grid grid-cols-2 gap-x-12 gap-y-3.5 lg:gap-x-16 text-[13.5px] lg:text-[14px] font-medium text-gray-200">
-              <a href="https://www.instagram.com/tavcorp/" className="hover:text-white transition text-left">Instagram</a>
-              <a href="https://tiktok.com" className="hover:text-white transition text-left">Tiktok</a>
-              <a href="https://x.com/tavcorp_" className="hover:text-white transition text-left">Twitter/X</a>
-              <a href="https://www.linkedin.com/company/tavcorp/" className="hover:text-white transition text-left">LinkedIn</a>
+              <a
+                href="https://www.instagram.com/tavcorp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition text-left"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition text-left"
+              >
+                Tiktok
+              </a>
+
+              <a
+                href="https://x.com/tavcorp_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition text-left"
+              >
+                Twitter/X
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/tavcorp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition text-left"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
@@ -232,7 +347,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Banner (responsive) */}
+        {/* Banner */}
         <div className="mt-8 sm:mt-10 w-full lg:pl-[2px]">
           <img
             src="https://res.cloudinary.com/de3ryzm92/image/upload/c_fill,q_auto,f_auto/v1776084032/Banner_jkopjo.jpg"
