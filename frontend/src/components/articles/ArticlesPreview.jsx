@@ -5,8 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
+
 const ArticlesSection = () => {
   const navigate = useNavigate();
+
   return (
     <article>
       <section id="articles" className="py-20 bg-[#262626] text-white">
@@ -43,19 +45,38 @@ const ArticlesSection = () => {
             </button>
           </div>
 
-          {/* Desktop Cards Section */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6" data-aos="fade-up">
-            {articlesData.map((item, index) => (
-              <div key={item.id} data-aos="fade-up" data-aos-delay={index * 100}>
-                <ArticleCard
-                  experience={item.experience}
-                  date={item.date}
-                  title={item.title}
-                  image={item.image}
-                  onClick={() => navigate(`/blogs/${item.id}`)}
-                />
-              </div>
-            ))}
+          {/* Desktop Carousel Section */}
+          <div className="hidden md:block relative mt-6" data-aos="fade-up">
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={30}
+              slidesPerView={3}
+              loop={true}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              breakpoints={{
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
+              className="articles-desktop-swiper"
+            >
+              {articlesData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <ArticleCard
+                    experience={item.experience}
+                    date={item.date}
+                    title={item.title}
+                    image={item.image}
+                    onClick={() => navigate(`/blogs/${item.id}`)}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           {/* Mobile Swiper Section */}

@@ -1,6 +1,9 @@
 // src/components/layout/Footer.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { CheckCircle, X, Info } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 const UPDATE_API =
   import.meta.env.VITE_API_URL_SUBSCRIBE ||
@@ -8,55 +11,61 @@ const UPDATE_API =
     ? "http://localhost:4000/subscribe-update"
     : "https://api.wearetavcorp.com/subscribe-update");
 
-
-
-const defaultSubscribeUpdate = {
-  email: "",
-};
-
 const Footer = () => {
-  const [subscribeUpdate, setSubscribeUpdate] = useState(
-    defaultSubscribeUpdate
-  );
+  const [email, setEmail] = useState("");
+  const [toast, setToast] = useState({ show: false, message: "", type: "success" });
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-
-    setSubscribeUpdate((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
 
+    if (!email.trim()) {
+      setToast({
+        show: true,
+        message: "Please enter a valid email address.",
+        type: "error"
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "error" }), 5000);
+      return;
+    }
+
     setIsLoading(true);
+    setToast({
+      show: true,
+      message: "Subscribing...",
+      type: "info"
+    });
 
     try {
-      const response = await fetch(`${UPDATE_API}/sub-update`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(subscribeUpdate),
-      });
+         const response = await fetch(`${UPDATE_API}/sub-update`, {
+            method: "POST",
+            headers: {
+                    "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+            });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Something went wrong");
+        throw new Error(data.message || "Subscription failed");
       }
 
-      // Reset form after successful submission
-      setSubscribeUpdate(defaultSubscribeUpdate);
-
-      console.log(data);
-      alert("Subscribed successfully!");
+      setEmail("");
+      setToast({
+        show: true,
+        message: "Thank you for subscribing! Check your email for confirmation.",
+        type: "success"
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "success" }), 5000);
     } catch (error) {
       console.log(error);
-      alert("Subscription failed. Please try again.");
+      setToast({
+        show: true,
+        message: error.message || "Subscription failed. Please try again.",
+        type: "error"
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "error" }), 5000);
     } finally {
       setIsLoading(false);
     }
@@ -64,10 +73,45 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#1B1B1B] text-[#F1F1F1]">
-      <div
-        className="w-[90%] lg:w-[68%] mx-auto py-10 sm:py-16"
-        data-aos="fade-up"
-      >
+      {/* Toast Notification */}
+      <div className="fixed top-24 left-0 right-0 md:left-auto md:right-8 z-50 flex justify-center md:block px-4 pointer-events-none">
+        <AnimatePresence>
+          {toast.show && (
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="w-full max-w-md md:w-[400px] pointer-events-auto"
+            >
+              <div className={`flex items-center w-full bg-[#252525] rounded-xl shadow-2xl overflow-hidden border ${toast.type === 'error' ? 'border-red-500/30' : 'border-[#333]'}`}>
+                {/* Left Accent Border */}
+                <div className={`w-2 self-stretch ${toast.type === 'error' ? 'bg-red-500' : 'bg-[#DF9931]'}`}></div>
+
+                {/* Icon & Message */}
+                <div className="flex items-center px-4 py-3 flex-1">
+                  {toast.type === 'error' && <X className="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />}
+                  {toast.type === 'info' && <Info className="w-6 h-6 text-[#DF9931] mr-3 flex-shrink-0 animate-pulse" />}
+                  {toast.type === 'success' && <CheckCircle className="w-6 h-6 text-[#DF9931] mr-3 flex-shrink-0" />}
+                  <span className="text-sm sm:text-base font-medium text-[#F1F1F1] leading-tight">
+                    {toast.message}
+                  </span>
+                </div>
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setToast({ show: false, message: "", type: toast.type })}
+                  className="px-4 py-3 text-gray-400 hover:text-[#DF9931] transition-colors"
+                  aria-label="Close notification"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      <div className="w-[90%] lg:w-[68%] mx-auto py-10 sm:py-16" data-aos="fade-up">
         {/* Top area: newsletter left + columns right */}
         <div
           className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 lg:gap-24"
@@ -85,25 +129,25 @@ const Footer = () => {
             </label>
 
             <form
-              onSubmit={handleSubmit}
-              className="flex w-full max-w-full sm:max-w-md bg-[#252525] border border-[#DF9931] rounded-sm shadow-inner"
-            >
-              <input
-                type="email"
-                name="email"
-                value={subscribeUpdate.email}
-                onChange={handleInput}
-                placeholder="Enter your email address"
-                required
-                className="flex-1 bg-transparent placeholder-gray-400 px-4 sm:px-5 py-3 sm:py-3.5 outline-none text-white text-[14px] sm:text-[15px]"
-              />
+  onSubmit={handleSubscribe}
+  className="flex w-full max-w-full sm:max-w-md bg-[#252525] border border-[#DF9931] rounded-sm shadow-inner"
+>
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email address"
+    required
+    disabled={isLoading}
+    className="flex-1 bg-transparent placeholder-gray-400 px-4 sm:px-5 py-3 sm:py-3.5 outline-none text-white text-[14px] sm:text-[15px] disabled:opacity-50"
+  />
 
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                disabled={isLoading}
-                className="px-4 sm:px-5 hover:bg-gray-700 transition text-white disabled:opacity-50"
-              >
+  <button
+    type="submit"
+    aria-label="Subscribe"
+    disabled={isLoading}
+    className="px-4 sm:px-5 hover:bg-gray-700 transition text-white disabled:opacity-50 disabled:cursor-not-allowed"
+  >
                 {isLoading ? (
                   "..."
                 ) : (
