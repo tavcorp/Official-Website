@@ -54,11 +54,14 @@ const Blog = () => {
                       </p>
                     ))}
 
-                    <ul className={styles.blogList}>
-                      {post.points.map((point, index) => (
-                        <li key={index}>{point}</li>
-                      ))}
-                    </ul>
+                    {post.author && (
+                      <div className={styles.blogAuthorContainer}>
+                        <p className={styles.blogAuthorText}>
+                          By <span className={styles.blogAuthorName}>{post.author.name}</span>
+                        </p>
+                        <p className={styles.blogAuthorRole}>{post.author.role}</p>
+                      </div>
+                    )}
                   </>
                 )}
 

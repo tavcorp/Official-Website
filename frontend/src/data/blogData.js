@@ -21,9 +21,10 @@ export const posts = [
 
       "I don't think the future belongs entirely to AI, and I don't think it belongs entirely to humans either. I think the future belongs to people who understand how to combine both in a way that creates something useful, memorable, and real. At Tavcorp, I believe technology should enhance human potential, not replace it. The goal isn't simply creating more content. It's creating content that actually matters."
     ],
-    points: [
-     "By Johnson Okafor."
-    ]
+    author: {
+      name: "Johnson Okafor",
+      role: "Junior UI Design Intern"
+    }
   },
    {
     id: 2,
@@ -47,9 +48,10 @@ export const posts = [
 
       "Final remark: A rebrand at the right time feels like growing up. A rebrand at the wrong time feels like running away. Know the difference. Your customers already do."
     ],
-    points: [
-     "By Kiana Olawumi."
-    ]
+    author: {
+      name: "Kiana Olawumi",
+      role: "Social Media Manager"
+    }
   },
   {
     id: 3,
@@ -63,9 +65,10 @@ export const posts = [
 
       "So What Went Wrong?: Minimalism started as a good idea: get rid of what you don't need. But it turned into a competition for who can own the least and look the coldest. It mistook emptiness for elegance. It forgot that design serves people, not the other way around. The Better Way: You don't need mess. You don't need clutter. You need smart design. A comfortable chair that also looks nice. A shelf with a few books you actually love. A room that is calm but not creepy. Clean but not cold. Minimalism's biggest misstep? Thinking that less is always more. Sometimes, more is just more. And that's okay. So keep it tidy. Keep it simple. But please—keep it livable. Your home is not a museum. And you are not a robot."
     ],
-    points: [
-      "By Favour Ipadeola."
-    ]
+    author: {
+      name: "Favour Ipadeola",
+      role: "Junior Marketing Intern"
+    }
   },
  {
     id: 4,
@@ -87,8 +90,9 @@ export const posts = [
 
       "Final Remark: No leader builds a perfect culture. Mistakes happen. Professionalism is measured not by absence of failure but by speed of repair. The goal is not to eliminate difference. It is to build a team where difference is not a risk but a signal to amplify. That is the work. It is slow, hard, and the only path to excellence."
     ],
-    points: [
-     "By Vera Banigo."
-    ],  
+    author: {
+      name: "Vera Banigo",
+      role: "Project Manager"
+    }
   },
 ];
