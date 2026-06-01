@@ -154,3 +154,37 @@
   background: #ffffff;
   color: #000000;
 } */
+
+.blogAuthorContainer {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #DF9931;
+  border-radius: 4px 12px 12px 4px;
+  transition: background 0.3s ease;
+}
+
+.blogAuthorContainer:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blogAuthorText {
+  font-size: 15px;
+  color: #E5E5E5;
+  margin-bottom: 6px !important;
+  font-weight: 400;
+}
+
+.blogAuthorName {
+  font-style: normal;
+  font-weight: 600;
+  color: #DF9931;
+}
+
+.blogAuthorRole {
+  font-size: 13px;
+  color: #A0A0A0;
+  font-style: italic;
+  font-weight: 500;
+  margin: 4px 0 0 0;
+}
