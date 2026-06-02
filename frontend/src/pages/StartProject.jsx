@@ -1,6 +1,14 @@
 import { useState } from "react";
 
+const START_PROJECT_API =
+  import.meta.env.VITE_API_URL_START_PROJECT ||
+  (import.meta.env.MODE === "development"
+    ? "http://localhost:4000/start_Project"
+    : "/start_Project");
+
 export default function ProjectInquiryForm() {
+  const [loading, setLoading] = useState(false);
+
   const servicesList = [
     "Branding & Brand Identity",
     "Design",
@@ -13,6 +21,8 @@ export default function ProjectInquiryForm() {
     "Consulting",
     "Social Media Marketing",
   ];
+
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -36,10 +46,57 @@ export default function ProjectInquiryForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+
+    // Prevent multiple submissions
+    if (loading) return;
+
+    if (formData.services.length === 0) {
+      alert("Please select at least one service.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        `${START_PROJECT_API}/project-ideas`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Submission failed");
+      }
+
+      alert("Project inquiry submitted successfully!");
+
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        services: [],
+        description: "",
+        timeline: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
+
+
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 mt-10 ">
@@ -58,7 +115,7 @@ export default function ProjectInquiryForm() {
         {/* Form */}
 
         <form onSubmit={handleSubmit} className="space-y-6">
-        
+
           <span className="text-2xl font-bold">Project Inquiry Form</span>
 
           {/* Name & Company */}
@@ -80,6 +137,7 @@ export default function ProjectInquiryForm() {
               value={formData.company}
               onChange={handleChange}
               className="w-full border rounded-lg px-4 py-3"
+              required
             />
           </div>
 
@@ -123,6 +181,7 @@ export default function ProjectInquiryForm() {
             onChange={handleChange}
             rows={5}
             className="w-full border rounded-lg px-4 py-3"
+            required
           />
 
           {/* Timeline */}
@@ -133,6 +192,7 @@ export default function ProjectInquiryForm() {
               value={formData.timeline}
               onChange={handleChange}
               className="w-full border rounded-lg px-4 py-3"
+              required
             >
               <option value="">Select timeline</option>
               <option value="ASAP">ASAP</option>
@@ -145,9 +205,10 @@ export default function ProjectInquiryForm() {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition"
+            disabled={loading}
+            className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit Project Inquiry
+            {loading ? "Submitting..." : "Submit Project Inquiry"}
           </button>
         </form>
 
