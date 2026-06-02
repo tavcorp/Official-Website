@@ -11,7 +11,9 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/auth.route.js';
 import contactRoute from './routes/contact.route.js';
 import subscribeRoute from './routes/subscribe.route.js';
+import startProjectRoute from './routes/startProject.route.js';
 import adminRoute from './routes/admin-router.js';
+
 
 
 
@@ -43,6 +45,7 @@ app.get("/", (req, res) => {
 app.use("/auth", authRoutes);
 app.use('/contact_form', contactRoute);
 app.use('/subscribe-update', subscribeRoute);
+app.use('/start_Project', startProjectRoute);
 
 // admin routes
 app.use('/admin', adminRoute);
