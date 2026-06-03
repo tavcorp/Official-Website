@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CheckCircle, X, Info } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const START_PROJECT_API =
   import.meta.env.VITE_API_URL_START_PROJECT ||
@@ -8,6 +10,7 @@ const START_PROJECT_API =
 
 export default function ProjectInquiryForm() {
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState({ show: false, message: "", type: "success" });
 
   const servicesList = [
     "Branding & Brand Identity",
@@ -53,12 +56,22 @@ export default function ProjectInquiryForm() {
     if (loading) return;
 
     if (formData.services.length === 0) {
-      alert("Please select at least one service.");
+      setToast({
+        show: true,
+        message: "Please select at least one service.",
+        type: "error"
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "error" }), 5000);
       return;
     }
 
     try {
       setLoading(true);
+      setToast({
+        show: true,
+        message: "Sending your inquiry...",
+        type: "info"
+      });
 
       const response = await fetch(
         `${START_PROJECT_API}/project-ideas`,
@@ -77,7 +90,12 @@ export default function ProjectInquiryForm() {
         throw new Error(data.message || "Submission failed");
       }
 
-      alert("Project inquiry submitted successfully!");
+      setToast({ 
+        show: true, 
+        message: "Project inquiry submitted successfully!",
+        type: "success" 
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "success" }), 5000);
 
       setFormData({
         name: "",
@@ -89,7 +107,12 @@ export default function ProjectInquiryForm() {
       });
     } catch (error) {
       console.error(error);
-      alert(error.message);
+      setToast({ 
+        show: true, 
+        message: error.message || "Submission failed. Please try again.",
+        type: "error" 
+      });
+      setTimeout(() => setToast({ show: false, message: "", type: "error" }), 5000);
     } finally {
       setLoading(false);
     }
@@ -100,6 +123,46 @@ export default function ProjectInquiryForm() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 mt-10 ">
+      
+      {/* Toast Notification */}
+      <div className="fixed top-24 left-0 right-0 md:left-auto md:right-8 z-50 flex justify-center md:block px-4 pointer-events-none">
+        <AnimatePresence>
+          {toast.show && (
+            <motion.div 
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="w-full max-w-md md:w-[400px] pointer-events-auto"
+            >
+              <div className={`flex items-center w-full bg-[#252525] rounded-xl shadow-2xl overflow-hidden border ${toast.type === 'error' ? 'border-red-500/30' : 'border-[#333]'}`}>
+              {/* Left Accent Border */}
+              <div className={`w-2 self-stretch ${toast.type === 'error' ? 'bg-red-500' : 'bg-[#DF9931]'}`}></div>
+              
+              {/* Icon & Message */}
+              <div className="flex items-center px-4 py-3 flex-1">
+                {toast.type === 'error' && <X className="w-6 h-6 text-red-500 mr-3 flex-shrink-0" />}
+                {toast.type === 'info' && <Info className="w-6 h-6 text-[#DF9931] mr-3 flex-shrink-0 animate-pulse" />}
+                {toast.type === 'success' && <CheckCircle className="w-6 h-6 text-[#DF9931] mr-3 flex-shrink-0" />}
+                <span className="text-sm sm:text-base font-medium text-[#F1F1F1] leading-tight">
+                  {toast.message}
+                </span>
+              </div>
+              
+              {/* Close Button */}
+              <button 
+                onClick={() => setToast({ show: false, message: "", type: toast.type })}
+                className="px-4 py-3 text-gray-400 hover:text-[#DF9931] transition-colors"
+                aria-label="Close notification"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+        </AnimatePresence>
+      </div>
+
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-8 space-y-8 mt-10">
 
         {/* Header */}
