@@ -1,4 +1,21 @@
 export const posts = [
+  {
+    id: 5,
+    title: "Technology Trends in EdTech",
+    content: [
+      "The educational technology (EdTech) landscape is evolving at a breakneck pace, transforming how we learn, teach, and interact with information. As we navigate this space, several key technology trends are moving from experimental to essential. However, having the right technology is only half the battle; how these tools are designed, presented, and experienced is what truly drives user adoption.",
+      "Here are the top technology trends reshaping EdTech today, and how integrating a strong design philosophy can elevate them:",
+      "1. Artificial Intelligence and Personalized Learning: AI is the backbone of modern EdTech. Adaptive learning platforms analyze student performance in real-time, tailoring coursework to fit individual learning paces. But complex algorithms require intuitive interfaces. This is where crafting thoughtful digital products becomes critical. A well-designed digital product ensures that AI feels like an accessible, helpful tutor rather than an overwhelming machine, merging creativity and technology effectively.",
+      "2. Immersive Experiences through AR and VR: Augmented and Virtual Reality are breaking down the walls of the traditional classroom, offering students immersive simulations and virtual field trips. To make these experiences truly memorable, educational institutions and startups must develop a cohesive brand ecosystem. By aligning AR/VR content with a strong visual identity, EdTech companies can build systems of value that resonate deeply with their users and evolve alongside modern culture.",
+      "3. Gamification and Microlearning: With shifting attention spans, EdTech is leaning heavily into gamified microlearning—delivering bite-sized, interactive lessons. Standing out in a crowded app market requires more than just a simple points system. It demands proprietary tech tools and robust internal design IP to properly design the invisible architecture behind every meaningful, engaging learning experience.",
+      "4. Data Privacy and Secure Credentialing: As digital learning scales, so does the need for secure, verifiable credentialing and data protection. EdTech brands dealing with sensitive student data must project absolute trust and market authority. Before launching new data-centric tools or platforms, companies can utilize an expert diagnostic tool to assess their brand health across key pillars, gaining proprietary insights into how their audience perceives them.",
+      "Building the Future of Learning: The intersection of creativity, technology, and ownership is where the future of EdTech truly lies. As these trends continue to grow, it is essential to focus not just on creating brands, but on building systems that shape the future forms of human creativity. Whether through a complete visual identity overhaul or the development of new digital products, focusing on the unseen frameworks is what will drive meaningful progress in education."
+    ],
+    author: {
+      name: "Inioluwa Ayanbisi",
+      role: "Frontend Developer"
+    }
+  },
    {
     id: 1,
     title: "Balancing Human Creativity with AI-Generated Content",

@@ -1,4 +1,11 @@
 export const articlesData = [
+  {
+    id: 5,
+    experience: "Technology Trends",
+    date: "July 16th, 2026",
+    title: "Technology Trends in EdTech",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1784210572/html_pj2usd.jpg",
+  },
      {
     id: 1,
     experience: "Tips",
