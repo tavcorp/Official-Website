@@ -73,13 +73,13 @@
 .blogCard {
   background: #252525;
   border-radius: 20px;
-  padding: 20px;
+  padding: 20px 12px; /* Reduced side padding for mobile */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (min-width: 640px) {
   .blogCard {
-    padding: 40px;
+    padding: 40px 24px;
   }
 }
 

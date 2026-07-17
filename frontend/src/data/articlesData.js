@@ -1,20 +1,20 @@
 export const articlesData = [
   {
-    id: 5,
+    id: 1,
     experience: "Technology Trends",
     date: "July 16th, 2026",
     title: "Technology Trends in EdTech",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1784210572/html_pj2usd.jpg",
   },
      {
-    id: 1,
+    id: 2,
     experience: "Tips",
     date: " May 25th, 2026",
     title: "Balancing Human Creativity with AI-Generated Content",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1779698267/johnson_cxcsvd.jpg",
   },
    {
-    id: 2,
+    id: 3,
     experience: "Tips & Tricks",
     date: " March 30th, 2026",
     title: "The Right Time to Rebrand: A Strategic Checklist",
@@ -22,14 +22,14 @@ export const articlesData = [
   },
  
   {
-    id: 3,
+    id: 4,
     experience: "Design Trends",
     date: "February 12th 2026",
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/w_400,h_300,c_fill,q_auto,f_auto/v1776784906/mini_f4nofz.jpg",
   },
   {
-    id: 4,
+    id: 5,
     experience: "Experience",
     date: "November 16 2025",
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",

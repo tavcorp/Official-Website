@@ -10,6 +10,15 @@ const Blog = () => {
   useEffect(() => {
     if (id) {
       setExpandedPost(parseInt(id));
+      setTimeout(() => {
+        const element = document.getElementById(`article-${id}`);
+        if (element) {
+          // Adjust scroll position to account for a fixed header if necessary
+          const yOffset = -100; 
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 500);
     }
   }, [id]);
 
@@ -32,6 +41,7 @@ const Blog = () => {
           {posts.map((post, index) => (
             <article 
               key={post.id} 
+              id={`article-${post.id}`}
               className={styles.blogCard}
               data-aos="fade-up"
               data-aos-delay={`${100 + (index * 50)}`}
