@@ -1,6 +1,6 @@
 export const posts = [
   {
-    id: 5,
+    id: 1,
     title: "Technology Trends in EdTech",
     content: [
       "The educational technology (EdTech) landscape is evolving at a breakneck pace, transforming how we learn, teach, and interact with information. As we navigate this space, several key technology trends are moving from experimental to essential. However, having the right technology is only half the battle; how these tools are designed, presented, and experienced is what truly drives user adoption.",
@@ -17,7 +17,7 @@ export const posts = [
     }
   },
    {
-    id: 1,
+    id: 2,
     title: "Balancing Human Creativity with AI-Generated Content",
     content: [
       "Over the past few years, I've watched Artificial Intelligence evolve from something people discussed as 'the future' into something many of us use almost every day. Today, AI can write articles, generate images, create designs, suggest ideas, and even help build entire marketing campaigns in minutes. As someone working in design and digital experiences, I see the appeal. AI saves time. It speeds up processes that once took hours and sometimes even days. But I've also noticed something else happening: the internet is gradually becoming filled with content that feels repetitive. It sounds polished, but often lacks personality. It says a lot without really saying anything.",
@@ -44,7 +44,7 @@ export const posts = [
     }
   },
    {
-    id: 2,
+    id: 3,
     title: "The Right Time to Rebrand: A Strategic Checklist",
     content: [
       "A rebrand is expensive, risky, and emotionally charged. Done well, it can revive a business. Done poorly, it erases years of hard-won equity. So how do you know when the timing is right? You don't guess. You look for four signals.",
@@ -71,7 +71,7 @@ export const posts = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     content: [
       "Minimalism promised us freedom. No clutter. No chaos. Just clean lines and peaceful spaces. Sounds great, right? But somewhere along the way, minimalism tripped over its own good intentions. It stopped being helpful and started being ridiculous.",
@@ -88,7 +88,7 @@ export const posts = [
     }
   },
  {
-    id: 4,
+    id: 5,
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",
     content: [
       "The phrase “We celebrate diversity” is common. The reality is harder: a meeting where a junior employee hesitates, a misunderstanding that turns to resentment, a good hire who leaves after 18 months because they never felt they belonged. Building work culture in a diverse team is not about ticking boxes. It is daily discipline, empathy, and professional humility.",
