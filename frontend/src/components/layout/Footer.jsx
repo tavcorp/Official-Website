@@ -350,7 +350,7 @@ const Footer = () => {
         {/* Banner */}
         <div className="mt-8 sm:mt-10 w-full lg:pl-[2px]">
           <img
-            src="https://res.cloudinary.com/de3ryzm92/image/upload/c_fill,q_auto,f_auto/v1776084032/Banner_jkopjo.jpg"
+            src="https://res.cloudinary.com/de3ryzm92/image/upload/v1785930409/footer_new_tbwaic.png"
             alt="Banner"
             className="w-full rounded-lg sm:rounded-xl object-cover"
           />
