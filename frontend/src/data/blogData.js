@@ -1,6 +1,53 @@
 export const posts = [
   {
     id: 1,
+    title: "Stop Losing Sales in the DMs: The Simple Story Behind Syncra™",
+    content: [
+      "If you run a fashion brand or boutique in Africa today, you already know the power of Instagram, TikTok, and WhatsApp. You post a stunning new dress, and the notifications start flying in.",
+      "It feels great, until you actually try to manage all those orders.",
+      "What should be an exciting sales day quickly turns into chaos:",
+      "→ \"How much is this?\"",
+      "→ \"Can I see more photos?\"",
+      "→ \"Will size 12 fit me, or should I get a 14?\"",
+      "→ \"Send me your bank account details.\"",
+      "→ \"I've paid, did you see the screenshot?\"",
+      "→ \"Has my package left yet?\"",
+      "When you have to answer every single customer manually, you get stuck behind your phone screen all day. Messages get missed, customers get tired of waiting, and money slips right through your fingers.",
+      "That is why we built Syncra™.",
+      "1. Why We Built This (The Problem)",
+      "Right now, more than half of all fashion sales in Africa happen inside chat apps like WhatsApp and Instagram DMs, not on traditional websites.",
+      "Because everything is done by hand, fashion brands face three big problems:",
+      "☐ Lost Customers: Nearly 40% of people who want to buy end up walking away if you take longer than 15 minutes to reply, or if paying takes too many steps.",
+      "☐ Wasted Time: Business owners spend over 3 hours every day doing repetitive tasks, answering the same questions, checking bank apps for transfer alerts, and calling delivery riders.",
+      "☐ Wrong Sizes: Customers guess their sizes, buy the wrong fit, and send items back, wasting money and time for everyone.",
+      "Our goal isn't to force your customers to shop differently. People love chatting and buying on social media. Syncra simply fixes the headache behind the scenes so you can handle 100 sales as easily as you handle one.",
+      "2. Who Syncra is For",
+      "Syncra was made specifically for growing African fashion businesses, boutique owners, local designers, and anyone employing the power of social media to reach their target audience.",
+      "It's built for you if:",
+      "• You sell clothes, shoes, beauty products, or any goods on Instagram, TikTok, or WhatsApp.",
+      "• You are looking to eliminate the hassle of losing customers due to a lack of connection between customer orders, payments, and product dispatch.",
+      "• You get plenty of interested buyers, but keeping up with DMs, manual payment checking, and coordinating delivery riders is overwhelming your team.",
+      "• You want a seamless experience that makes it easy to connect with the right audience, streamline sales, and boost revenue.",
+      "3. What TavCorp is Offering You",
+      "Think of Syncra as a helpful bridge between your Instagram post and your delivery rider. Instead of starting a long, manual Q&A session in the DMs every single time, Syncra guides your customer step-by-step:",
+      "1. Discovery: Your customer sees your product on Instagram or TikTok and clicks the link.",
+      "2. Details & Fit: Before they even start chatting, they see clear photos, prices, available colors, and a quick Sizing Tool made specifically for African body shapes so they pick the right size.",
+      "3. The Chat: When they enter your WhatsApp, they aren't asking \"How much?\" anymore. They are ready to buy.",
+      "4. Instant Payment & Dispatch: They get an automatic payment link (working with Paystack, Flutterwave, or M-Pesa). Once they pay, the system confirms it automatically and notifies your courier, no manual screenshot checking needed!",
+      "The Big Picture: From DM to Dispatch",
+      "\"Everybody wants more sales. But not every business has the system to handle them.\"",
+      "When you don't have a system, getting more customers just brings more stress.",
+      "With Syncra™, you stop playing customer support chatbot and go back to what you actually love: creating great fashion and growing your brand.",
+      "Ready to fix your checkout process?",
+      "Want to see where your business is currently losing time or money in the DMs? Send us a message today for a quick TavCorp Friction Audit."
+    ],
+    author: {
+      name: "Anthony Okobi",
+      role: "Sales Associate"
+    }
+  },
+  {
+    id: 2,
     title: "Technology Trends in EdTech",
     content: [
       "The educational technology (EdTech) landscape is evolving at a breakneck pace, transforming how we learn, teach, and interact with information. As we navigate this space, several key technology trends are moving from experimental to essential. However, having the right technology is only half the battle; how these tools are designed, presented, and experienced is what truly drives user adoption.",
@@ -17,7 +64,7 @@ export const posts = [
     }
   },
    {
-    id: 2,
+    id: 3,
     title: "Balancing Human Creativity with AI-Generated Content",
     content: [
       "Over the past few years, I've watched Artificial Intelligence evolve from something people discussed as 'the future' into something many of us use almost every day. Today, AI can write articles, generate images, create designs, suggest ideas, and even help build entire marketing campaigns in minutes. As someone working in design and digital experiences, I see the appeal. AI saves time. It speeds up processes that once took hours and sometimes even days. But I've also noticed something else happening: the internet is gradually becoming filled with content that feels repetitive. It sounds polished, but often lacks personality. It says a lot without really saying anything.",
@@ -44,7 +91,7 @@ export const posts = [
     }
   },
    {
-    id: 3,
+    id: 4,
     title: "The Right Time to Rebrand: A Strategic Checklist",
     content: [
       "A rebrand is expensive, risky, and emotionally charged. Done well, it can revive a business. Done poorly, it erases years of hard-won equity. So how do you know when the timing is right? You don't guess. You look for four signals.",
@@ -71,7 +118,7 @@ export const posts = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     content: [
       "Minimalism promised us freedom. No clutter. No chaos. Just clean lines and peaceful spaces. Sounds great, right? But somewhere along the way, minimalism tripped over its own good intentions. It stopped being helpful and started being ridiculous.",
@@ -88,7 +135,7 @@ export const posts = [
     }
   },
  {
-    id: 5,
+    id: 6,
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",
     content: [
       "The phrase “We celebrate diversity” is common. The reality is harder: a meeting where a junior employee hesitates, a misunderstanding that turns to resentment, a good hire who leaves after 18 months because they never felt they belonged. Building work culture in a diverse team is not about ticking boxes. It is daily discipline, empathy, and professional humility.",
