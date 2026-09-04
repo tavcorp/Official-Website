@@ -1,7 +1,8 @@
 {
-  "name": "frontend",
+  "name": "tavcorp-frontend",
   "private": true,
   "version": "0.1.0",
+  "description": "TavCorp — Creative & Technology Studio crafting brands, modern websites, and scalable digital products.",
   "homepage": "https://wearetavcorp.com",
   "type": "module",
   "scripts": {
