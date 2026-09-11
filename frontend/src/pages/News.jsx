@@ -1,4 +1,13 @@
+import React, { useState } from "react";
+import { featuredNews, newsData } from "../data/newsData";
+
 const News = () => {
+  const [expandedId, setExpandedId] = useState(null);
+
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   return (
     <div className="pt-24 min-h-screen w-full px-4 sm:px-8" style={{ backgroundColor: "#1B1B1B", color: "#F1F1F1" }}>
       <div className="mx-auto w-[95%] md:w-[70%]">
@@ -15,87 +24,77 @@ const News = () => {
         </div>
 
         {/* Featured News */}
-        <div className="rounded-2xl shadow-md overflow-hidden mb-12" style={{ backgroundColor: "#252525" }} data-aos="fade-up" data-aos-delay="100">
-          {/* 
-          <div className="h-56 bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500 text-lg">Featured Image</span>
+        {featuredNews && (
+          <div className="rounded-2xl shadow-md overflow-hidden mb-12" style={{ backgroundColor: "#252525" }} data-aos="fade-up" data-aos-delay="100">
+            <div className="p-4 sm:p-8">
+              <span className="text-sm text-gray-400">{featuredNews.date}</span>
+              <h2 className="text-2xl font-bold mt-2 mb-4" style={{ color: "#DF9931" }}>
+                {featuredNews.title}
+              </h2>
+              <p className="text-gray-300 mb-6">
+                {featuredNews.description}
+              </p>
+            </div>
           </div>
-          */}
-          <div className="p-4 sm:p-8">
-            <span className="text-sm text-gray-400">July 2023</span>
-            <h2 className="text-2xl font-bold mt-2 mb-4" style={{ color: "#DF9931" }}>
-              Tavcorp Officially Launches Its Creative & Tech Studio 🚀
-            </h2>
-            <p className="text-gray-300 mb-6">
-              Tavcorp formally opened its creative studio in Abuja, marking the beginning of a new era in branding, design, and digital product development. The launch reflects the company’s commitment to helping businesses solve design and technology challenges through innovation, strategy, and craftsmanship. Tavcorp now serves brands locally and globally with integrated creative and technical solutions.
-            </p>
-            <button className="text-white font-medium hover:underline">
-              Read Full Story →
-            </button>
-          </div>
-        </div>
+        )}
 
         {/* News List */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {newsData.map((item, index) => (
+            <div
+              key={item.id}
+              className="rounded-xl shadow-md p-3 sm:p-6 flex flex-col justify-between"
+              style={{ backgroundColor: "#252525" }}
+              data-aos="slide-up"
+              data-aos-delay={`${100 * (index + 1)}`}
+            >
+              <div>
+                <span className="text-xs text-gray-400">{item.date}</span>
+                <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                  {item.description}
+                </p>
 
-          {/* News Item */}
-          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }} data-aos="slide-up" data-aos-delay="100">
-            <span className="text-xs text-gray-400">Ongoing</span>
-            <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
-              Tavcorp Expands Its Digital Product Capabilities
-            </h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Tavcorp continues to deepen its expertise in automation, custom software development, and website design, strengthening its position as a full-service creative and technology studio. The company is focused on building scalable digital products that improve business efficiency, customer experience, and long-term brand value.
-            </p>
-            <button className="text-sm font-medium text-white hover:underline">
-              Read More →
-            </button>
-          </div>
+                {/* Expanded full content */}
+                {item.content && expandedId === item.id && (
+                  <div className="mt-4 pt-4 border-t border-white/10 space-y-3">
+                    {item.content.map((paragraph, pIdx) => {
+                      const isHeading =
+                        paragraph === paragraph.toUpperCase() &&
+                        paragraph.length < 60 &&
+                        !paragraph.includes(".");
+                      return isHeading ? (
+                        <h4
+                          key={pIdx}
+                          className="text-sm font-bold tracking-wider pt-2"
+                          style={{ color: "#DF9931" }}
+                        >
+                          {paragraph}
+                        </h4>
+                      ) : (
+                        <p key={pIdx} className="text-gray-300 text-sm leading-relaxed">
+                          {paragraph}
+                        </p>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
 
-          {/* News Item */}
-          <div className="rounded-xl shadow-md p-3 sm:p-6" style={{ backgroundColor: "#252525" }} data-aos="slide-up" data-aos-delay="200">
-            <span className="text-xs text-gray-400">Ongoing</span>
-            <h3 className="text-xl font-semibold mt-2 mb-3" style={{ color: "#DF9931" }}>
-              Tavcorp Strengthens Its Collaborative Studio Model
-            </h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Built as both a creative space and tech hub, the Tavcorp studio is designed to foster collaboration, experimentation, and problem-solving. By combining an expert team with innovative processes, the studio supports brands from strategy to execution, ensuring every project is intentional, functional, and visually compelling.
-            </p>
-            <button className="text-sm font-medium text-white hover:underline">
-              Read More →
-            </button>
-          </div>
-
-          {/* News Item */}
-          {/* <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-            <span className="text-xs text-gray-500">October 2025</span>
-            <h3 className="text-xl font-semibold mt-2 mb-3">
-              Awarded for Innovation in Web Development
-            </h3>
-            <p className="text-gray-600 text-sm mb-4">
-              Our studio was recognized for building scalable and impactful web
-              solutions across multiple industries.
-            </p>
-            <button className="text-sm font-medium text-black hover:underline">
-              Read More →
-            </button>
-          </div> */}
-
-          {/* News Item */}
-          {/* <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-            <span className="text-xs text-gray-500">September 2025</span>
-            <h3 className="text-xl font-semibold mt-2 mb-3">
-              Expanding Our Team 🎉
-            </h3>
-            <p className="text-gray-600 text-sm mb-4">
-              We welcomed new developers and designers to strengthen our product
-              and innovation efforts.
-            </p>
-            <button className="text-sm font-medium text-black hover:underline">
-              Read More →
-            </button>
-          </div> */}
-
+              {/* Read More / Read Less button */}
+              {item.content && (
+                <button
+                  onClick={() => toggleExpand(item.id)}
+                  className="text-sm font-semibold hover:underline mt-4 inline-flex items-center gap-1 cursor-pointer transition-colors w-fit"
+                  style={{ color: "#DF9931" }}
+                >
+                  {expandedId === item.id ? "Read Less ▲" : "Read More →"}
+                </button>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* CTA */}

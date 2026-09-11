@@ -1,6 +1,35 @@
 export const posts = [
   {
     id: 1,
+    title: "The Problem Was Never The Gift Card. It Was Everything Around It",
+    content: [
+      "A customer walks into a store. They want to give someone a gift. They ask one simple question: “Do you sell gift cards?” The business says yes. But behind that “yes” is usually a messy process.",
+      "Someone creates the card manually. Payment gets confirmed somewhere else. The card is sent through WhatsApp or email. Someone has to remember the balance. Someone has to track the redemption.",
+      "And then the customer gets the card. Maybe they save it. Maybe they screenshot it. Maybe they forget where they saved it.",
+      "We looked at that entire experience and realized something: The problem wasn't the gift card. It was everything around it.",
+      "So We Built CardVault",
+      "On one side, the Business Portal gives businesses a simple way to create and manage gift cards. Create the card. Set the value. Send it.",
+      "On the other side, the Customer App turns that card into something they actually own and can use. It arrives in their wallet. They can see it. Check the balance. Use it. Gift it.",
+      "And the moment they redeem it, the two sides connect again. The customer uses ₦20,000. Their balance updates. The business sees the redemption. The transaction is recorded.",
+      "No messages back and forth. No spreadsheets. No searching through old emails.",
+      "The business creates the value. The customer carries the value. CardVault keeps the entire journey connected.",
+      "Then We Saw the Bigger Opportunity",
+      "This wasn't just a better way to issue gift cards. It was a new infrastructure for gifting, customer acquisition and repeat commerce.",
+      "A business can reach someone who has never walked through its doors. A customer can discover businesses through the value they receive.",
+      "A gift can become a first purchase. A first purchase can become a relationship. And a relationship can become repeat business.",
+      "That's the part that matters. Because the best products don't just solve the problem you came in with. They reveal what becomes possible once that problem is solved.",
+      "One Card. Two Experiences. One Connected Ecosystem.",
+      "The business creates. The customer receives. The customer redeems. The business sees the value. And the cycle can begin again.",
+      "Create. Gift. Redeem. Repeat.",
+      "That's CardVault."
+    ],
+    author: {
+      name: "Anita Simpah",
+      role: "Growth Partner"
+    }
+  },
+  {
+    id: 2,
     title: "Stop Losing Sales in the DMs: The Simple Story Behind Syncra™",
     content: [
       "If you run a fashion brand or boutique in Africa today, you already know the power of Instagram, TikTok, and WhatsApp. You post a stunning new dress, and the notifications start flying in.",
@@ -47,7 +76,7 @@ export const posts = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "Technology Trends in EdTech",
     content: [
       "The educational technology (EdTech) landscape is evolving at a breakneck pace, transforming how we learn, teach, and interact with information. As we navigate this space, several key technology trends are moving from experimental to essential. However, having the right technology is only half the battle; how these tools are designed, presented, and experienced is what truly drives user adoption.",
@@ -64,7 +93,7 @@ export const posts = [
     }
   },
    {
-    id: 3,
+    id: 4,
     title: "Balancing Human Creativity with AI-Generated Content",
     content: [
       "Over the past few years, I've watched Artificial Intelligence evolve from something people discussed as 'the future' into something many of us use almost every day. Today, AI can write articles, generate images, create designs, suggest ideas, and even help build entire marketing campaigns in minutes. As someone working in design and digital experiences, I see the appeal. AI saves time. It speeds up processes that once took hours and sometimes even days. But I've also noticed something else happening: the internet is gradually becoming filled with content that feels repetitive. It sounds polished, but often lacks personality. It says a lot without really saying anything.",
@@ -91,7 +120,7 @@ export const posts = [
     }
   },
    {
-    id: 4,
+    id: 5,
     title: "The Right Time to Rebrand: A Strategic Checklist",
     content: [
       "A rebrand is expensive, risky, and emotionally charged. Done well, it can revive a business. Done poorly, it erases years of hard-won equity. So how do you know when the timing is right? You don't guess. You look for four signals.",
@@ -118,7 +147,7 @@ export const posts = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     content: [
       "Minimalism promised us freedom. No clutter. No chaos. Just clean lines and peaceful spaces. Sounds great, right? But somewhere along the way, minimalism tripped over its own good intentions. It stopped being helpful and started being ridiculous.",
@@ -135,7 +164,7 @@ export const posts = [
     }
   },
  {
-    id: 6,
+    id: 7,
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",
     content: [
       "The phrase “We celebrate diversity” is common. The reality is harder: a meeting where a junior employee hesitates, a misunderstanding that turns to resentment, a good hire who leaves after 18 months because they never felt they belonged. Building work culture in a diverse team is not about ticking boxes. It is daily discipline, empathy, and professional humility.",
