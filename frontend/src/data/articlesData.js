@@ -1,27 +1,34 @@
 export const articlesData = [
-  {
+    {
     id: 1,
     experience: "Products",
-    date: "August 17th, 2026",
-    title: "Stop Losing Sales in the DMs: The Simple Story Behind Syncra™",
-    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1786985574/blueprint_ycsuum.jpg",
+    date: "September 11th, 2026",
+    title: "The Problem Was Never The Gift Card. It Was Everything Around It",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1789133364/gift_card_ezfakb.png",
   },
   {
     id: 2,
+    experience: "Products",
+    date: "August 17th, 2026",
+    title: "Stop Losing Sales in The DMs: The Simple Story Behind Syncra™",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1786985574/blueprint_ycsuum.jpg",
+  },
+  {
+    id: 3,
     experience: "Technology Trends",
     date: "July 16th, 2026",
     title: "Technology Trends in EdTech",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1784210572/html_pj2usd.jpg",
   },
      {
-    id: 3,
+    id: 4,
     experience: "Tips",
     date: " May 25th, 2026",
     title: "Balancing Human Creativity with AI-Generated Content",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1779698267/johnson_cxcsvd.jpg",
   },
    {
-    id: 4,
+    id: 5,
     experience: "Tips & Tricks",
     date: " March 30th, 2026",
     title: "The Right Time to Rebrand: A Strategic Checklist",
@@ -29,14 +36,14 @@ export const articlesData = [
   },
  
   {
-    id: 5,
+    id: 6,
     experience: "Design Trends",
     date: "February 12th 2026",
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/w_400,h_300,c_fill,q_auto,f_auto/v1776784906/mini_f4nofz.jpg",
   },
   {
-    id: 6,
+    id: 7,
     experience: "Experience",
     date: "November 16 2025",
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",
