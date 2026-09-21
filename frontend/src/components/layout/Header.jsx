@@ -210,22 +210,31 @@ const Header = () => {
           >
             {/* ... Menu Content ... */}
             <div className="text-gray-200">
-              <div>
-                <h3 className="text-sm font-semibold mb-3">Pages</h3>
-                <div className="grid gap-1">
-                  {pages.map((p) => (
-                    <button
-                      key={p.id}
-                      onClick={() => {
-                        navigate(p.url);
-                        setDesktopMenuOpen(false);
-                      }}
-                      className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
-                    >
-                      {p.title}
-                    </button>
-                  ))}
-                </div>
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-gray-700">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-400">Pages</h3>
+                <button
+                  onClick={() => {
+                    navigate("/our-team");
+                    setDesktopMenuOpen(false);
+                  }}
+                  className="px-3.5 py-1.5 text-xs font-semibold rounded-md bg-[#DF9931] text-black hover:bg-[#c88425] transition"
+                >
+                  Our Team
+                </button>
+              </div>
+              <div className="grid gap-1">
+                {pages.map((p) => (
+                  <button
+                    key={p.id}
+                    onClick={() => {
+                      navigate(p.url);
+                      setDesktopMenuOpen(false);
+                    }}
+                    className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 text-sm"
+                  >
+                    {p.title}
+                  </button>
+                ))}
               </div>
 
               {/* Login/Signup for non-authenticated users */}
@@ -271,6 +280,17 @@ const Header = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => {
+                    navigate("/our-team");
+                    closeAll();
+                  }}
+                  className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 font-medium text-white transition"
+                >
+                  Our Team
+                </button>
+              </li>
               <li className="mt-1 border-t border-gray-700" />
               <li>
                 <button
