@@ -374,6 +374,12 @@ const OurTeam = () => {
             ))}
             </div>
           </div>
+
+          <div className="mt-16 sm:mt-20">
+            <p className="text-lg sm:text-xl font-medium text-gray-500">
+              Supported by our global growing team
+            </p>
+          </div>
         </div>
 
         {/* Call to Action */}
