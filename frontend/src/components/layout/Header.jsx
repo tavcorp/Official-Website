@@ -280,17 +280,7 @@ const Header = () => {
                   </button>
                 </li>
               ))}
-              <li>
-                <button
-                  onClick={() => {
-                    navigate("/our-team");
-                    closeAll();
-                  }}
-                  className="block w-full text-left py-2 px-2 rounded hover:bg-gray-800 font-medium text-white transition"
-                >
-                  Our Team
-                </button>
-              </li>
+
               <li className="mt-1 border-t border-gray-700" />
               <li>
                 <button
