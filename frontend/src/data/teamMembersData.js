@@ -27,7 +27,7 @@ export const teamMembers = [
     id: 5,
     name: "Inioluwa Ayanbisi",
     role: "Engineering Lead",
-    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1790013107/Gemini_Generated_Image_8onavh8onavh8ona_inp4mm.jpg",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1790259252/Gemini_Generated_Image_8onavh8onavh8ona_inp4mm_vcclg2.jpg",
   },
   {
     id: 6,
