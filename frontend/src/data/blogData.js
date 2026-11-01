@@ -1,6 +1,104 @@
 export const posts = [
   {
     id: 1,
+    title: "From an Idea to an Institution: The Evolution of Building a Business",
+    content: [
+      "Every established business was once an idea someone couldn't stop thinking about. Before the offices, the customers, the revenue, the recognition and the reputation, there was a thought. Sometimes it came from frustration. Sometimes from an opportunity nobody else noticed. Other times, it was simply the desire to create something that didn't exist.",
+      "But an idea, no matter how brilliant, is only the beginning.",
+      "The journey from an idea to an established business is one of the most demanding transformations an individual or team can undertake. It requires more than passion, a good product or access to capital. It demands a deliberate process of turning possibility into something people can experience, trust and eventually depend on.",
+      "And that process rarely happens in a straight line.",
+      "1. The Idea: Seeing What Others Overlook",
+      "Every business begins with a reason to exist.",
+      "It could be a problem that needs solving, an underserved audience, an inefficient industry or a completely new way of doing something.",
+      "The strongest business ideas are not necessarily the most complicated. Often, they emerge from understanding ordinary problems differently.",
+      "However, having an idea and identifying a viable business opportunity are two different things.",
+      "A founder must ask difficult questions:",
+      "• Who actually needs this?",
+      "• What problem does it solve?",
+      "• Why would someone choose this over existing alternatives?",
+      "• Is there a market willing to pay for it?",
+      "• Can the idea become something sustainable?",
+      "This is where research, observation and strategic thinking become essential. Before building anything, there must be an understanding of what is worth building.",
+      "2. Validation: Turning Assumptions into Evidence",
+      "One of the biggest mistakes entrepreneurs make is falling in love with their ideas before understanding their markets.",
+      "An idea may sound exceptional to its creator but mean very little to its intended audience.",
+      "Validation bridges that gap.",
+      "It involves researching the market, understanding customer behaviour, studying competitors, testing demand and gathering feedback from potential customers.",
+      "Sometimes, validation reveals that the original idea needs to change. A different audience may be more suitable. The pricing may need reconsideration. The problem may be bigger, smaller or entirely different from what was initially imagined.",
+      "That is not failure. It is refinement.",
+      "The objective is not to prove that the founder is right. It is to discover what the market actually needs.",
+      "3. Foundation: Giving the Business an Identity",
+      "Once the opportunity becomes clearer, the next challenge is establishing a foundation.",
+      "A business needs more than a name and a logo. It needs a defined purpose, positioning, identity and direction.",
+      "This is where brand strategy becomes particularly important.",
+      "The business must establish:",
+      "• Its mission, vision and values.",
+      "• Its target audience and market position.",
+      "• Its products, services and value proposition.",
+      "• Its brand identity and communication style.",
+      "• Its business model and revenue structure.",
+      "A strong brand gives people something to recognise, understand and remember. It communicates what the business represents before a conversation even begins.",
+      "But identity must be supported by substance. A business cannot build lasting trust on appearance alone.",
+      "4. Development: Building Something People Can Experience",
+      "An idea becomes a business when people can interact with what it offers.",
+      "This is the stage where concepts become products, services, platforms, processes and experiences.",
+      "Depending on the business, development could involve manufacturing a physical product, building software, designing a digital platform, establishing a service operation or creating a distribution system.",
+      "The important thing is to build around the actual needs of the customer.",
+      "A beautiful product that doesn't solve a problem will struggle. A sophisticated website without a functional business behind it will not create sustainable value.",
+      "Every element must work together: the product, the customer experience, the technology, the delivery process and the people responsible for making it happen.",
+      "5. Market Entry: Becoming Visible and Acquiring Customers",
+      "A business can have an excellent product and still remain unknown.",
+      "Market entry is where the business moves from preparation to public interaction.",
+      "This requires a deliberate approach to marketing, sales, positioning and distribution.",
+      "The business must communicate its value, reach the right people and create reasons for them to take action.",
+      "Brand awareness creates familiarity. Marketing generates interest. Sales convert interest into customers. Customer experience determines whether those customers return.",
+      "These functions are connected, but they are not interchangeable.",
+      "The first sale is important. However, building a repeatable process for acquiring and retaining customers is what begins to make a business sustainable.",
+      "6. Operations: Moving Beyond the Founder",
+      "At the beginning, founders often do everything.",
+      "They manage customers, oversee finances, create content, handle sales, deliver services and solve operational problems.",
+      "This may work initially, but it becomes increasingly difficult as the business grows.",
+      "Establishment requires structure.",
+      "Processes must become repeatable. Responsibilities must be defined. Financial records must be maintained. Teams must understand their roles. Technology should support efficiency rather than create additional complexity.",
+      "This is also where automation, operational systems and proper management become valuable.",
+      "A business becomes stronger when its ability to deliver value is no longer dependent on one person doing everything.",
+      "The transition from founder-led activity to organised business operations is one of the most important milestones in entrepreneurial development.",
+      "7. Growth: Building Beyond Survival",
+      "Getting a business started is one achievement. Building one that can compete, adapt and expand is another.",
+      "At this stage, the questions begin to change.",
+      "Instead of asking how to get the next customer, the business starts considering how to improve customer lifetime value, enter new markets, strengthen its competitive advantage and create additional revenue streams.",
+      "Growth may involve hiring, partnerships, new product lines, improved technology, expansion or investment.",
+      "But growth without structure can become an expensive mistake.",
+      "The objective is not simply to become bigger. It is to become better equipped to create and deliver value consistently.",
+      "8. Establishment: Becoming Something That Lasts",
+      "An established business is not simply one that has operated for several years or accumulated a large customer base.",
+      "It is one that has developed the systems, reputation, relationships, financial discipline and operational capacity to sustain itself.",
+      "Its identity is understood. Its customers know what to expect. Its processes are increasingly dependable. Its people understand the direction. Its value extends beyond the founder's original idea.",
+      "At this point, the business is no longer just an entrepreneurial experiment.",
+      "It is an organisation with the potential to influence its industry, create employment, develop new products, contribute to its economy and build something that outlives its original creators.",
+      "That is the difference between starting a business and building an institution.",
+      "The Part Nobody Should Ignore",
+      "There is no universal timeline for building a successful business.",
+      "Some businesses find their footing within months. Others spend years testing, adjusting and rebuilding before discovering the right direction.",
+      "There will be decisions that don't work, opportunities that disappear, customers who don't return and moments when the original vision needs to be reconsidered.",
+      "The businesses that endure are not necessarily those that never make mistakes. They are the ones capable of learning, adapting and making better decisions as they evolve.",
+      "An idea gives you somewhere to begin. Strategy gives it direction. Design gives it identity. Technology gives it capability. People give it momentum. Systems give it stability.",
+      "And time, consistency and execution give it the opportunity to become something much bigger.",
+      "So, What Does Your Idea Have the Potential to Become?",
+      "Perhaps it is a small business that gives you independence. Perhaps it is a product that changes how an industry operates. Perhaps it is a company that creates opportunities for thousands of people.",
+      "Whatever the ambition, the distance between imagining it and establishing it is filled with decisions that matter.",
+      "You don't have to build everything at once. But you do have to start building intentionally.",
+      "At TavCorp, we believe businesses deserve more than a good beginning. They deserve the strategy, identity, technology and systems to build a meaningful future.",
+      "Because the goal isn't just to start something.",
+      "It's to build something that matters."
+    ],
+    author: {
+      name: "Fredrick Hart",
+      role: "COO"
+    }
+  },
+  {
+    id: 2,
     title: "The Problem Was Never The Gift Card. It Was Everything Around It",
     content: [
       "A customer walks into a store. They want to give someone a gift. They ask one simple question: “Do you sell gift cards?” The business says yes. But behind that “yes” is usually a messy process.",
@@ -29,7 +127,7 @@ export const posts = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "Stop Losing Sales in the DMs: The Simple Story Behind Syncra™",
     content: [
       "If you run a fashion brand or boutique in Africa today, you already know the power of Instagram, TikTok, and WhatsApp. You post a stunning new dress, and the notifications start flying in.",
@@ -76,7 +174,7 @@ export const posts = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "Technology Trends in EdTech",
     content: [
       "The educational technology (EdTech) landscape is evolving at a breakneck pace, transforming how we learn, teach, and interact with information. As we navigate this space, several key technology trends are moving from experimental to essential. However, having the right technology is only half the battle; how these tools are designed, presented, and experienced is what truly drives user adoption.",
@@ -89,11 +187,11 @@ export const posts = [
     ],
     author: {
       name: "Inioluwa Ayanbisi",
-      role: "Frontend Developer"
+      role: "Frontend Engineer"
     }
   },
    {
-    id: 4,
+    id: 5,
     title: "Balancing Human Creativity with AI-Generated Content",
     content: [
       "Over the past few years, I've watched Artificial Intelligence evolve from something people discussed as 'the future' into something many of us use almost every day. Today, AI can write articles, generate images, create designs, suggest ideas, and even help build entire marketing campaigns in minutes. As someone working in design and digital experiences, I see the appeal. AI saves time. It speeds up processes that once took hours and sometimes even days. But I've also noticed something else happening: the internet is gradually becoming filled with content that feels repetitive. It sounds polished, but often lacks personality. It says a lot without really saying anything.",
@@ -120,7 +218,7 @@ export const posts = [
     }
   },
    {
-    id: 5,
+    id: 6,
     title: "The Right Time to Rebrand: A Strategic Checklist",
     content: [
       "A rebrand is expensive, risky, and emotionally charged. Done well, it can revive a business. Done poorly, it erases years of hard-won equity. So how do you know when the timing is right? You don't guess. You look for four signals.",
@@ -147,7 +245,7 @@ export const posts = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     content: [
       "Minimalism promised us freedom. No clutter. No chaos. Just clean lines and peaceful spaces. Sounds great, right? But somewhere along the way, minimalism tripped over its own good intentions. It stopped being helpful and started being ridiculous.",
@@ -164,7 +262,7 @@ export const posts = [
     }
   },
  {
-    id: 7,
+    id: 8,
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",
     content: [
       "The phrase “We celebrate diversity” is common. The reality is harder: a meeting where a junior employee hesitates, a misunderstanding that turns to resentment, a good hire who leaves after 18 months because they never felt they belonged. Building work culture in a diverse team is not about ticking boxes. It is daily discipline, empathy, and professional humility.",

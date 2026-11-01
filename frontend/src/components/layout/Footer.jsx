@@ -302,7 +302,7 @@ const Footer = () => {
 
             <div className="grid grid-cols-2 gap-x-12 gap-y-3.5 lg:gap-x-16 text-[13.5px] lg:text-[14px] font-medium text-gray-200">
               <a
-                href="https://www.instagram.com/tavcorp/"
+                href="https://www.instagram.com/wearetavcorp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition text-left"
