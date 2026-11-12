@@ -65,7 +65,7 @@ const Hero1 = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/tavcorp/"
+              href="https://www.instagram.com/wearetavcorp"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
