@@ -13,26 +13,27 @@ export const teamMembers = [
   },
   {
     id: 3,
+    name: "Stanley Chibuike",
+    role: "Co-founder/CFO",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1794506929/Centered_Studio_Portrait_on_White_Background_zsw6tk.png",
+  },
+  {
+    id: 4,
     name: "Anuj Raj",
     role: "MERN Stack Engineer & CTO",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1789990537/WhatsApp_Image_2026-09-21_at_2.35.52_AM_qmq6ab.jpg",
   },
   {
-    id: 4,
+    id: 5,
     name: "Anita Simpah",
     role: "Brand & Project Manager",
     image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1790012083/Gemini_Generated_Image_73vmqu73vmqu73vm_lgbmpc.jpg",
   },
   {
-    id: 5,
+    id: 6,
     name: "Inioluwa Ayanbisi",
     role: "Engineering Lead",
-    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1790259252/Gemini_Generated_Image_8onavh8onavh8ona_inp4mm_vcclg2.jpg",
+    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1794507549/Expanded_Entrance_Selfie_Portrait_yvy6ka.png",
   },
-  {
-    id: 6,
-    name: "Alli Joshua",
-    role: "Sales Lead",
-    image: "https://res.cloudinary.com/de3ryzm92/image/upload/v1789990581/1693573295929.jpg_yimxeo.jpg",
-  },
+  
 ];

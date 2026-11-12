@@ -1,6 +1,49 @@
 export const posts = [
   {
     id: 1,
+    title: "Artificial Intelligence Is Not the Future. What We Build With It Is",
+    content: [
+      "The world is teaching machines to think. But the real opportunity lies in teaching technology to make a difference.",
+      "Somewhere in the world, an algorithm is learning to diagnose diseases. Somewhere else, an intelligent system is helping a business make decisions that once required an entire team. A machine is learning to recognise patterns, a robot is learning to navigate its environment, and software is beginning to accomplish things that would have seemed impossible a decade ago.",
+      "Artificial intelligence is moving remarkably fast.",
+      "But amid the excitement, we believe the most important question is being overlooked:",
+      "What happens when intelligence moves beyond the screen and begins to transform the physical world?",
+      "Beyond the Conversation",
+      "Much of today's AI revolution happens through conversations, prompts, dashboards and digital interfaces. We ask questions, generate content, analyse information and automate processes.",
+      "These are significant achievements. But they represent only one dimension of what artificial intelligence can become.",
+      "Imagine intelligence that does more than recommend what a farmer should do, but works alongside physical systems that monitor soil, regulate irrigation and respond to changing environmental conditions.",
+      "Imagine AI that does not simply analyse hospital data, but connects with medical equipment to support faster, more informed healthcare decisions.",
+      "Imagine factories where intelligent software communicates directly with machines, identifying inefficiencies, anticipating failures and adapting production in real time.",
+      "This is where we believe the next chapter begins.",
+      "AI should not be confined to generating answers. It should help create better outcomes in the world around us.",
+      "Intelligence Needs an Infrastructure",
+      "An intelligent algorithm is only as useful as its ability to interact with the environment it serves.",
+      "It needs systems to collect information, devices to interpret physical conditions, infrastructure to communicate and reliable hardware to execute decisions.",
+      "This is why we see artificial intelligence, software engineering, electronics, robotics and automation as interconnected disciplines rather than independent industries.",
+      "The opportunity is not simply to build smarter applications. It is to develop intelligent ecosystems where digital intelligence and physical capability work together.",
+      "At TavCorp, this belief is shaping our long-term direction.",
+      "Our Place in the AI Revolution",
+      "We are building towards a future where TavCorp goes beyond designing digital experiences and developing software products.",
+      "Our ambition is to participate in the creation of intelligent systems: AI-powered platforms, autonomous workflows, connected devices, robotics and hardware solutions designed around real human and industrial needs.",
+      "We want to explore what becomes possible when creativity, engineering and intelligence meet.",
+      "Not because AI is trending, but because we recognise its potential to fundamentally change how people live, work, build and interact with their environments.",
+      "And we believe that potential deserves more than another chatbot.",
+      "The Future Needs Builders",
+      "Every technological revolution creates two kinds of participants: those who learn to use what has been created and those who contribute to what comes next.",
+      "We intend to be among the builders.",
+      "There is still so much to discover, engineer and redefine. The relationship between humans and intelligent machines is only beginning to take shape.",
+      "Our responsibility is to approach that future with curiosity, discipline and a commitment to building technology that serves a genuine purpose.",
+      "Because the greatest achievement of artificial intelligence will not be how convincingly a machine can think.",
+      "It will be how meaningfully that intelligence can improve the world.",
+      "TavCorp. Intelligence, engineered into possibility."
+    ],
+    author: {
+      name: "Mr Stanley Chibuike",
+      role: "Co-Founder"
+    }
+  },
+  {
+    id: 2,
     title: "From an Idea to an Institution: The Evolution of Building a Business",
     content: [
       "Every established business was once an idea someone couldn't stop thinking about. Before the offices, the customers, the revenue, the recognition and the reputation, there was a thought. Sometimes it came from frustration. Sometimes from an opportunity nobody else noticed. Other times, it was simply the desire to create something that didn't exist.",
@@ -98,7 +141,7 @@ export const posts = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "The Problem Was Never The Gift Card. It Was Everything Around It",
     content: [
       "A customer walks into a store. They want to give someone a gift. They ask one simple question: “Do you sell gift cards?” The business says yes. But behind that “yes” is usually a messy process.",
@@ -127,7 +170,7 @@ export const posts = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "Stop Losing Sales in the DMs: The Simple Story Behind Syncra™",
     content: [
       "If you run a fashion brand or boutique in Africa today, you already know the power of Instagram, TikTok, and WhatsApp. You post a stunning new dress, and the notifications start flying in.",
@@ -174,7 +217,7 @@ export const posts = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "Technology Trends in EdTech",
     content: [
       "The educational technology (EdTech) landscape is evolving at a breakneck pace, transforming how we learn, teach, and interact with information. As we navigate this space, several key technology trends are moving from experimental to essential. However, having the right technology is only half the battle; how these tools are designed, presented, and experienced is what truly drives user adoption.",
@@ -191,7 +234,7 @@ export const posts = [
     }
   },
    {
-    id: 5,
+    id: 6,
     title: "Balancing Human Creativity with AI-Generated Content",
     content: [
       "Over the past few years, I've watched Artificial Intelligence evolve from something people discussed as 'the future' into something many of us use almost every day. Today, AI can write articles, generate images, create designs, suggest ideas, and even help build entire marketing campaigns in minutes. As someone working in design and digital experiences, I see the appeal. AI saves time. It speeds up processes that once took hours and sometimes even days. But I've also noticed something else happening: the internet is gradually becoming filled with content that feels repetitive. It sounds polished, but often lacks personality. It says a lot without really saying anything.",
@@ -218,7 +261,7 @@ export const posts = [
     }
   },
    {
-    id: 6,
+    id: 7,
     title: "The Right Time to Rebrand: A Strategic Checklist",
     content: [
       "A rebrand is expensive, risky, and emotionally charged. Done well, it can revive a business. Done poorly, it erases years of hard-won equity. So how do you know when the timing is right? You don't guess. You look for four signals.",
@@ -245,7 +288,7 @@ export const posts = [
     }
   },
   {
-    id: 7,
+    id: 8,
     title: " Minimalism Tried to Be Cool. Then It Got Weird.",
     content: [
       "Minimalism promised us freedom. No clutter. No chaos. Just clean lines and peaceful spaces. Sounds great, right? But somewhere along the way, minimalism tripped over its own good intentions. It stopped being helpful and started being ridiculous.",
@@ -262,7 +305,7 @@ export const posts = [
     }
   },
  {
-    id: 8,
+    id: 9,
     title: "Beyond the Mosaic: Building Work Culture in a Diverse Team",
     content: [
       "The phrase “We celebrate diversity” is common. The reality is harder: a meeting where a junior employee hesitates, a misunderstanding that turns to resentment, a good hire who leaves after 18 months because they never felt they belonged. Building work culture in a diverse team is not about ticking boxes. It is daily discipline, empathy, and professional humility.",
